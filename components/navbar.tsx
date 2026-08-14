@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Home, Mail, MonitorPlay, type LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { siteNavigation } from "@/lib/navigation";
 
 function isNavigationItemActive(pathname: string, href: string) {
@@ -14,18 +13,6 @@ function isNavigationItemActive(pathname: string, href: string) {
 
 export function Navbar() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (!menuOpen) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false);
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [menuOpen]);
 
   return (
     <header className="site-header">
@@ -44,35 +31,30 @@ export function Navbar() {
           <span className="brand-product-label">POS</span>
         </Link>
 
-        <button
-          className="menu-toggle"
-          type="button"
-          aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          onClick={() => setMenuOpen((current) => !current)}
-        >
-          {menuOpen ? <X size={21} strokeWidth={2.1} /> : <Menu size={21} strokeWidth={2.1} />}
-        </button>
-
         <nav
           id="primary-navigation"
-          className={`primary-navigation${menuOpen ? " primary-navigation-open" : ""}`}
+          className="primary-navigation"
           aria-label="Navegación principal"
         >
           {siteNavigation.map((item) => {
             const active = isNavigationItemActive(pathname, item.href);
             const isSoon = item.status === "soon";
+            const NavigationIcon: LucideIcon = item.href === "/"
+              ? Home
+              : item.href === "/contacto"
+                ? Mail
+                : MonitorPlay;
 
             return (
               <Link
                 className={`nav-link${active ? " nav-link-active" : ""}${isSoon ? " nav-link-soon" : ""}`}
                 href={item.href}
                 key={item.href}
+                aria-label={`${item.label}${isSoon ? ", próximamente" : ""}`}
                 aria-current={active ? "page" : undefined}
-                onClick={() => setMenuOpen(false)}
               >
-                <span>{item.label}</span>
+                <NavigationIcon className="nav-link-icon" size={16} strokeWidth={2.1} aria-hidden="true" />
+                <span className="nav-link-label">{item.label}</span>
                 {isSoon ? <span className="nav-soon-badge">Próximamente</span> : null}
               </Link>
             );

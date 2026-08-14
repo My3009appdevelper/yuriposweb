@@ -161,6 +161,10 @@ button {
   transition: color 180ms ease, background-color 180ms ease;
 }
 
+.nav-link-icon {
+  flex: 0 0 auto;
+}
+
 .nav-link::after {
   position: absolute;
   right: 14px;
@@ -199,17 +203,6 @@ button {
   font-weight: 800;
   letter-spacing: 0.01em;
   line-height: 1.2;
-}
-
-.menu-toggle {
-  display: none;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-control);
-  background: var(--color-surface);
-  color: var(--color-ink);
 }
 
 .site-footer {
@@ -375,40 +368,18 @@ button {
     min-height: 68px;
   }
 
-  .menu-toggle {
-    display: grid;
-    place-items: center;
-  }
-
   .primary-navigation {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 18px;
-    left: 18px;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    padding: 8px;
-    border: 1px solid var(--color-line);
-    border-radius: 16px;
-    background: var(--color-surface);
-    box-shadow: var(--shadow-soft);
-  }
-
-  .primary-navigation-open {
-    display: flex;
+    gap: 2px;
   }
 
   .nav-link {
-    justify-content: space-between;
-    min-height: 48px;
-    padding-inline: 13px;
+    min-height: 40px;
+    padding-inline: 8px;
   }
 
   .nav-link::after {
-    right: 13px;
-    left: 13px;
+    right: 8px;
+    left: 8px;
     bottom: 3px;
   }
 
@@ -424,6 +395,41 @@ button {
   .footer-bottom {
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-container {
+    gap: 10px;
+  }
+
+  .primary-navigation {
+    flex: 0 0 auto;
+    gap: 2px;
+  }
+
+  .nav-link {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-link-label,
+  .nav-soon-badge {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .nav-link::after {
+    right: 7px;
+    bottom: 1px;
+    left: 7px;
   }
 }
 
@@ -1720,4 +1726,3 @@ button {
     margin-bottom: 28px;
   }
 }
-
