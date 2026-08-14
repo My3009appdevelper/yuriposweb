@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { HeroMap } from "@/components/hero-map";
 
 export function YuriHero() {
@@ -19,14 +19,6 @@ export function YuriHero() {
             <Link className="button button-primary" href="#modulos">
               Explorar módulos <ArrowRight className="button-icon" size={17} aria-hidden="true" />
             </Link>
-            <Link className="text-link" href="#farmacias">
-              Ver para quién está hecho <ArrowRight className="button-icon" size={16} aria-hidden="true" />
-            </Link>
-          </div>
-          <div className="hero-proof-row" aria-label="Capacidades principales">
-            <span><Check size={15} aria-hidden="true" /> Venta y caja</span>
-            <span><Check size={15} aria-hidden="true" /> Inventario por sucursal</span>
-            <span><Check size={15} aria-hidden="true" /> Crece por módulos</span>
           </div>
         </div>
         <HeroMap />
@@ -35,3 +27,4 @@ export function YuriHero() {
     </section>
   );
 }
+
