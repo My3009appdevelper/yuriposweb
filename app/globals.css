@@ -132,9 +132,7 @@ button {
 }
 
 .footer-brand .brand-logo {
-  border-radius: 10px;
-  background: var(--color-surface);
-  box-shadow: 0 8px 22px rgb(0 0 0 / 12%);
+  border-radius: 0;
 }
 
 .footer-brand .brand-product-label {

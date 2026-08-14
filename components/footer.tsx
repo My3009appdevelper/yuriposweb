@@ -11,7 +11,7 @@ export function Footer() {
             <span className="brand-logo" aria-hidden="true">
               <Image
                 className="brand-logo-image"
-                src="/assets/brand/yuri-logo.png"
+                src="/assets/brand/yuri-logo-light.png"
                 alt=""
                 width={120}
                 height={120}
