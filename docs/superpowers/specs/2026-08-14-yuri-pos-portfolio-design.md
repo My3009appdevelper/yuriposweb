@@ -116,4 +116,3 @@ No se incorporan Supabase, autenticación, CMS, analytics, pagos, formularios co
 ## Validación
 
 Se ejecutarán lint, typecheck, build y `git diff --check`. También se verificará manualmente la portada, las tres rutas, navegación móvil, selector de módulos, selector mensual/anual, enlaces de contacto/demo, 404, foco de teclado y reducción de movimiento.
-

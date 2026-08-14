@@ -102,42 +102,43 @@ button {
   color: var(--color-ink);
 }
 
-.brand-lockup > span:last-child,
-.footer-brand > span:last-child {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0;
+.brand-logo {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 112px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.brand-logo-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 112px;
+  max-width: none;
+  height: 112px;
+  transform: translate(-50%, -50%);
+}
+
+.brand-product-label {
+  align-self: flex-end;
+  margin: 0 0 5px -6px;
+  color: var(--color-muted);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.22em;
   line-height: 1;
 }
 
-.brand-lockup strong,
-.footer-brand strong {
-  font-size: 0.84rem;
-  font-weight: 850;
-  letter-spacing: 0.16em;
+.footer-brand .brand-logo {
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 8px 22px rgb(0 0 0 / 12%);
 }
 
-.brand-lockup small,
-.footer-brand small {
-  margin-top: 4px;
-  color: var(--color-muted);
-  font-size: 0.55rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-}
-
-.brand-mark {
-  display: grid;
-  width: 35px;
-  height: 35px;
-  place-items: center;
-  border-radius: 11px;
-  background: var(--color-brand);
-  color: var(--color-dark);
-  font-size: 1.12rem;
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  box-shadow: 0 8px 22px rgb(0 177 255 / 22%);
+.footer-brand .brand-product-label {
+  color: var(--color-dark-text-muted, #a8bdc9);
 }
 
 .primary-navigation {

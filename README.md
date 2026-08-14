@@ -65,4 +65,3 @@ El proyecto usa la configuración detectada de Next.js y no requiere variables d
 ## Límites actuales
 
 No se incluye Supabase, autenticación, CMS, analytics, pagos, backend de contacto, migraciones, demo Flutter embebida ni sesión de demo productiva. La futura demo deberá usar datos precargados aislados y borrar los cambios al cerrar la sesión.
-

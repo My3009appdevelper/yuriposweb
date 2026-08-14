@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteNavigation } from "@/lib/navigation";
@@ -30,13 +31,17 @@ export function Navbar() {
     <header className="site-header">
       <div className="container nav-container">
         <Link className="brand-lockup" href="/" aria-label="Yuri POS, ir a Inicio">
-          <span className="brand-mark" aria-hidden="true">
-            Y
+          <span className="brand-logo" aria-hidden="true">
+            <Image
+              className="brand-logo-image"
+              src="/assets/brand/yuri-logo.png"
+              alt=""
+              width={120}
+              height={120}
+              priority
+            />
           </span>
-          <span>
-            <strong>YURI</strong>
-            <small>POS</small>
-          </span>
+          <span className="brand-product-label">POS</span>
         </Link>
 
         <button

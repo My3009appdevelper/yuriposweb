@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,13 +8,16 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <Link className="footer-brand" href="/" aria-label="Yuri POS, ir a Inicio">
-            <span className="brand-mark" aria-hidden="true">
-              Y
+            <span className="brand-logo" aria-hidden="true">
+              <Image
+                className="brand-logo-image"
+                src="/assets/brand/yuri-logo.png"
+                alt=""
+                width={120}
+                height={120}
+              />
             </span>
-            <span>
-              <strong>YURI</strong>
-              <small>POS</small>
-            </span>
+            <span className="brand-product-label">POS</span>
           </Link>
           <p className="footer-summary">
             Plataforma de gestión operativa y punto de venta para negocios que quieren trabajar con más orden.

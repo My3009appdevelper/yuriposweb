@@ -541,4 +541,3 @@ export const pricingPlans: readonly PricingPlan[] = [
     features: ["Todo lo profesional", "Recetas, fiscal y control ambiental", "Sucursales y permisos ampliados"],
   },
 ];
-
