@@ -68,7 +68,7 @@ export function HeroMap() {
       </svg>
       <svg
         className="hero-map hero-map-mobile"
-        viewBox="0 0 360 540"
+        viewBox="0 0 420 500"
         role="img"
         aria-labelledby="hero-map-mobile-title hero-map-mobile-description"
       >
@@ -85,49 +85,48 @@ export function HeroMap() {
             <feDropShadow dx="0" dy="12" floodColor="#10212B" floodOpacity="0.14" stdDeviation="10" />
           </filter>
         </defs>
-        <circle cx="180" cy="296" r="142" fill="url(#map-glow-mobile)" />
-        <path className="hero-map-line hero-map-mobile-line" d="M92 145 C128 176 151 207 164 242" />
-        <path className="hero-map-line hero-map-mobile-line" d="M268 145 C232 176 209 207 196 242" />
-        <path className="hero-map-line hero-map-mobile-line" d="M92 414 C128 383 151 352 164 322" />
-        <path className="hero-map-line hero-map-mobile-line" d="M268 414 C232 383 209 352 196 322" />
-        <path className="hero-map-line hero-map-line-dashed hero-map-mobile-line" d="M180 230 C180 198 180 168 180 144" />
+        <circle cx="210" cy="266" r="158" fill="url(#map-glow-mobile)" />
+        <path className="hero-map-line hero-map-mobile-line" d="M100 151 C145 177 170 202 188 228" />
+        <path className="hero-map-line hero-map-mobile-line" d="M320 151 C275 177 250 202 232 228" />
+        <path className="hero-map-line hero-map-mobile-line" d="M100 393 C145 366 170 340 188 312" />
+        <path className="hero-map-line hero-map-mobile-line" d="M320 393 C275 366 250 340 232 312" />
+        <path className="hero-map-line hero-map-line-dashed hero-map-mobile-line" d="M210 216 C210 170 210 132 210 108" />
         <g filter="url(#map-shadow-mobile)">
-          <rect className="hero-map-center" x="93" y="242" width="174" height="80" rx="20" />
-          <text className="hero-map-center-label" x="180" y="276" textAnchor="middle">YURI POS</text>
-          <text className="hero-map-center-subtitle" x="180" y="299" textAnchor="middle">operación en contexto</text>
+          <rect className="hero-map-center" x="120" y="228" width="180" height="84" rx="20" />
+          <text className="hero-map-center-label" x="210" y="263" textAnchor="middle">YURI POS</text>
+          <text className="hero-map-center-subtitle" x="210" y="287" textAnchor="middle">operación en contexto</text>
         </g>
         <g className="hero-map-node hero-map-node-red">
-          <rect x="101" y="50" width="158" height="70" rx="18" />
-          <circle cx="126" cy="76" r="12" />
-          <text x="149" y="79">CAJA</text>
-          <text className="hero-map-node-detail" x="149" y="101">turnos y cortes</text>
+          <rect x="136" y="30" width="148" height="70" rx="18" />
+          <circle cx="161" cy="56" r="12" />
+          <text x="184" y="59">CAJA</text>
+          <text className="hero-map-node-detail" x="184" y="81">turnos y cortes</text>
         </g>
         <g className="hero-map-node hero-map-node-cyan">
-          <rect x="12" y="116" width="148" height="70" rx="18" />
-          <circle cx="37" cy="142" r="12" />
-          <text x="60" y="145">VENTA</text>
-          <text className="hero-map-node-detail" x="60" y="167">caja y clientes</text>
+          <rect x="14" y="112" width="172" height="72" rx="18" />
+          <circle cx="40" cy="139" r="12" />
+          <text x="63" y="142">VENTA</text>
+          <text className="hero-map-node-detail" x="63" y="164">caja y clientes</text>
         </g>
         <g className="hero-map-node hero-map-node-cyan">
-          <rect x="200" y="116" width="148" height="70" rx="18" />
-          <circle cx="225" cy="142" r="12" />
-          <text x="248" y="145">INVENTARIO</text>
-          <text className="hero-map-node-detail" x="248" y="167">existencias y lotes</text>
+          <rect x="234" y="112" width="172" height="72" rx="18" />
+          <circle cx="260" cy="139" r="12" />
+          <text x="283" y="142">INVENTARIO</text>
+          <text className="hero-map-node-detail" x="283" y="164">existencias y lotes</text>
         </g>
         <g className="hero-map-node hero-map-node-neutral">
-          <rect x="12" y="388" width="148" height="70" rx="18" />
-          <circle cx="37" cy="414" r="12" />
-          <text x="60" y="417">COMPRAS</text>
-          <text className="hero-map-node-detail" x="60" y="439">proveedores y órdenes</text>
+          <rect x="14" y="358" width="172" height="72" rx="18" />
+          <circle cx="40" cy="385" r="12" />
+          <text x="63" y="388">COMPRAS</text>
+          <text className="hero-map-node-detail" x="63" y="410">proveedores y órdenes</text>
         </g>
         <g className="hero-map-node hero-map-node-neutral">
-          <rect x="200" y="388" width="148" height="70" rx="18" />
-          <circle cx="225" cy="414" r="12" />
-          <text x="248" y="417">REPORTES</text>
-          <text className="hero-map-node-detail" x="248" y="439">KPIs y decisiones</text>
+          <rect x="234" y="358" width="172" height="72" rx="18" />
+          <circle cx="260" cy="385" r="12" />
+          <text x="283" y="388">REPORTES</text>
+          <text className="hero-map-node-detail" x="283" y="410">KPIs y decisiones</text>
         </g>
       </svg>
     </div>
   );
 }
-
