@@ -48,20 +48,19 @@ Antes de publicar conviene validar límites, funciones por plan, soporte, impues
 
 ## GitHub y Vercel
 
-El código queda listo para conectarse al repositorio:
+El repositorio público del portfolio es:
 
 ```text
 https://github.com/My3009appdevelper/yuriposweb
 ```
 
-Este checkout no hizo `push` ni despliegue. Para conectarlo manualmente:
+La versión actual ya está publicada en Vercel:
 
-```powershell
-git remote add origin https://github.com/My3009appdevelper/yuriposweb.git
-git push -u origin master
+```text
+https://yuri-pos.vercel.app
 ```
 
-Después, en Vercel, importa el repositorio y usa la configuración detectada de Next.js. No se requieren variables de entorno para esta versión estática.
+El proyecto usa la configuración detectada de Next.js y no requiere variables de entorno para esta versión estática. Los precios siguen siendo referencias de desarrollo y deben revisarse antes de una publicación comercial definitiva.
 
 ## Límites actuales
 
