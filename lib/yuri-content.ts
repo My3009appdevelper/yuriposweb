@@ -170,15 +170,6 @@ export const yuriModules: readonly YuriModule[] = [
     icon: "truck",
   },
   {
-    id: "empresas",
-    category: "Administración",
-    name: "Empresas",
-    summary: "Administra el contexto empresarial desde una base preparada para crecer.",
-    audiences: ["general"],
-    plan: "Escala",
-    icon: "building-2",
-  },
-  {
     id: "sucursales",
     category: "Administración",
     name: "Sucursales",
@@ -496,7 +487,7 @@ export const capabilityHighlights = [
   {
     eyebrow: "Crece con orden",
     title: "Multisucursal",
-    description: "Organiza empresas, sucursales, cajas y permisos desde una misma lógica.",
+    description: "Organiza tus sucursales, cajas y permisos desde una misma lógica.",
     icon: "network",
   },
   {
@@ -550,3 +541,4 @@ export const pricingPlans: readonly PricingPlan[] = [
     features: ["Todo lo profesional", "Recetas, fiscal y control ambiental", "Sucursales y permisos ampliados"],
   },
 ];
+
