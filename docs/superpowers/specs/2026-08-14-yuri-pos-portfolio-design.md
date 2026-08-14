@@ -31,7 +31,7 @@ Capacidades diferenciales comunicables, respaldadas por el código revisado:
 - recetas y médicos;
 - control ambiental de temperatura y humedad;
 - CFDI, facturas y catálogos SAT;
-- empresas, sucursales, usuarios, roles, permisos, personal, vacaciones y comisiones;
+- sucursales, usuarios, roles, permisos, personal, vacaciones y comisiones;
 - reportes, KPIs, gráficas e historial;
 - persistencia local offline-first y sincronización preparada.
 
@@ -65,7 +65,7 @@ Cada módulo se modela como dato (`id`, `category`, `name`, `summary`, `audience
 - Venta: Ventas, Historial de ventas, Clientes, Promociones, Impulso de venta, Fidelidad.
 - Inventario: Productos, Departamentos, Categorías, Inventario por sucursal, Movimientos de inventario.
 - Compras: Compras, Historial de compras, Órdenes de compra, Proveedores.
-- Administración: Empresas, Sucursales, Usuarios, Roles y permisos, Cajas, Personal, Vacaciones, Comisiones, Anuncios.
+- Administración: Sucursales, Usuarios, Roles y permisos, Cajas, Personal, Vacaciones, Comisiones, Anuncios.
 - Operación: Cortes de caja, Movimientos de caja, Ticket, Control ambiental.
 - Recetas: Recetas, Médicos.
 - Fiscal: Facturas, Categorías fiscales, Régimen fiscal, Uso CFDI, Claves ProdServ SAT, Claves de unidad SAT, Monedas SAT, Métodos de pago SAT, Formas de pago SAT, Impuestos SAT.
@@ -116,3 +116,4 @@ No se incorporan Supabase, autenticación, CMS, analytics, pagos, formularios co
 ## Validación
 
 Se ejecutarán lint, typecheck, build y `git diff --check`. También se verificará manualmente la portada, las tres rutas, navegación móvil, selector de módulos, selector mensual/anual, enlaces de contacto/demo, 404, foco de teclado y reducción de movimiento.
+
