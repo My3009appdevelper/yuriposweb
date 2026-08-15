@@ -4,7 +4,7 @@ import { HeroMap } from "@/components/hero-map";
 
 export function YuriHero() {
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="inicio">
       <div className="container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">Yuri POS · gestión que acompaña</p>
@@ -27,3 +27,4 @@ export function YuriHero() {
     </section>
   );
 }
+
