@@ -3,7 +3,7 @@ import { capabilityHighlights } from "@/lib/yuri-content";
 
 export function Capability3DSection() {
   return (
-    <section className="capability-3d-section capability-section-3d capability-3d-light capability-3d-bleed" id="diferencia-3d" aria-labelledby="capability-3d-title">
+    <section className="capability-3d-section capability-section-3d capability-3d-light capability-3d-bleed" id="beneficios" aria-labelledby="capability-3d-title">
       <div className="container">
         <div className="capability-3d-intro">
           <div>
@@ -16,6 +16,7 @@ export function Capability3DSection() {
         <div className="capability-3d-grid">
           {capabilityHighlights.map((item) => (
             <article className="capability-3d-card" key={item.id}>
+              <p className="capability-3d-eyebrow capability-3d-card-eyebrow">{item.eyebrow}</p>
               <div className="capability-3d-art">
                 <Image
                   src={`/assets/difference-yuri/${item.id}.webp`}
@@ -26,7 +27,6 @@ export function Capability3DSection() {
                 />
               </div>
               <div className="capability-3d-card-copy">
-                <p className="capability-3d-eyebrow">{item.eyebrow}</p>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>

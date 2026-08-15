@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Boxes, CreditCard, Home, Mail, MonitorPlay, Package, UsersRound, type LucideIcon } from "lucide-react";
+import { Boxes, CreditCard, Home, Mail, MonitorPlay, Package, Sparkles, UsersRound, type LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -20,6 +20,8 @@ function getNavigationIcon(item: NavigationItem): LucideIcon {
       return Home;
     case "Módulos":
       return Package;
+    case "Beneficios":
+      return Sparkles;
     case "Negocios":
       return UsersRound;
     case "Planes":

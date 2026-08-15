@@ -26,7 +26,7 @@ if (home.includes("CapabilityStrip") || home.includes("CapabilityContextSection"
   failures.push("la landing debe mostrar únicamente la presentación 3D de la diferencia Yuri");
 }
 
-const requiredHrefs = ["/#inicio", "/#modulos", "/#publico", "/#precios", "/#contacto", "/demo"];
+const requiredHrefs = ["/#inicio", "/#beneficios", "/#modulos", "/#publico", "/#precios", "/#contacto", "/demo"];
 for (const href of requiredHrefs) {
   if (!navigation.includes(href)) failures.push(`falta el enlace ${href}`);
 }
@@ -35,15 +35,21 @@ if (navigation.includes('status: "soon"') || navbar.includes("Próximamente")) {
   failures.push("Demo todavía está marcada como próximamente");
 }
 
+if (!navigation.includes('label: "Beneficios"')) {
+  failures.push("falta el enlace de Beneficios en la navegación");
+}
+
 for (const required of ["maufuku3009@gmail.com", "tel:+525570757594", "mailto:maufuku3009@gmail.com"]) {
   if (!contact.includes(required)) failures.push(`falta el canal ${required}`);
 }
 
-for (const anchor of ["id=\"inicio\"", "id=\"modulos\"", "id=\"publico\"", "id=\"precios\"", "id=\"contacto\""]) {
+for (const anchor of ["id=\"inicio\"", "id=\"beneficios\"", "id=\"modulos\"", "id=\"publico\"", "id=\"precios\"", "id=\"contacto\""]) {
   const source = anchor === 'id="inicio"'
     ? hero
     : anchor === 'id="modulos"'
       ? moduleIndex
+      : anchor === 'id="beneficios"'
+        ? capability3d
       : anchor === 'id="contacto"'
         ? contact
         : home;

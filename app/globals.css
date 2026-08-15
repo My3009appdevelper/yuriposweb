@@ -764,10 +764,8 @@ button {
   position: relative;
   overflow: clip;
   padding: 104px 0 112px;
-  background:
-    radial-gradient(circle at 16% 18%, rgb(0 177 255 / 13%), transparent 30%),
-    radial-gradient(circle at 88% 78%, rgb(0 177 255 / 8%), transparent 28%),
-    var(--color-surface-soft);
+  scroll-margin-top: 82px;
+  background: var(--color-surface-soft);
   color: var(--color-ink);
 }
 
@@ -887,6 +885,12 @@ button {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.capability-3d-bleed .capability-3d-card-eyebrow {
+  margin: 0;
+  padding: 4px 0 12px;
+  text-align: center;
 }
 
 .capability-3d-card h3,

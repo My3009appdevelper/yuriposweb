@@ -7,6 +7,7 @@ export type NavigationItem = {
 
 export const siteNavigation: readonly NavigationItem[] = [
   { href: "/#inicio", label: "Inicio" },
+  { href: "/#beneficios", label: "Beneficios", landingOnly: true },
   { href: "/#modulos", label: "Módulos", landingOnly: true },
   { href: "/#publico", label: "Negocios", landingOnly: true },
   { href: "/#precios", label: "Planes", landingOnly: true },
