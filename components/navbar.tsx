@@ -55,7 +55,7 @@ export function Navbar() {
       frame = 0;
       const headerOffset = 96;
       const scrollPosition = window.scrollY + headerOffset;
-      let currentSection = sectionIds[0] ?? "inicio";
+      let currentSection = "inicio";
 
       for (const sectionId of sectionIds) {
         const section = document.getElementById(sectionId);
