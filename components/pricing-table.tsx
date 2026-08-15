@@ -40,7 +40,7 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
               <ul className="pricing-features">
                 {plan.features.map((feature) => <li key={feature}><Check size={16} aria-hidden="true" />{feature}</li>)}
               </ul>
-              <Link className={`button ${plan.featured ? "button-primary" : "button-quiet"}`} href="/contacto">
+              <Link className={`button ${plan.featured ? "button-primary" : "button-quiet"}`} href="/#contacto">
                 Conocer este plan <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </article>
@@ -51,3 +51,4 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
     </div>
   );
 }
+
