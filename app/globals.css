@@ -1,6 +1,8 @@
 :root {
   --color-brand: #00b1ff;
   --color-brand-deep: #0077b6;
+  --color-primary-container: #cbefff;
+  --color-on-primary-container: #00131c;
   --color-accent: #f31322;
   --color-ink: #10212b;
   --color-muted: #516977;
@@ -322,13 +324,13 @@ button {
 }
 
 .button-primary {
-  background: var(--color-brand);
-  color: var(--color-dark);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   box-shadow: 0 8px 22px rgb(0 177 255 / 20%);
 }
 
 .button-primary:hover {
-  background: #2dbdff;
+  background: var(--color-primary-container);
   box-shadow: 0 12px 28px rgb(0 177 255 / 27%);
 }
 
@@ -340,7 +342,8 @@ button {
 
 .button-quiet:hover {
   border-color: rgb(0 177 255 / 40%);
-  background: var(--color-surface-tint);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .button-arrow {
@@ -683,8 +686,8 @@ button {
   place-items: center;
   border: 1px solid rgb(0 177 255 / 22%);
   border-radius: 12px;
-  background: var(--color-surface-tint);
-  color: var(--color-brand-deep);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .capability-eyebrow,
@@ -786,21 +789,21 @@ button {
   height: 20px;
   place-items: center;
   border-radius: 999px;
-  background: var(--color-surface-soft);
-  color: var(--color-muted-soft);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   font-size: 0.64rem;
 }
 
 .module-filter:hover,
 .module-filter-active {
   border-color: var(--color-brand);
-  background: var(--color-brand);
-  color: var(--color-dark);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .module-filter-active span {
-  background: rgb(253 255 255 / 60%);
-  color: var(--color-dark);
+  background: rgb(253 255 255 / 72%);
+  color: var(--color-on-primary-container);
 }
 
 .module-index-count {
@@ -1187,11 +1190,12 @@ button {
   height: 31px;
   place-items: center;
   border-radius: 9px;
-  background: rgb(0 177 255 / 14%);
-  color: var(--color-brand-deep);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .audience-section-farmacias .audience-module-icon {
+  background: rgb(0 177 255 / 14%);
   color: var(--color-brand);
 }
 
@@ -1266,19 +1270,19 @@ button {
 .pricing-toggle button span {
   padding: 3px 6px;
   border-radius: 999px;
-  background: rgb(0 177 255 / 10%);
-  color: var(--color-brand-deep);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   font-size: 0.61rem;
 }
 
 .pricing-toggle .pricing-toggle-active {
-  background: var(--color-dark);
-  color: #f1f7fb;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .pricing-toggle .pricing-toggle-active span {
-  background: rgb(0 177 255 / 20%);
-  color: var(--color-brand);
+  background: rgb(253 255 255 / 72%);
+  color: var(--color-on-primary-container);
 }
 
 .pricing-grid {
@@ -1447,8 +1451,8 @@ button {
   gap: 32px;
   padding: 42px 48px;
   border-radius: var(--radius-highlight);
-  background: var(--color-brand);
-  color: var(--color-dark);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   box-shadow: 0 20px 52px rgb(0 177 255 / 17%);
 }
 
@@ -1532,8 +1536,8 @@ button {
   margin-bottom: 36px;
   place-items: center;
   border-radius: 16px;
-  background: var(--color-surface-tint);
-  color: var(--color-brand-deep);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
 }
 
 .standby-card h2,
@@ -1681,8 +1685,8 @@ button {
   padding: 12px 15px;
   border: 1px solid var(--color-line);
   border-radius: 999px;
-  background: var(--color-surface);
-  color: var(--color-brand-deep);
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   font-size: 0.8rem;
   font-weight: 700;
   white-space: nowrap;
@@ -1869,3 +1873,4 @@ button {
     max-width: 340px;
   }
 }
+
