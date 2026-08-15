@@ -27,4 +27,3 @@ export function YuriHero() {
     </section>
   );
 }
-
