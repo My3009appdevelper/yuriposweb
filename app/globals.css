@@ -835,15 +835,19 @@ button {
 }
 
 .capability-3d-bleed .capability-3d-card {
+  position: relative;
   padding: 0 24px;
+  overflow: visible;
   border: 0;
   border-radius: 0;
-  background: transparent;
+  background: radial-gradient(
+    ellipse at 50% 64%,
+    rgb(0 177 255 / 16%) 0%,
+    rgb(0 177 255 / 9%) 35%,
+    rgb(0 177 255 / 3%) 56%,
+    transparent 78%
+  );
   box-shadow: none;
-}
-
-.capability-3d-bleed .capability-3d-card + .capability-3d-card {
-  border-left: 1px solid rgb(220 235 242 / 86%);
 }
 
 .capability-3d-art {
@@ -1429,8 +1433,7 @@ button {
   }
 
   .capability-3d-bleed .capability-3d-card + .capability-3d-card {
-    border-left: 0;
-    border-top: 1px solid rgb(220 235 242 / 86%);
+    border: 0;
     padding-top: 28px;
   }
 
