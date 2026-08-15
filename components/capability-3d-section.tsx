@@ -3,7 +3,7 @@ import { capabilityHighlights } from "@/lib/yuri-content";
 
 export function Capability3DSection() {
   return (
-    <section className="capability-3d-section capability-section-3d" id="diferencia-3d" aria-labelledby="capability-3d-title">
+    <section className="capability-3d-section capability-section-3d capability-3d-light" id="diferencia-3d" aria-labelledby="capability-3d-title">
       <div className="container">
         <div className="capability-3d-intro">
           <div>

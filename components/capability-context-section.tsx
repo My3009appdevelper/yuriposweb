@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { capabilityHighlights } from "@/lib/yuri-content";
 
 export function CapabilityContextSection() {
@@ -16,6 +17,15 @@ export function CapabilityContextSection() {
           {capabilityHighlights.map((item, index) => (
             <article className={`capability-context-card capability-context-card-${item.visualKey}`} key={item.id}>
               <div className="capability-context-visual" aria-hidden="true">
+                <Image
+                  className="capability-context-image"
+                  src={`/assets/difference-yuri/${item.id}.webp`}
+                  alt=""
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 700px) 86vw, (max-width: 1080px) 42vw, 25vw"
+                />
+                <span className="capability-context-image-wash" />
                 <span className="capability-context-orbit capability-context-orbit-one" />
                 <span className="capability-context-orbit capability-context-orbit-two" />
                 <span className="capability-context-node capability-context-node-one" />
