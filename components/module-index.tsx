@@ -5,11 +5,11 @@ import { ModuleCard } from "@/components/module-card";
 import { SectionHeading } from "@/components/section-heading";
 import { moduleCategories, type ModuleCategory, type YuriModule } from "@/lib/yuri-content";
 
-type Filter = "Todas" | ModuleCategory;
+type Filter = ModuleCategory;
 
 export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
-  const [filter, setFilter] = useState<Filter>("Todas");
-  const visibleModules = filter === "Todas" ? modules : modules.filter((module) => module.category === filter);
+  const [filter, setFilter] = useState<Filter>(moduleCategories[0]);
+  const visibleModules = modules.filter((module) => module.category === filter);
 
   return (
     <section className="module-index-section" id="modulos" aria-labelledby="modules-title">
@@ -22,14 +22,6 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
         />
         <div className="module-index-toolbar">
           <div className="module-filters" role="group" aria-label="Filtrar módulos por categoría">
-            <button
-              className={`module-filter${filter === "Todas" ? " module-filter-active" : ""}`}
-              type="button"
-              aria-pressed={filter === "Todas"}
-              onClick={() => setFilter("Todas")}
-            >
-              Todas <span>{modules.length}</span>
-            </button>
             {moduleCategories.map((category) => {
               const count = modules.filter((module) => module.category === category).length;
               return (
@@ -45,9 +37,6 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
               );
             })}
           </div>
-          <p className="module-index-count" aria-live="polite">
-            Mostrando <strong>{visibleModules.length}</strong> módulos
-          </p>
         </div>
         <div className="module-grid">
           {visibleModules.map((module) => <ModuleCard key={module.id} module={module} />)}
@@ -57,3 +46,4 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
     </section>
   );
 }
+
