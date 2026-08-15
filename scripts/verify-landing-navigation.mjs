@@ -14,12 +14,17 @@ const contact = readProjectFile("components/contact-section.tsx");
 const moduleIndex = readProjectFile("components/module-index.tsx");
 const hero = readProjectFile("components/yuri-hero.tsx");
 const home = readProjectFile("app/page.tsx");
+
 const contactPage = readProjectFile("app/contacto/page.tsx");
 const styles = readProjectFile("app/globals.css");
 const capabilityEditorial = readProjectFile("components/capability-strip.tsx");
 const capability3d = readProjectFile("components/capability-3d-section.tsx");
 const capabilityContext = readProjectFile("components/capability-context-section.tsx");
 const failures = [];
+
+if (home.includes("CapabilityStrip") || home.includes("CapabilityContextSection")) {
+  failures.push("la landing debe mostrar únicamente la presentación 3D de la diferencia Yuri");
+}
 
 const requiredHrefs = ["/#inicio", "/#modulos", "/#publico", "/#precios", "/#contacto", "/demo"];
 for (const href of requiredHrefs) {
