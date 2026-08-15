@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { CapabilityStrip } from "@/components/capability-strip";
 import { AudienceSection } from "@/components/audience-section";
+import { ContactSection } from "@/components/contact-section";
 import { ModuleIndex } from "@/components/module-index";
 import { PricingTable } from "@/components/pricing-table";
 import { SectionHeading } from "@/components/section-heading";
@@ -12,13 +14,15 @@ export default function HomePage() {
       <YuriHero />
       <CapabilityStrip />
       <ModuleIndex modules={yuriModules} />
-      {audienceStories.map((story) => (
-        <AudienceSection
-          key={story.id}
-          story={story}
-          modules={story.moduleIds.map((moduleId) => yuriModules.find((module) => module.id === moduleId)).filter((module): module is (typeof yuriModules)[number] => Boolean(module))}
-        />
-      ))}
+      <div id="publico" className="audience-sections-anchor">
+        {audienceStories.map((story) => (
+          <AudienceSection
+            key={story.id}
+            story={story}
+            modules={story.moduleIds.map((moduleId) => yuriModules.find((module) => module.id === moduleId)).filter((module): module is (typeof yuriModules)[number] => Boolean(module))}
+          />
+        ))}
+      </div>
       <section className="pricing-section" id="precios" aria-labelledby="pricing-title">
         <div className="container">
           <SectionHeading
@@ -31,6 +35,7 @@ export default function HomePage() {
           <PricingTable plans={pricingPlans} />
         </div>
       </section>
+      <ContactSection />
       <section className="home-cta-section" aria-labelledby="home-cta-title">
         <div className="container home-cta-card">
           <div>
@@ -38,9 +43,10 @@ export default function HomePage() {
             <h2 id="home-cta-title">Tu operación puede sentirse más clara.</h2>
             <p>Conoce el alcance de Yuri POS y descubre qué módulos tienen sentido para tu negocio.</p>
           </div>
-          <a className="button button-primary" href="/contacto">Hablemos <span aria-hidden="true">→</span></a>
+          <Link className="button button-primary" href="/#contacto">Hablemos <span aria-hidden="true">→</span></Link>
         </div>
       </section>
     </>
   );
 }
+
