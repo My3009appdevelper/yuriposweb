@@ -50,6 +50,10 @@ if (!styles.includes(".nav-link-demo") || !styles.includes("var(--color-primary-
   failures.push("Demo no tiene la variante visual primaryContainer");
 }
 
+if (!navbar.includes("activeLandingSection") || !navbar.includes('addEventListener("scroll"')) {
+  failures.push("El navbar no sigue la sección visible durante el scroll");
+}
+
 for (const failure of failures) console.error(`[landing] ${failure}`);
 process.exitCode = failures.length ? 1 : 0;
 
