@@ -65,8 +65,16 @@ if (!capability3d.includes("capability-section-3d")) {
   failures.push("falta la presentación capability-section-3d");
 }
 
+if (!capability3d.includes("capability-3d-light")) {
+  failures.push("la presentación 3D no conserva el tratamiento claro");
+}
+
 if (!capabilityContext.includes("capability-section-context")) {
   failures.push("falta la presentación capability-section-context");
+}
+
+if (!capabilityContext.includes("capability-context-image")) {
+  failures.push("la presentación contextual no muestra ilustraciones");
 }
 
 for (const asset of [
