@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "sync:demo": "node scripts/sync-demo-build.mjs",
+    "test:demo": "node scripts/verify-demo-embed.mjs",
     "test": "npm run lint && npm run typecheck && npm run build",
     "typecheck": "tsc --noEmit"
   },
