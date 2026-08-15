@@ -69,6 +69,10 @@ if (!capability3d.includes("capability-3d-light")) {
   failures.push("la presentación 3D no conserva el tratamiento claro");
 }
 
+if (!capability3d.includes("capability-3d-bleed")) {
+  failures.push("la presentación 3D todavía está contenida en cards");
+}
+
 if (!capabilityContext.includes("capability-section-context")) {
   failures.push("falta la presentación capability-section-context");
 }
