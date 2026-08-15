@@ -830,6 +830,22 @@ button {
   box-shadow: var(--shadow-soft);
 }
 
+.capability-3d-bleed .capability-3d-grid {
+  gap: 0;
+}
+
+.capability-3d-bleed .capability-3d-card {
+  padding: 0 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.capability-3d-bleed .capability-3d-card + .capability-3d-card {
+  border-left: 1px solid rgb(220 235 242 / 86%);
+}
+
 .capability-3d-art {
   position: relative;
   min-height: 240px;
@@ -865,6 +881,10 @@ button {
 .capability-3d-card-copy {
   min-height: 176px;
   padding: 0 22px 24px;
+}
+
+.capability-3d-bleed .capability-3d-card-copy {
+  padding-inline: 0;
 }
 
 .capability-3d-eyebrow,
@@ -1315,6 +1335,10 @@ button {
     text-align: left;
   }
 
+  .capability-3d-bleed .capability-3d-card {
+    padding-inline: 18px;
+  }
+
   .module-index-toolbar {
     display: block;
   }
@@ -1402,6 +1426,12 @@ button {
 
   .capability-context-card {
     min-height: 0;
+  }
+
+  .capability-3d-bleed .capability-3d-card + .capability-3d-card {
+    border-left: 0;
+    border-top: 1px solid rgb(220 235 242 / 86%);
+    padding-top: 28px;
   }
 
   .section-heading h2 {
