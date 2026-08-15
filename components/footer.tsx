@@ -32,10 +32,10 @@ export function Footer() {
         </div>
         <div className="footer-links">
           <span className="footer-label">Siguiente paso</span>
-          <Link href="/contacto">
+          <Link href="/#contacto">
             Hablemos <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
-          <Link href="/demo">Ver estado de la demo</Link>
+          <Link href="/demo">Probar la demo</Link>
         </div>
       </div>
       <div className="container footer-bottom">
@@ -45,3 +45,4 @@ export function Footer() {
     </footer>
   );
 }
+
