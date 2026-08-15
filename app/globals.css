@@ -840,13 +840,7 @@ button {
   overflow: visible;
   border: 0;
   border-radius: 0;
-  background: radial-gradient(
-    ellipse at 50% 64%,
-    rgb(0 177 255 / 16%) 0%,
-    rgb(0 177 255 / 9%) 35%,
-    rgb(0 177 255 / 3%) 56%,
-    transparent 78%
-  );
+  background: transparent;
   box-shadow: none;
 }
 
@@ -859,17 +853,7 @@ button {
 }
 
 .capability-3d-art::after {
-  position: absolute;
-  right: 14%;
-  bottom: 6%;
-  left: 14%;
-  height: 18%;
-  border-radius: 50%;
-  background: rgb(0 177 255 / 21%);
-  content: "";
-  filter: blur(25px);
-  opacity: 0.75;
-  z-index: -1;
+  display: none;
 }
 
 .capability-3d-art img {
@@ -888,7 +872,11 @@ button {
 }
 
 .capability-3d-bleed .capability-3d-card-copy {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding-inline: 0;
+  text-align: center;
 }
 
 .capability-3d-eyebrow,
@@ -912,6 +900,7 @@ button {
 
 .capability-3d-card-copy > p:last-child {
   margin: 9px 0 0;
+  max-width: 270px;
   color: var(--color-muted);
   font-size: 0.84rem;
   line-height: 1.5;
