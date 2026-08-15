@@ -16,6 +16,9 @@ const hero = readProjectFile("components/yuri-hero.tsx");
 const home = readProjectFile("app/page.tsx");
 const contactPage = readProjectFile("app/contacto/page.tsx");
 const styles = readProjectFile("app/globals.css");
+const capabilityEditorial = readProjectFile("components/capability-strip.tsx");
+const capability3d = readProjectFile("components/capability-3d-section.tsx");
+const capabilityContext = readProjectFile("components/capability-context-section.tsx");
 const failures = [];
 
 const requiredHrefs = ["/#inicio", "/#modulos", "/#publico", "/#precios", "/#contacto", "/demo"];
@@ -52,6 +55,29 @@ if (!styles.includes(".nav-link-demo") || !styles.includes("var(--color-primary-
 
 if (!navbar.includes("activeLandingSection") || !navbar.includes('addEventListener("scroll"')) {
   failures.push("El navbar no sigue la sección visible durante el scroll");
+}
+
+if (!capabilityEditorial.includes("capability-section-editorial")) {
+  failures.push("falta la presentación editorial");
+}
+
+if (!capability3d.includes("capability-section-3d")) {
+  failures.push("falta la presentación capability-section-3d");
+}
+
+if (!capabilityContext.includes("capability-section-context")) {
+  failures.push("falta la presentación capability-section-context");
+}
+
+for (const asset of [
+  "offline-first.webp",
+  "multisucursal.webp",
+  "roles-permisos.webp",
+  "reportes-operativos.webp",
+]) {
+  if (!existsSync(resolve(root, "public", "assets", "difference-yuri", asset))) {
+    failures.push(`falta el asset 3D ${asset}`);
+  }
 }
 
 for (const failure of failures) console.error(`[landing] ${failure}`);
