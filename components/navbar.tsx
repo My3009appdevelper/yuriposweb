@@ -1,18 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { Home, Mail, MonitorPlay, type LucideIcon } from "lucide-react";
+import { Boxes, CreditCard, Home, Mail, MonitorPlay, Package, UsersRound, type LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { siteNavigation } from "@/lib/navigation";
+import { siteNavigation, type NavigationItem } from "@/lib/navigation";
 
 function isNavigationItemActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+  const [basePath, anchor] = href.split("#");
+  const routePath = basePath || "/";
+  if (routePath === "/") return pathname === "/" && (!anchor || anchor === "inicio");
+  return pathname === routePath || pathname.startsWith(`${routePath}/`);
+}
+
+function getNavigationIcon(item: NavigationItem): LucideIcon {
+  switch (item.label) {
+    case "Inicio":
+      return Home;
+    case "Módulos":
+      return Package;
+    case "Negocios":
+      return UsersRound;
+    case "Planes":
+      return CreditCard;
+    case "Contacto":
+      return Mail;
+    case "Demo":
+      return MonitorPlay;
+    default:
+      return Boxes;
+  }
 }
 
 export function Navbar() {
   const pathname = usePathname();
+  const visibleNavigation = siteNavigation.filter((item) => pathname === "/" || !item.landingOnly);
 
   return (
     <header className="site-header">
@@ -36,26 +58,20 @@ export function Navbar() {
           className="primary-navigation"
           aria-label="Navegación principal"
         >
-          {siteNavigation.map((item) => {
+          {visibleNavigation.map((item) => {
             const active = isNavigationItemActive(pathname, item.href);
-            const isSoon = item.status === "soon";
-            const NavigationIcon: LucideIcon = item.href === "/"
-              ? Home
-              : item.href === "/contacto"
-                ? Mail
-                : MonitorPlay;
+            const NavigationIcon = getNavigationIcon(item);
 
             return (
               <Link
-                className={`nav-link${active ? " nav-link-active" : ""}${isSoon ? " nav-link-soon" : ""}`}
+                className={`nav-link${active ? " nav-link-active" : ""}${item.variant === "demo" ? " nav-link-demo" : ""}`}
                 href={item.href}
                 key={item.href}
-                aria-label={`${item.label}${isSoon ? ", próximamente" : ""}`}
+                aria-label={item.label}
                 aria-current={active ? "page" : undefined}
               >
                 <NavigationIcon className="nav-link-icon" size={16} strokeWidth={2.1} aria-hidden="true" />
                 <span className="nav-link-label">{item.label}</span>
-                {isSoon ? <span className="nav-soon-badge">Próximamente</span> : null}
               </Link>
             );
           })}
@@ -64,3 +80,4 @@ export function Navbar() {
     </header>
   );
 }
+
