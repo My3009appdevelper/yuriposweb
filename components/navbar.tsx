@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Boxes, CreditCard, Home, Mail, MonitorPlay, Package, UsersRound, type LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { siteNavigation, type NavigationItem } from "@/lib/navigation";
 
 function isNavigationItemActive(pathname: string, href: string) {
@@ -32,9 +33,54 @@ function getNavigationIcon(item: NavigationItem): LucideIcon {
   }
 }
 
+function getNavigationAnchor(href: string) {
+  return href.split("#")[1] ?? null;
+}
+
 export function Navbar() {
   const pathname = usePathname();
+  const [activeLandingSection, setActiveLandingSection] = useState("inicio");
   const visibleNavigation = siteNavigation.filter((item) => pathname === "/" || !item.landingOnly);
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const sectionIds = siteNavigation
+      .filter((item) => item.landingOnly)
+      .map((item) => getNavigationAnchor(item.href))
+      .filter((anchor): anchor is string => Boolean(anchor));
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      frame = 0;
+      const headerOffset = 96;
+      const scrollPosition = window.scrollY + headerOffset;
+      let currentSection = sectionIds[0] ?? "inicio";
+
+      for (const sectionId of sectionIds) {
+        const section = document.getElementById(sectionId);
+        if (section && section.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
+          currentSection = sectionId;
+        }
+      }
+
+      setActiveLandingSection((previous) => previous === currentSection ? previous : currentSection);
+    };
+
+    const handleScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
 
   return (
     <header className="site-header">
@@ -59,7 +105,10 @@ export function Navbar() {
           aria-label="Navegación principal"
         >
           {visibleNavigation.map((item) => {
-            const active = isNavigationItemActive(pathname, item.href);
+            const anchor = getNavigationAnchor(item.href);
+            const active = pathname === "/" && anchor
+              ? activeLandingSection === anchor
+              : isNavigationItemActive(pathname, item.href);
             const NavigationIcon = getNavigationIcon(item);
 
             return (
