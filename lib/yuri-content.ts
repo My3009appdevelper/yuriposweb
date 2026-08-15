@@ -477,32 +477,54 @@ export const audienceStories: readonly AudienceStory[] = [
   },
 ];
 
-export const capabilityHighlights = [
+export type CapabilityHighlight = {
+  id: "offline-first" | "multisucursal" | "roles-permisos" | "reportes-operativos";
+  eyebrow: string;
+  title: string;
+  description: string;
+  icon: string;
+  contextTagline: string;
+  visualKey: string;
+};
+
+export const capabilityHighlights: readonly CapabilityHighlight[] = [
   {
+    id: "offline-first",
     eyebrow: "Sigue trabajando",
     title: "Operación offline-first",
     description: "La persistencia local mantiene el flujo preparado cuando la conexión no acompaña.",
     icon: "wifi-off",
+    contextTagline: "La caja sigue su ritmo.",
+    visualKey: "offline",
   },
   {
+    id: "multisucursal",
     eyebrow: "Crece con orden",
     title: "Multisucursal",
     description: "Organiza tus sucursales, cajas y permisos desde una misma lógica.",
     icon: "network",
+    contextTagline: "Cada sucursal habla el mismo idioma.",
+    visualKey: "multisucursal",
   },
   {
+    id: "roles-permisos",
     eyebrow: "Cuida el acceso",
     title: "Roles y permisos",
     description: "Cada persona puede trabajar con el nivel de acceso que necesita.",
     icon: "shield-check",
+    contextTagline: "El acceso correcto, en cada mano.",
+    visualKey: "roles",
   },
   {
+    id: "reportes-operativos",
     eyebrow: "Decide mejor",
     title: "Reportes operativos",
     description: "KPI, gráficas e historial convierten la actividad en señales útiles.",
     icon: "chart-no-axes-combined",
+    contextTagline: "La actividad se vuelve una señal.",
+    visualKey: "reports",
   },
-] as const;
+];
 
 export type PricingPlan = {
   id: string;

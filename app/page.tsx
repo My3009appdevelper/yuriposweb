@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { CapabilityStrip } from "@/components/capability-strip";
+import { Capability3DSection } from "@/components/capability-3d-section";
+import { CapabilityContextSection } from "@/components/capability-context-section";
 import { AudienceSection } from "@/components/audience-section";
 import { ContactSection } from "@/components/contact-section";
 import { ModuleIndex } from "@/components/module-index";
@@ -13,6 +15,8 @@ export default function HomePage() {
     <>
       <YuriHero />
       <CapabilityStrip />
+      <Capability3DSection />
+      <CapabilityContextSection />
       <ModuleIndex modules={yuriModules} />
       <div id="publico" className="audience-sections-anchor">
         {audienceStories.map((story) => (

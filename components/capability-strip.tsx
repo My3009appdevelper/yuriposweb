@@ -3,7 +3,7 @@ import { capabilityHighlights } from "@/lib/yuri-content";
 
 export function CapabilityStrip() {
   return (
-    <section className="capability-section" aria-labelledby="capability-title">
+    <section id="diferencia-editorial" className="capability-section capability-section-editorial" aria-labelledby="capability-title">
       <div className="container">
         <div className="capability-intro">
           <p className="section-label" id="capability-title">La diferencia Yuri</p>
