@@ -41,4 +41,47 @@ if (existsSync(indexPath)) {
   }
 }
 
+const dataPath = resolve(root, "public/demo-app/demo-data.json");
+const manifestPath = resolve(root, "public/demo-app/demo-manifest.json");
+const hasData = existsSync(dataPath);
+const hasManifest = existsSync(manifestPath);
+
+if (hasData !== hasManifest) {
+  console.error("[demo] demo-data.json y demo-manifest.json deben publicarse juntos");
+  failed = true;
+} else if (hasData && hasManifest) {
+  try {
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+    const data = JSON.parse(readFileSync(dataPath, "utf8"));
+
+    if (manifest.dataFile !== "demo-data.json") {
+      console.error("[demo] el manifiesto no apunta a demo-data.json");
+      failed = true;
+    }
+    if (manifest.uuidEmpresa !== "demo-farmacia-yuri") {
+      console.error("[demo] el manifiesto usa un tenant Demo inesperado");
+      failed = true;
+    }
+    if (data.uuidEmpresa !== "demo-farmacia-yuri") {
+      console.error("[demo] los datos usan un tenant Demo inesperado");
+      failed = true;
+    }
+    if (/[A-Za-z]:[\\/]/.test(readFileSync(dataPath, "utf8"))) {
+      console.error("[demo] demo-data.json contiene una ruta absoluta local");
+      failed = true;
+    }
+
+    for (const asset of manifest.assets ?? []) {
+      const assetPath = resolve(root, "public", "demo-app", asset.relativePath);
+      if (!existsSync(assetPath)) {
+        console.error(`[demo] falta el asset publicado ${asset.relativePath}`);
+        failed = true;
+      }
+    }
+  } catch (error) {
+    console.error(`[demo] paquete de contenido inválido: ${error}`);
+    failed = true;
+  }
+}
+
 process.exitCode = failed ? 1 : 0;

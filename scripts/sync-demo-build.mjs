@@ -15,11 +15,9 @@ const sourceCandidates = process.env.PHARMA_POS_WEB_DIR
         root,
         "..",
         "pharma-pos-worktrees",
-        "codex-flavors-demo",
         "build",
         "web",
       ),
-      resolve(root, "..", "pharma-pos", "build", "web"),
     ];
 const source = sourceCandidates.find(
   (candidate) =>
@@ -28,6 +26,11 @@ const source = sourceCandidates.find(
 );
 const destination = resolve(root, "public", "demo-app");
 const sourceIndex = source ? resolve(source, "index.html") : "";
+const packageSource = process.env.PHARMA_POS_DEMO_PACKAGE_DIR
+  ? resolve(process.env.PHARMA_POS_DEMO_PACKAGE_DIR)
+  : resolve(root, "..", "pharma-pos-worktrees", "artifacts", "demo-package");
+const packageData = resolve(packageSource, "demo-data.json");
+const packageManifest = resolve(packageSource, "demo-manifest.json");
 
 if (!source || !existsSync(sourceIndex)) {
   throw new Error(
@@ -60,6 +63,24 @@ cpSync(source, destination, {
   },
 });
 writeFileSync(resolve(destination, "index.html"), patchedIndex, "utf8");
+
+if (existsSync(packageData) && existsSync(packageManifest)) {
+  cpSync(packageData, resolve(destination, "demo-data.json"));
+  cpSync(packageManifest, resolve(destination, "demo-manifest.json"));
+
+  const packageAssets = resolve(packageSource, "demo-assets");
+  if (existsSync(packageAssets)) {
+    cpSync(packageAssets, resolve(destination, "demo-assets"), {
+      recursive: true,
+    });
+  }
+  console.log(`[demo] paquete de contenido sincronizado desde ${packageSource}`);
+} else {
+  console.warn(
+    `[demo] paquete de contenido no encontrado o incompleto en ${packageSource}. ` +
+      "La Demo usará el seed local de respaldo.",
+  );
+}
 
 console.log(`[demo] build sincronizada desde ${source}`);
 console.log(`[demo] destino: ${destination}`);
