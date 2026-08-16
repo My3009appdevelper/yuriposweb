@@ -143,6 +143,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "shopping-basket",
+    visualAsset: "/assets/modulos-3d/compras.webp",
   },
   {
     id: "historial-compras",
@@ -152,6 +153,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "history",
+    visualAsset: "/assets/modulos-3d/historial-compras.webp",
   },
   {
     id: "ordenes-compra",
@@ -161,6 +163,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "clipboard-list",
+    visualAsset: "/assets/modulos-3d/ordenes-compra.webp",
   },
   {
     id: "proveedores",
@@ -170,6 +173,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "truck",
+    visualAsset: "/assets/modulos-3d/proveedores.webp",
   },
   {
     id: "sucursales",
@@ -179,6 +183,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "map-pin",
+    visualAsset: "/assets/modulos-3d/sucursales.webp",
   },
   {
     id: "usuarios",
@@ -188,15 +193,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "user-round-cog",
-  },
-  {
-    id: "roles-permisos",
-    category: "Administración",
-    name: "Roles y permisos",
-    summary: "Entrega acceso con criterio para proteger la operación sin frenar al equipo.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "shield-check",
+    visualAsset: "/assets/modulos-3d/usuarios.webp",
   },
   {
     id: "cajas",
@@ -206,6 +203,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "cash-register",
+    visualAsset: "/assets/modulos-3d/cajas.webp",
   },
   {
     id: "personal",
@@ -215,6 +213,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "badge-check",
+    visualAsset: "/assets/modulos-3d/personal.webp",
   },
   {
     id: "vacaciones",
@@ -224,6 +223,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "calendar-days",
+    visualAsset: "/assets/modulos-3d/vacaciones.webp",
   },
   {
     id: "comisiones",
@@ -233,6 +233,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "percent",
+    visualAsset: "/assets/modulos-3d/comisiones.webp",
   },
   {
     id: "anuncios",
@@ -242,6 +243,17 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "megaphone",
+    visualAsset: "/assets/modulos-3d/anuncios.webp",
+  },
+  {
+    id: "roles-permisos",
+    category: "Administración",
+    name: "Roles y permisos",
+    summary: "Entrega acceso con criterio para proteger la operación sin frenar al equipo.",
+    audiences: ["general", "farmacias", "abarrotes"],
+    plan: "Profesional",
+    icon: "shield-check",
+    visualAsset: "/assets/difference-yuri/roles-permisos.webp",
   },
   {
     id: "cortes-caja",

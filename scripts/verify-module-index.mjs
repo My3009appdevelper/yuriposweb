@@ -65,6 +65,17 @@ const expectedVisualAssets = [
   "departamentos-categorias.webp",
   "inventario-sucursal.webp",
   "movimientos-inventario.webp",
+  "compras.webp",
+  "historial-compras.webp",
+  "ordenes-compra.webp",
+  "proveedores.webp",
+  "sucursales.webp",
+  "usuarios.webp",
+  "cajas.webp",
+  "personal.webp",
+  "vacaciones.webp",
+  "comisiones.webp",
+  "anuncios.webp",
 ];
 
 for (const asset of expectedVisualAssets) {
@@ -74,6 +85,13 @@ for (const asset of expectedVisualAssets) {
   if (!existsSync(resolve(root, "public/assets/modulos-3d", asset))) {
     failures.push(`no existe el archivo visual ${asset}`);
   }
+}
+
+if (!content.includes('/assets/difference-yuri/roles-permisos.webp')) {
+  failures.push("Roles y permisos no reutiliza la ilustración 3D existente");
+}
+if (!existsSync(resolve(root, "public/assets/difference-yuri/roles-permisos.webp"))) {
+  failures.push("no existe la ilustración 3D existente de Roles y permisos");
 }
 
 const ventaOrder = ["id: \"ventas\"", "id: \"historial-ventas\"", "id: \"promociones\"", "id: \"impulso-venta\"", "id: \"clientes\"", "id: \"fidelidad\""];
@@ -86,6 +104,18 @@ const inventoryOrder = ["id: \"productos\"", "id: \"departamentos-categorias\"",
 const inventoryPositions = inventoryOrder.map((marker) => content.indexOf(marker));
 if (inventoryPositions.some((position) => position === -1) || inventoryPositions.some((position, index) => index > 0 && position < inventoryPositions[index - 1])) {
   failures.push("los módulos de Inventario no están en el orden solicitado");
+}
+
+const purchaseOrder = ["id: \"compras\"", "id: \"historial-compras\"", "id: \"ordenes-compra\"", "id: \"proveedores\""];
+const purchasePositions = purchaseOrder.map((marker) => content.indexOf(marker));
+if (purchasePositions.some((position) => position === -1) || purchasePositions.some((position, index) => index > 0 && position < purchasePositions[index - 1])) {
+  failures.push("los módulos de Compras no están en el orden solicitado");
+}
+
+const administrationOrder = ["id: \"sucursales\"", "id: \"cajas\"", "id: \"personal\"", "id: \"vacaciones\"", "id: \"comisiones\"", "id: \"anuncios\"", "id: \"roles-permisos\""];
+const administrationPositions = administrationOrder.map((marker) => content.indexOf(marker));
+if (administrationPositions.some((position) => position === -1) || administrationPositions.some((position, index) => index > 0 && position < administrationPositions[index - 1])) {
+  failures.push("los módulos de Administración no están en el orden solicitado");
 }
 
 if (failures.length > 0) {
