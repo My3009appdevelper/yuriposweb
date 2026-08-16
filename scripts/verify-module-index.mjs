@@ -46,6 +46,26 @@ if (!/\.module-visual-art \{[\s\S]*?margin-top: -22px;/.test(styles)) {
   failures.push("el arte de módulos conserva demasiado espacio superior");
 }
 
+if (!styles.includes(".capability-3d-section {\n  position: relative;\n  overflow: clip;\n  padding: 76px 0 84px;")) {
+  failures.push("el bloque de beneficios conserva demasiado espacio vertical");
+}
+
+if (!/\.capability-3d-intro h2 \{[\s\S]*?max-width: none;/.test(styles)) {
+  failures.push("el título de beneficios todavía limita su ancho horizontal");
+}
+
+if (!styles.includes(".module-index-section {\n  padding: 80px 0 88px;")) {
+  failures.push("el índice de módulos conserva demasiado espacio vertical");
+}
+
+if (!/\.module-index-section \.section-heading,[\s\S]*?\.module-index-section \.section-heading h2 \{\n  max-width: none;/.test(styles)) {
+  failures.push("el título del índice de módulos todavía limita su ancho horizontal");
+}
+
+if (!styles.includes(".module-visual-copy {\n  min-height: 108px;")) {
+  failures.push("los módulos visuales conservan una altura mínima innecesaria");
+}
+
 if (!styles.includes(".capability-3d-bleed .capability-3d-card-eyebrow {\n  margin: 0;\n  padding: 4px 0 0;")) {
   failures.push("el bloque de beneficios conserva demasiado espacio antes de la imagen");
 }
