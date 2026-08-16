@@ -1197,6 +1197,68 @@ button {
   gap: 12px;
 }
 
+.module-visual-item {
+  min-width: 0;
+  text-align: center;
+}
+
+.module-visual-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 28px;
+}
+
+.module-visual-category {
+  margin: 0;
+  color: var(--color-brand);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.module-visual-art {
+  position: relative;
+  min-height: 230px;
+  aspect-ratio: 1 / 0.92;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.module-visual-art img {
+  object-fit: contain;
+  padding: 12px;
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.module-visual-item:hover .module-visual-art img {
+  transform: scale(1.045) translateY(-4px);
+}
+
+.module-visual-copy {
+  min-height: 135px;
+  padding: 0 8px 24px;
+  text-align: center;
+}
+
+.module-visual-copy h3 {
+  margin: 0;
+  font-size: 1.06rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.module-visual-copy p {
+  max-width: 270px;
+  margin: 9px auto 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.48;
+}
+
 .module-card {
   min-height: 245px;
   padding: 20px;
@@ -1414,6 +1476,10 @@ button {
   }
 
   .capability-3d-art {
+    min-height: 220px;
+  }
+
+  .module-visual-art {
     min-height: 220px;
   }
 

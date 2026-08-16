@@ -10,7 +10,6 @@ export function Capability3DSection() {
             <p className="eyebrow">Una vista más tangible</p>
             <h2 id="capability-3d-title">La operación, convertida en sistema.</h2>
           </div>
-          <p>Visualiza cómo Yuri conecta cada decisión del negocio con una base preparada para moverse contigo.</p>
         </div>
 
         <div className="capability-3d-grid">

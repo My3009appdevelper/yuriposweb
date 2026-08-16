@@ -20,6 +20,7 @@ export type YuriModule = {
   audiences: readonly Audience[];
   plan: PlanName;
   icon: string;
+  visualAsset?: string;
 };
 
 export const moduleCategories: readonly ModuleCategory[] = [
@@ -42,6 +43,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "shopping-cart",
+    visualAsset: "/assets/modulos-3d/ventas.webp",
   },
   {
     id: "historial-ventas",
@@ -51,15 +53,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "history",
-  },
-  {
-    id: "clientes",
-    category: "Venta",
-    name: "Clientes",
-    summary: "Conserva la información de tus clientes para atender mejor cada visita.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "users-round",
+    visualAsset: "/assets/modulos-3d/historial-ventas.webp",
   },
   {
     id: "promociones",
@@ -69,6 +63,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "sparkles",
+    visualAsset: "/assets/modulos-3d/promociones.webp",
   },
   {
     id: "impulso-venta",
@@ -78,6 +73,17 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "trending-up",
+    visualAsset: "/assets/modulos-3d/impulso-venta.webp",
+  },
+  {
+    id: "clientes",
+    category: "Venta",
+    name: "Clientes",
+    summary: "Conserva la información de tus clientes para atender mejor cada visita.",
+    audiences: ["general", "farmacias", "abarrotes"],
+    plan: "Profesional",
+    icon: "users-round",
+    visualAsset: "/assets/modulos-3d/clientes.webp",
   },
   {
     id: "fidelidad",
@@ -87,6 +93,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "heart-handshake",
+    visualAsset: "/assets/modulos-3d/fidelidad.webp",
   },
   {
     id: "productos",
@@ -96,24 +103,17 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "package",
+    visualAsset: "/assets/modulos-3d/productos.webp",
   },
   {
-    id: "departamentos",
+    id: "departamentos-categorias",
     category: "Inventario",
-    name: "Departamentos",
-    summary: "Ordena el catálogo en niveles que hacen más fácil encontrar y analizar productos.",
+    name: "Departamentos y categorías",
+    summary: "Ordena el catálogo en niveles claros para encontrar y analizar productos sin perder tiempo.",
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "folder-tree",
-  },
-  {
-    id: "categorias",
-    category: "Inventario",
-    name: "Categorías",
-    summary: "Clasifica productos con una estructura clara para operar sin perder tiempo.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Esencial",
-    icon: "tags",
+    visualAsset: "/assets/modulos-3d/departamentos-categorias.webp",
   },
   {
     id: "inventario-sucursal",
@@ -123,6 +123,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "warehouse",
+    visualAsset: "/assets/modulos-3d/inventario-sucursal.webp",
   },
   {
     id: "movimientos-inventario",
@@ -132,6 +133,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "arrow-left-right",
+    visualAsset: "/assets/modulos-3d/movimientos-inventario.webp",
   },
   {
     id: "compras",
