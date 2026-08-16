@@ -7,8 +7,8 @@ export function ModuleCard({ module }: { module: YuriModule }) {
     return (
       <article className="module-visual-item">
         <div className="module-visual-meta">
-          <p className="module-visual-category">{module.category}</p>
           <span className={`module-plan module-plan-${module.plan.toLowerCase()}`}>{module.plan}</span>
+          <p className="module-visual-category">{module.category}</p>
         </div>
         <div className="module-visual-art">
           <Image

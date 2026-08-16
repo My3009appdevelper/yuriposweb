@@ -34,6 +34,22 @@ if (!card.includes("module.visualAsset")) {
   failures.push("las tarjetas no contemplan presentaciones visuales por módulo");
 }
 
+if (card.indexOf("module-plan") > card.indexOf("module-visual-category")) {
+  failures.push("la etiqueta de plan no está antes de la categoría azul");
+}
+
+if (!styles.includes(".module-visual-meta {\n  display: flex;\n  flex-direction: column;")) {
+  failures.push("la cabecera de módulos no está apilada con el plan arriba");
+}
+
+if (!/\.module-visual-art \{[\s\S]*?margin-top: -22px;/.test(styles)) {
+  failures.push("el arte de módulos conserva demasiado espacio superior");
+}
+
+if (!styles.includes(".capability-3d-bleed .capability-3d-card-eyebrow {\n  margin: 0;\n  padding: 4px 0 0;")) {
+  failures.push("el bloque de beneficios conserva demasiado espacio antes de la imagen");
+}
+
 if (capability.includes("Visualiza cómo Yuri conecta cada decisión del negocio")) {
   failures.push("el bloque de beneficios todavía muestra el texto introductorio eliminado");
 }

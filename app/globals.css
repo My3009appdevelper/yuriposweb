@@ -889,8 +889,12 @@ button {
 
 .capability-3d-bleed .capability-3d-card-eyebrow {
   margin: 0;
-  padding: 4px 0 12px;
+  padding: 4px 0 0;
   text-align: center;
+}
+
+.capability-3d-bleed .capability-3d-art {
+  margin-top: -22px;
 }
 
 .capability-3d-card h3,
@@ -1204,10 +1208,11 @@ button {
 
 .module-visual-meta {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 28px;
+  gap: 4px;
+  min-height: 0;
 }
 
 .module-visual-category {
@@ -1222,6 +1227,7 @@ button {
 
 .module-visual-art {
   position: relative;
+  margin-top: -22px;
   min-height: 230px;
   aspect-ratio: 1 / 0.92;
   overflow: hidden;
