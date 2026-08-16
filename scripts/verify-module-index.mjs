@@ -76,6 +76,12 @@ const expectedVisualAssets = [
   "vacaciones.webp",
   "comisiones.webp",
   "anuncios.webp",
+  "movimientos-caja.webp",
+  "ticket.webp",
+  "recetas.webp",
+  "medicos.webp",
+  "cortes-caja.webp",
+  "control-ambiental.webp",
 ];
 
 for (const asset of expectedVisualAssets) {

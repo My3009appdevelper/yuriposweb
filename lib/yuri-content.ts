@@ -263,6 +263,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "receipt-text",
+    visualAsset: "/assets/modulos-3d/cortes-caja.webp",
   },
   {
     id: "movimientos-caja",
@@ -272,6 +273,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "arrow-right-left",
+    visualAsset: "/assets/modulos-3d/movimientos-caja.webp",
   },
   {
     id: "ticket",
@@ -281,6 +283,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "file-text",
+    visualAsset: "/assets/modulos-3d/ticket.webp",
   },
   {
     id: "control-ambiental",
@@ -290,6 +293,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["farmacias"],
     plan: "Escala",
     icon: "thermometer",
+    visualAsset: "/assets/modulos-3d/control-ambiental.webp",
   },
   {
     id: "recetas",
@@ -299,6 +303,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["farmacias"],
     plan: "Escala",
     icon: "pill",
+    visualAsset: "/assets/modulos-3d/recetas.webp",
   },
   {
     id: "medicos",
@@ -308,6 +313,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["farmacias"],
     plan: "Escala",
     icon: "stethoscope",
+    visualAsset: "/assets/modulos-3d/medicos.webp",
   },
   {
     id: "facturas",
