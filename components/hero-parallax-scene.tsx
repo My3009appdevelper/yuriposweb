@@ -51,7 +51,7 @@ export function HeroParallaxScene() {
         fill
         preload
         sizes="(max-width: 800px) 110vw, 72vw"
-        src="/assets/hero/yuri-pos-parallax.png"
+        src="/assets/hero/yuri-pos-parallax.webp"
       />
     </div>
   );
