@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -66,6 +67,61 @@ if (hasData !== hasManifest) {
       console.error("[demo] los datos usan un tenant Demo inesperado");
       failed = true;
     }
+    if (manifest.contentVersion !== data.contentVersion) {
+      console.error("[demo] manifest y snapshot tienen versiones distintas");
+      failed = true;
+    }
+    if (
+      manifest.sourceUuidEmpresa &&
+      manifest.sourceUuidEmpresa !== data.sourceUuidEmpresa
+    ) {
+      console.error("[demo] manifest y snapshot tienen empresas fuente distintas");
+      failed = true;
+    }
+    const requiredTables = [
+      "empresas",
+      "sucursales",
+      "cajas",
+      "departamentos",
+      "categorias",
+      "productos",
+      "inventario_sucursales",
+      "clientes",
+      "proveedores",
+      "medicos",
+      "promociones",
+      "compras",
+      "compra_detalles",
+      "ventas",
+      "venta_detalles",
+      "venta_impulso_eventos",
+    ];
+    for (const table of requiredTables) {
+      if (!Array.isArray(data.tables?.[table])) {
+        console.error(`[demo] falta la tabla de negocio ${table}`);
+        failed = true;
+      }
+    }
+    const forbiddenTables = [
+      "usuarios",
+      "usuario_sesiones",
+      "sync_checkpoints",
+      "local_printers",
+      "local_shortcuts",
+      "simulacion_corridas",
+    ];
+    for (const table of forbiddenTables) {
+      if (Object.hasOwn(data.tables ?? {}, table)) {
+        console.error(`[demo] el paquete no debe publicar la tabla técnica ${table}`);
+        failed = true;
+      }
+    }
+    for (const [table, count] of Object.entries(data.rowCounts ?? {})) {
+      if (!Array.isArray(data.tables?.[table]) || data.tables[table].length !== count) {
+        console.error(`[demo] rowCounts no coincide para ${table}`);
+        failed = true;
+      }
+    }
     if (/[A-Za-z]:[\\/]/.test(readFileSync(dataPath, "utf8"))) {
       console.error("[demo] demo-data.json contiene una ruta absoluta local");
       failed = true;
@@ -81,6 +137,29 @@ if (hasData !== hasManifest) {
   } catch (error) {
     console.error(`[demo] paquete de contenido inválido: ${error}`);
     failed = true;
+  }
+}
+
+const packageSource = process.env.PHARMA_POS_DEMO_PACKAGE_DIR
+  ? resolve(process.env.PHARMA_POS_DEMO_PACKAGE_DIR)
+  : null;
+if (packageSource && hasData && hasManifest) {
+  const sourceDataPath = resolve(packageSource, "demo-data.json");
+  const sourceManifestPath = resolve(packageSource, "demo-manifest.json");
+  if (!existsSync(sourceDataPath) || !existsSync(sourceManifestPath)) {
+    console.error(`[demo] el paquete fuente no está completo: ${packageSource}`);
+    failed = true;
+  } else {
+    const digest = (file) =>
+      createHash("sha256").update(readFileSync(file)).digest("hex");
+    if (digest(sourceDataPath) !== digest(dataPath)) {
+      console.error("[demo] demo-data.json publicado no coincide con el paquete fuente");
+      failed = true;
+    }
+    if (digest(sourceManifestPath) !== digest(manifestPath)) {
+      console.error("[demo] demo-manifest.json publicado no coincide con el paquete fuente");
+      failed = true;
+    }
   }
 }
 

@@ -1,8 +1,307 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 1,
-  "generatedAt": "2026-08-15T21:34:33.130448Z",
+  "contentVersion": 4,
+  "generatedAt": "2026-08-17T19:37:45.626436Z",
   "uuidEmpresa": "demo-farmacia-yuri",
+  "sourceUuidEmpresa": "74241882-45b0-4534-b6e4-d2fc765d03c4",
+  "sourceCompanyName": "Yuri Salud y Abarrotes",
+  "rowCounts": {
+    "empresas": 1,
+    "empresa_seguridad_configuraciones": 0,
+    "empresa_inventario_configuraciones": 0,
+    "roles": 1,
+    "roles_permisos": 0,
+    "sucursales": 3,
+    "cajas": 6,
+    "caja_corte_programaciones": 0,
+    "caja_corte_programacion_turnos": 0,
+    "caja_cortes": 91,
+    "departamentos": 0,
+    "categorias": 0,
+    "productos": 35,
+    "producto_clasificaciones": 35,
+    "producto_comercial_configs": 35,
+    "producto_comercial_relaciones": 22,
+    "inventario_sucursales": 35,
+    "movimientos_inventario": 4058,
+    "proveedores": 12,
+    "clientes": 30,
+    "medicos": 10,
+    "recetas": 76,
+    "receta_detalles": 76,
+    "promociones": 0,
+    "compras": 75,
+    "compra_detalles": 75,
+    "compra_pagos": 75,
+    "compra_ordenes": 51,
+    "compra_orden_detalles": 51,
+    "ventas": 2030,
+    "venta_detalles": 3948,
+    "venta_pagos": 2030,
+    "venta_promociones_aplicadas": 0,
+    "venta_impulso_eventos": 1783,
+    "movimientos_caja": 11,
+    "facturas": 0,
+    "factura_detalles": 0,
+    "factura_detalle_impuestos": 0,
+    "control_ambiental_programaciones": 0,
+    "control_ambiental_registros": 60,
+    "fidelidad_programas": 0,
+    "cliente_fidelidad_cuentas": 0,
+    "cliente_fidelidad_movimientos": 0,
+    "cliente_fidelidad_consumos": 0,
+    "comision_reglas": 0,
+    "comision_pagos": 0,
+    "comision_pago_detalles": 0,
+    "heroes": 0,
+    "hero_audiencias": 0,
+    "suscripciones": 1,
+    "permisos": 0,
+    "categorias_fiscales": 2,
+    "sat_claves_prod_serv": 25,
+    "sat_claves_unidad": 1,
+    "sat_formas_pago": 22,
+    "sat_impuestos": 3,
+    "sat_metodos_pago": 2,
+    "sat_monedas": 183,
+    "sat_regimenes_fiscales": 19,
+    "sat_usos_cfdi": 24
+  },
   "dataFile": "demo-data.json",
-  "assets": []
+  "assets": [
+    {
+      "relativePath": "demo-assets/empresas/74241882-45b0-4534-b6e4-d2fc765d03c4.svg",
+      "sourceTable": "empresas",
+      "sourceId": "74241882-45b0-4534-b6e4-d2fc765d03c4",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/sucursales/abc38ef4-b28a-45e2-b4df-f2ad826b8f51.jpg",
+      "sourceTable": "sucursales",
+      "sourceId": "abc38ef4-b28a-45e2-b4df-f2ad826b8f51",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/sucursales/b5990289-62f2-4cca-be20-62ac159c1bce.jpg",
+      "sourceTable": "sucursales",
+      "sourceId": "b5990289-62f2-4cca-be20-62ac159c1bce",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/sucursales/be8995a1-2aa2-4b04-9ddc-a4271a5c0052.jpg",
+      "sourceTable": "sucursales",
+      "sourceId": "be8995a1-2aa2-4b04-9ddc-a4271a5c0052",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000001-0000-4000-8000-000000000001.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000001-0000-4000-8000-000000000001",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000002-0000-4000-8000-000000000002.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000002-0000-4000-8000-000000000002",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000003-0000-4000-8000-000000000003.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000003-0000-4000-8000-000000000003",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000004-0000-4000-8000-000000000004.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000004-0000-4000-8000-000000000004",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000005-0000-4000-8000-000000000005.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000005-0000-4000-8000-000000000005",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000006-0000-4000-8000-000000000006.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000006-0000-4000-8000-000000000006",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000007-0000-4000-8000-000000000007.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000007-0000-4000-8000-000000000007",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000008-0000-4000-8000-000000000008.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000008-0000-4000-8000-000000000008",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000009-0000-4000-8000-000000000009.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000009-0000-4000-8000-000000000009",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000010-0000-4000-8000-000000000010.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000010-0000-4000-8000-000000000010",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000011-0000-4000-8000-000000000011.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000011-0000-4000-8000-000000000011",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000012-0000-4000-8000-000000000012.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000012-0000-4000-8000-000000000012",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000013-0000-4000-8000-000000000013.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000013-0000-4000-8000-000000000013",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000014-0000-4000-8000-000000000014.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000014-0000-4000-8000-000000000014",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000015-0000-4000-8000-000000000015.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000015-0000-4000-8000-000000000015",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000016-0000-4000-8000-000000000016.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000016-0000-4000-8000-000000000016",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000017-0000-4000-8000-000000000017.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000017-0000-4000-8000-000000000017",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000018-0000-4000-8000-000000000018.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000018-0000-4000-8000-000000000018",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000019-0000-4000-8000-000000000019.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000019-0000-4000-8000-000000000019",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000020-0000-4000-8000-000000000020.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000020-0000-4000-8000-000000000020",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000021-0000-4000-8000-000000000021.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000021-0000-4000-8000-000000000021",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000022-0000-4000-8000-000000000022.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000022-0000-4000-8000-000000000022",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000023-0000-4000-8000-000000000023.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000023-0000-4000-8000-000000000023",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000024-0000-4000-8000-000000000024.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000024-0000-4000-8000-000000000024",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000025-0000-4000-8000-000000000025.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000025-0000-4000-8000-000000000025",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000026-0000-4000-8000-000000000026.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000026-0000-4000-8000-000000000026",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000027-0000-4000-8000-000000000027.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000027-0000-4000-8000-000000000027",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000028-0000-4000-8000-000000000028.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000028-0000-4000-8000-000000000028",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000029-0000-4000-8000-000000000029.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000029-0000-4000-8000-000000000029",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000030-0000-4000-8000-000000000030.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000030-0000-4000-8000-000000000030",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000031-0000-4000-8000-000000000031.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000031-0000-4000-8000-000000000031",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000032-0000-4000-8000-000000000032.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000032-0000-4000-8000-000000000032",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000033-0000-4000-8000-000000000033.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000033-0000-4000-8000-000000000033",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000034-0000-4000-8000-000000000034.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000034-0000-4000-8000-000000000034",
+      "required": true
+    },
+    {
+      "relativePath": "demo-assets/productos/d0000035-0000-4000-8000-000000000035.jpg",
+      "sourceTable": "productos",
+      "sourceId": "d0000035-0000-4000-8000-000000000035",
+      "required": true
+    }
+  ]
 }
