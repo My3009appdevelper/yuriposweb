@@ -780,7 +780,7 @@ button {
 
 .capability-3d-intro .eyebrow,
 .capability-context-intro .eyebrow {
-  color: var(--color-brand);
+  color: var(--color-brand-deep);
 }
 
 .capability-3d-intro h2,
@@ -813,8 +813,9 @@ button {
 }
 
 .capability-3d-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
 }
 
@@ -830,11 +831,12 @@ button {
 }
 
 .capability-3d-bleed .capability-3d-grid {
-  gap: 0;
+  gap: 0 12px;
 }
 
 .capability-3d-bleed .capability-3d-card {
   position: relative;
+  flex: 0 1 clamp(220px, calc((100% - 36px) / 4), 280px);
   padding: 0 24px;
   overflow: visible;
   border: 0;
@@ -881,7 +883,7 @@ button {
 .capability-3d-eyebrow,
 .capability-context-eyebrow {
   margin: 0 0 7px;
-  color: var(--color-brand);
+  color: var(--color-brand-deep);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -1229,7 +1231,7 @@ button {
 
 .module-group-title {
   margin: 0;
-  color: var(--color-brand);
+  color: var(--color-brand-deep);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -1237,12 +1239,14 @@ button {
 }
 
 .module-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px 12px;
 }
 
 .module-visual-item {
+  flex: 0 1 clamp(150px, calc((100% - 60px) / 6), 190px);
   min-width: 0;
   text-align: center;
 }
@@ -1258,7 +1262,7 @@ button {
 
 .module-visual-title {
   margin: 0;
-  color: var(--color-brand);
+  color: var(--color-brand-deep);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -1374,10 +1378,6 @@ button {
   .module-group-tabs {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  .module-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 1050px) {
@@ -1390,9 +1390,6 @@ button {
     font-size: clamp(3rem, 5.4vw, 4.55rem);
   }
 
-  .module-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 800px) {
@@ -1421,9 +1418,17 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .capability-3d-grid,
   .capability-context-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .capability-3d-bleed .capability-3d-grid {
+    gap: 28px 10px;
+  }
+
+  .capability-3d-bleed .capability-3d-card {
+    flex-basis: calc((100% - 10px) / 2);
+    max-width: none;
   }
 
   .capability-3d-intro,
@@ -1443,7 +1448,12 @@ button {
   }
 
   .module-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 10px;
+  }
+
+  .module-visual-item {
+    flex-basis: calc((100% - 10px) / 2);
+    max-width: none;
   }
 
   .module-group-tabs {
@@ -1509,9 +1519,7 @@ button {
   }
 
   .capability-grid,
-  .capability-3d-grid,
-  .capability-context-grid,
-  .module-grid {
+  .capability-context-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

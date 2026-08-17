@@ -107,12 +107,24 @@ if (!styles.includes(".module-visual-meta {\n  display: flex;\n  flex-direction:
   failures.push("la cabecera de módulos no está apilada con el plan arriba");
 }
 
-if (!/\.module-grid \{[\s\S]*?grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/.test(styles)) {
-  failures.push("la cuadrícula de módulos no contempla seis columnas en pantallas grandes");
+if (!styles.includes(".module-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;")) {
+  failures.push("la cuadrícula de módulos no centra sus filas con distribución uniforme");
 }
 
-if (!/@media \(max-width: 1250px\) \{[\s\S]*?\.module-grid \{\n    grid-template-columns: repeat\(4, minmax\(0, 1fr\)\);/.test(styles)) {
-  failures.push("la cuadrícula de módulos no reduce a cuatro columnas en pantallas medianas");
+if (!/\.module-visual-item \{[\s\S]*?flex: 0 1 clamp\(150px, calc\(\(100% - 60px\) \/ 6\), 190px\);/.test(styles)) {
+  failures.push("los módulos no conservan un ancho controlado para centrar grupos de 3 o 6");
+}
+
+if (!styles.includes(".capability-3d-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;")) {
+  failures.push("la cuadrícula de beneficios no centra sus elementos");
+}
+
+if (!styles.includes(".module-group-title {\n  margin: 0;\n  color: var(--color-brand-deep);") || !styles.includes(".module-visual-title {\n  margin: 0;\n  color: var(--color-brand-deep);")) {
+  failures.push("los rótulos y títulos pequeños de módulos no usan azul profundo");
+}
+
+if (!styles.includes(".capability-3d-intro .eyebrow,\n.capability-context-intro .eyebrow {\n  color: var(--color-brand-deep);") || !styles.includes(".capability-3d-eyebrow,\n.capability-context-eyebrow {\n  margin: 0 0 7px;\n  color: var(--color-brand-deep);")) {
+  failures.push("los rótulos pequeños de beneficios no usan azul profundo");
 }
 
 if (!/\.module-visual-art \{[\s\S]*?min-height: 176px;/.test(styles)) {
@@ -143,7 +155,7 @@ if (!styles.includes(".module-visual-copy {\n  min-height: 96px;")) {
   failures.push("los módulos visuales no reservan una altura compacta para la descripción");
 }
 
-if (!styles.includes(".module-grid {\n    grid-template-columns: repeat(2, minmax(0, 1fr));")) {
+if (!/@media \(max-width: 800px\) \{[\s\S]*?\.module-visual-item \{\n    flex-basis: calc\(\(100% - 10px\) \/ 2\);/.test(styles)) {
   failures.push("la cuadrícula de módulos no conserva dos columnas en móvil");
 }
 
