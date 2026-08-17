@@ -22,6 +22,14 @@ export type YuriModule = {
   visualAsset?: string;
 };
 
+export type ModuleGroup = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  moduleIds: readonly string[];
+};
+
 export const moduleCategories: readonly ModuleCategory[] = [
   "Venta",
   "Inventario",
@@ -106,8 +114,8 @@ export const yuriModules: readonly YuriModule[] = [
   {
     id: "departamentos-categorias",
     category: "Inventario",
-    name: "Departamentos y categorías",
-    summary: "Ordena el catálogo en niveles claros para encontrar y analizar productos sin perder tiempo.",
+    name: "Departamentos",
+    summary: "Ordena tu catálogo por departamentos claros para encontrar productos y analizar el negocio sin perder tiempo.",
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "folder-tree",
@@ -122,16 +130,6 @@ export const yuriModules: readonly YuriModule[] = [
     plan: "Profesional",
     icon: "warehouse",
     visualAsset: "/assets/modulos-webp/inventario-sucursal.webp",
-  },
-  {
-    id: "movimientos-inventario",
-    category: "Inventario",
-    name: "Movimientos de inventario",
-    summary: "Revisa entradas, salidas, ajustes y el recorrido de tus existencias.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "arrow-left-right",
-    visualAsset: "/assets/modulos-webp/movimientos-inventario.webp",
   },
   {
     id: "compras",
@@ -204,6 +202,16 @@ export const yuriModules: readonly YuriModule[] = [
     visualAsset: "/assets/modulos-webp/cajas.webp",
   },
   {
+    id: "roles-permisos",
+    category: "Administración",
+    name: "Roles y permisos",
+    summary: "Entrega acceso con criterio para proteger la operación sin frenar al equipo.",
+    audiences: ["general", "farmacias", "abarrotes"],
+    plan: "Profesional",
+    icon: "shield-check",
+    visualAsset: "/assets/difference-yuri/optimized/roles-permisos.webp",
+  },
+  {
     id: "personal",
     category: "Administración",
     name: "Personal",
@@ -242,16 +250,6 @@ export const yuriModules: readonly YuriModule[] = [
     plan: "Escala",
     icon: "megaphone",
     visualAsset: "/assets/modulos-webp/anuncios.webp",
-  },
-  {
-    id: "roles-permisos",
-    category: "Administración",
-    name: "Roles y permisos",
-    summary: "Entrega acceso con criterio para proteger la operación sin frenar al equipo.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "shield-check",
-    visualAsset: "/assets/difference-yuri/optimized/roles-permisos.webp",
   },
   {
     id: "cortes-caja",
@@ -355,6 +353,51 @@ export const yuriModules: readonly YuriModule[] = [
   },
 ];
 
+export const moduleGroups: readonly ModuleGroup[] = [
+  {
+    id: "administracion",
+    eyebrow: "01 · Administración",
+    title: "Administra tu negocio con una sola lógica.",
+    description: "Centraliza sucursales, equipos, cajas y permisos para que cada persona sepa qué hacer y tú conserves el control a medida que el negocio crece.",
+    moduleIds: ["sucursales", "usuarios", "cajas", "roles-permisos", "personal", "vacaciones", "comisiones", "anuncios"],
+  },
+  {
+    id: "venta",
+    eyebrow: "02 · Venta",
+    title: "Vende sin problemas, incluso en los días con más movimiento.",
+    description: "Convierte cada visita en una operación ágil: cobra, entiende el historial y crea razones para que tus clientes regresen.",
+    moduleIds: ["ventas", "historial-ventas", "promociones", "impulso-venta", "clientes", "fidelidad"],
+  },
+  {
+    id: "inventario",
+    eyebrow: "03 · Inventario",
+    title: "Controla tus productos e inventarios con claridad.",
+    description: "Conoce qué tienes, dónde está y cómo está organizado para reponer a tiempo y evitar decisiones a ciegas.",
+    moduleIds: ["productos", "departamentos-categorias", "inventario-sucursal"],
+  },
+  {
+    id: "compras",
+    eyebrow: "04 · Abastecimiento",
+    title: "Abastece tus sucursales y trabaja mejor con tus proveedores.",
+    description: "Ordena cada compra desde la necesidad hasta la recepción y conserva una relación de abastecimiento que te permita crecer con confianza.",
+    moduleIds: ["compras", "historial-compras", "ordenes-compra", "proveedores"],
+  },
+  {
+    id: "operacion",
+    eyebrow: "05 · Operación",
+    title: "Mantén la operación bajo control, desde la caja hasta la farmacia.",
+    description: "Da seguimiento a cortes, movimientos, tickets y procesos sensibles para que el equipo trabaje con una rutina confiable.",
+    moduleIds: ["cortes-caja", "movimientos-caja", "ticket", "control-ambiental", "recetas", "medicos"],
+  },
+  {
+    id: "reportes",
+    eyebrow: "06 · Reportes",
+    title: "Decide con información clara y accionable.",
+    description: "Convierte la actividad de tu negocio en señales que te ayuden a entender lo que ocurre, compartirlo y elegir el siguiente paso.",
+    moduleIds: ["facturas", "exportaciones", "graficas", "kpis"],
+  },
+];
+
 export type AudienceStory = {
   id: "farmacias" | "abarrotes";
   eyebrow: string;
@@ -379,7 +422,6 @@ export const audienceStories: readonly AudienceStory[] = [
     ],
     moduleIds: [
       "inventario-sucursal",
-      "movimientos-inventario",
       "control-ambiental",
       "recetas",
       "medicos",

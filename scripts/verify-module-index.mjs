@@ -15,12 +15,40 @@ if (component.includes('useState<Filter>("Todas")')) {
   failures.push('el índice todavía inicia con el filtro "Todas"');
 }
 
+if (component.includes("useState") || component.includes("module-filters") || component.includes("module-filter")) {
+  failures.push("el índice todavía usa pestañas o estado de filtros");
+}
+
+if (!component.includes("module-plans-legend") || component.indexOf("module-index-note") > component.indexOf("module-plans-legend")) {
+  failures.push("la nota y la guía de planes no preceden a los grupos");
+}
+
+for (const groupId of ["administracion", "venta", "inventario", "compras", "operacion", "reportes"]) {
+  if (!content.includes(`id: \"${groupId}\"`)) {
+    failures.push(`falta el grupo vertical ${groupId}`);
+  }
+}
+
 if (component.includes("Mostrando")) {
   failures.push('el índice todavía muestra el contador "Mostrando"');
 }
 
 if (styles.includes(".module-index-count")) {
   failures.push("quedaron estilos para el contador eliminado");
+}
+
+if (styles.includes(".module-index-toolbar") || styles.includes(".module-filters") || styles.includes(".module-filter")) {
+  failures.push("quedaron estilos de pestañas que ya no se utilizan");
+}
+
+for (const selector of [".module-plans-legend", ".module-plan-chip", ".module-group", ".module-group-heading", ".module-group-description"]) {
+  if (!styles.includes(`${selector} {`)) {
+    failures.push(`falta el estilo ${selector} para la narrativa vertical`);
+  }
+}
+
+if (!styles.includes(".module-index-section .section-heading-description {\n  max-width: none;")) {
+  failures.push("el subtítulo del índice todavía limita su ancho horizontal");
 }
 
 if (styles.includes(".module-filters {\n  display: flex;\n  gap: 7px;\n  max-width: 100%;\n  overflow-x: auto;")) {
@@ -83,7 +111,7 @@ if (!styles.includes(".module-index-section {\n  padding: 80px 0 88px;")) {
   failures.push("el índice de módulos conserva demasiado espacio vertical");
 }
 
-if (!/\.module-index-section \.section-heading,[\s\S]*?\.module-index-section \.section-heading h2 \{\n  max-width: none;/.test(styles)) {
+if (!styles.includes(".module-index-section .section-heading h2,\n.module-index-section .section-heading-description {\n  max-width: none;")) {
   failures.push("el título del índice de módulos todavía limita su ancho horizontal");
 }
 
@@ -122,7 +150,6 @@ const expectedVisualAssets = [
   "productos.webp",
   "departamentos-categorias.webp",
   "inventario-sucursal.webp",
-  "movimientos-inventario.webp",
   "compras.webp",
   "historial-compras.webp",
   "ordenes-compra.webp",
@@ -167,10 +194,18 @@ if (ventaPositions.some((position) => position === -1) || ventaPositions.some((p
   failures.push("los módulos de Venta no están en el orden comercial solicitado");
 }
 
-const inventoryOrder = ["id: \"productos\"", "id: \"departamentos-categorias\"", "id: \"inventario-sucursal\"", "id: \"movimientos-inventario\""];
+const inventoryOrder = ["id: \"productos\"", "id: \"departamentos-categorias\"", "id: \"inventario-sucursal\""];
 const inventoryPositions = inventoryOrder.map((marker) => content.indexOf(marker));
 if (inventoryPositions.some((position) => position === -1) || inventoryPositions.some((position, index) => index > 0 && position < inventoryPositions[index - 1])) {
   failures.push("los módulos de Inventario no están en el orden solicitado");
+}
+
+if (content.includes('id: "movimientos-inventario"')) {
+  failures.push("Movimientos de inventario todavía está visible");
+}
+
+if (!content.includes('name: "Departamentos"')) {
+  failures.push("Inventario no muestra Departamentos como módulo independiente");
 }
 
 const purchaseOrder = ["id: \"compras\"", "id: \"historial-compras\"", "id: \"ordenes-compra\"", "id: \"proveedores\""];
@@ -213,7 +248,7 @@ if (content.includes('id: "reportes-historial"')) {
   failures.push("el módulo Historial y reportes todavía aparece dentro de Reportes");
 }
 
-const administrationOrder = ["id: \"sucursales\"", "id: \"cajas\"", "id: \"personal\"", "id: \"vacaciones\"", "id: \"comisiones\"", "id: \"anuncios\"", "id: \"roles-permisos\""];
+const administrationOrder = ["id: \"sucursales\"", "id: \"usuarios\"", "id: \"cajas\"", "id: \"roles-permisos\"", "id: \"personal\"", "id: \"vacaciones\"", "id: \"comisiones\"", "id: \"anuncios\""];
 const administrationPositions = administrationOrder.map((marker) => content.indexOf(marker));
 if (administrationPositions.some((position) => position === -1) || administrationPositions.some((position, index) => index > 0 && position < administrationPositions[index - 1])) {
   failures.push("los módulos de Administración no están en el orden solicitado");
