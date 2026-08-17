@@ -11,16 +11,16 @@ const moduleAssetsDir = resolve(root, "public/assets/modulos-webp");
 
 const failures = [];
 
-if (component.includes('useState<Filter>("Todas")')) {
-  failures.push('el índice todavía inicia con el filtro "Todas"');
+if (!component.includes("useState") || !component.includes("module-group-tabs") || !component.includes('role="tablist"')) {
+  failures.push("el índice no contiene pestañas interactivas para las áreas principales");
 }
 
-if (component.includes("useState") || component.includes("module-filters") || component.includes("module-filter")) {
-  failures.push("el índice todavía usa pestañas o estado de filtros");
+if (!component.includes('role="tab"') || !component.includes("aria-selected") || !component.includes("role=\"tabpanel\"")) {
+  failures.push("las pestañas no exponen una relación accesible con su panel");
 }
 
-if (!component.includes("module-plans-legend") || component.indexOf("module-index-note") > component.indexOf("module-plans-legend")) {
-  failures.push("la nota y la guía de planes no preceden a los grupos");
+if (component.includes("module-plans-legend") || component.includes("module-index-note")) {
+  failures.push("el índice todavía muestra la leyenda superior de planes y su nota");
 }
 
 for (const groupId of ["administracion", "venta", "inventario", "compras", "operacion", "reportes"]) {
@@ -38,25 +38,29 @@ if (styles.includes(".module-index-count")) {
 }
 
 if (styles.includes(".module-index-toolbar") || styles.includes(".module-filters") || styles.includes(".module-filter")) {
-  failures.push("quedaron estilos de pestañas que ya no se utilizan");
+  failures.push("quedaron estilos del filtro anterior que ya no se utilizan");
 }
 
-for (const selector of [".module-plans-legend", ".module-plan-chip", ".module-group", ".module-group-heading", ".module-group-description"]) {
+for (const selector of [".module-group-tabs", ".module-group-tab", ".module-group-tab-active", ".module-group-tab-icon", ".module-group-tab-copy", ".module-group", ".module-group-heading", ".module-group-description"]) {
   if (!styles.includes(`${selector} {`)) {
-    failures.push(`falta el estilo ${selector} para la narrativa vertical`);
+    failures.push(`falta el estilo ${selector} para las pestañas de áreas`);
   }
 }
 
-if (!styles.includes(".module-index-section .section-heading-description {\n  max-width: none;")) {
-  failures.push("el subtítulo del índice todavía limita su ancho horizontal");
+if (styles.includes(".module-plans-legend") || styles.includes(".module-plan-chip")) {
+  failures.push("quedaron estilos para la leyenda superior de planes eliminada");
 }
 
 if (styles.includes(".module-filters {\n  display: flex;\n  gap: 7px;\n  max-width: 100%;\n  overflow-x: auto;")) {
-  failures.push("los filtros todavía usan scroll horizontal");
+  failures.push("los filtros anteriores todavía usan scroll horizontal");
 }
 
-if (!styles.includes("  flex-wrap: wrap;")) {
-  failures.push("los filtros no están configurados para envolver en varias filas");
+if (!/\.module-group-tabs \{[\s\S]*?grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/.test(styles)) {
+  failures.push("las pestañas no contemplan seis áreas en pantallas grandes");
+}
+
+if (!/\.module-group-tabs \{[\s\S]*?margin-bottom: 42px;/.test(styles)) {
+  failures.push("las pestañas no separan el panel activo con un espacio compacto");
 }
 
 if (!card.includes("module.visualAsset")) {
@@ -87,7 +91,7 @@ if (!/\.module-grid \{[\s\S]*?grid-template-columns: repeat\(6, minmax\(0, 1fr\)
   failures.push("la cuadrícula de módulos no contempla seis columnas en pantallas grandes");
 }
 
-if (!styles.includes("@media (max-width: 1250px) {\n  .module-grid {\n    grid-template-columns: repeat(4, minmax(0, 1fr));")) {
+if (!/@media \(max-width: 1250px\) \{[\s\S]*?\.module-grid \{\n    grid-template-columns: repeat\(4, minmax\(0, 1fr\)\);/.test(styles)) {
   failures.push("la cuadrícula de módulos no reduce a cuatro columnas en pantallas medianas");
 }
 
@@ -107,16 +111,24 @@ if (!/\.capability-3d-intro h2 \{[\s\S]*?max-width: none;/.test(styles)) {
   failures.push("el título de beneficios todavía limita su ancho horizontal");
 }
 
-if (!styles.includes(".module-index-section {\n  padding: 80px 0 88px;")) {
-  failures.push("el índice de módulos conserva demasiado espacio vertical");
-}
-
-if (!styles.includes(".module-index-section .section-heading h2,\n.module-index-section .section-heading-description {\n  max-width: none;")) {
-  failures.push("el título del índice de módulos todavía limita su ancho horizontal");
+if (!styles.includes(".module-index-section {\n  padding: 64px 0 76px;")) {
+  failures.push("el índice no conserva una altura compacta para la navegación por pestañas");
 }
 
 if (!styles.includes(".module-visual-copy {\n  min-height: 96px;")) {
   failures.push("los módulos visuales no reservan una altura compacta para la descripción");
+}
+
+if (!styles.includes(".module-grid {\n    grid-template-columns: repeat(2, minmax(0, 1fr));")) {
+  failures.push("la cuadrícula de módulos no conserva dos columnas en móvil");
+}
+
+if (!/@media \(max-width: 520px\) \{[\s\S]*?\.capability-3d-art \{\n    min-height: 150px;/.test(styles)) {
+  failures.push("las imágenes de beneficios no se reducen para mostrar dos por fila en móvil");
+}
+
+if (styles.includes(".capability-3d-bleed .capability-3d-card + .capability-3d-card {\n    border: 0;\n    padding-top: 28px;")) {
+  failures.push("los beneficios conservan un espacio vertical excesivo entre filas móviles");
 }
 
 if (!styles.includes(".capability-3d-bleed .capability-3d-card-eyebrow {\n  margin: 0;\n  padding: 4px 0 0;")) {
