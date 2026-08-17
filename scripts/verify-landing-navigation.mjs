@@ -13,6 +13,7 @@ const navbar = readProjectFile("components/navbar.tsx");
 const contact = readProjectFile("components/contact-section.tsx");
 const moduleIndex = readProjectFile("components/module-index.tsx");
 const hero = readProjectFile("components/yuri-hero.tsx");
+const heroParallax = readProjectFile("components/hero-parallax-scene.tsx");
 const home = readProjectFile("app/page.tsx");
 
 const contactPage = readProjectFile("app/contacto/page.tsx");
@@ -70,6 +71,18 @@ if (!navbar.includes("activeLandingSection") || !navbar.includes('addEventListen
 
 if (!capabilityEditorial.includes("capability-section-editorial")) {
   failures.push("falta la presentación editorial");
+}
+
+if (!hero.includes("hero-parallax-section") || !hero.includes("HeroParallaxScene") || !heroParallax.includes("/assets/hero/yuri-pos-parallax.png")) {
+  failures.push("el hero no contiene la escena parallax 3D ni su asset transparente");
+}
+
+if (hero.includes("HeroMap") || hero.includes("Explorar módulos")) {
+  failures.push("el hero todavía muestra el mapa operativo o el CTA de módulos eliminado");
+}
+
+if (!styles.includes(".hero-parallax-section") || !styles.includes(".hero-parallax-layer") || !styles.includes("@media (prefers-reduced-motion: reduce)")) {
+  failures.push("faltan los estilos de profundidad y accesibilidad del parallax");
 }
 
 if (!capability3d.includes("capability-section-3d")) {

@@ -67,8 +67,8 @@ if (!/\.module-group-tab \{[\s\S]*?align-items: center;[\s\S]*?text-align: cente
   failures.push("el texto de las pestañas no está centrado");
 }
 
-if (!/\.module-group-tab-icon \{[\s\S]*?position: absolute;[\s\S]*?top: 14px;[\s\S]*?right: 14px;/.test(styles)) {
-  failures.push("el icono de las pestañas no está en la esquina superior derecha");
+if (!/\.module-group-tab-icon \{[\s\S]*?position: absolute;[\s\S]*?top: 0;[\s\S]*?right: 0;/.test(styles)) {
+  failures.push("el icono de las pestañas no está pegado a la esquina superior derecha");
 }
 
 if (styles.includes(".module-filters {\n  display: flex;\n  gap: 7px;\n  max-width: 100%;\n  overflow-x: auto;")) {
@@ -111,8 +111,12 @@ if (!styles.includes(".module-grid {\n  display: flex;\n  flex-wrap: wrap;\n  ju
   failures.push("la cuadrícula de módulos no centra sus filas con distribución uniforme");
 }
 
-if (!/\.module-visual-item \{[\s\S]*?flex: 0 1 clamp\(150px, calc\(\(100% - 60px\) \/ 6\), 190px\);/.test(styles)) {
-  failures.push("los módulos no conservan un ancho controlado para centrar grupos de 3 o 6");
+if (!/\.module-visual-item \{[\s\S]*?flex: 0 1 clamp\(210px, calc\(\(100% - 72px\) \/ 4\), 280px\);/.test(styles)) {
+  failures.push("los módulos no conservan un ancho controlado para mostrar cuatro por fila");
+}
+
+if (!/\.module-group-tab \{[\s\S]*?min-height: 76px;[\s\S]*?padding: 16px 52px 16px 18px;/.test(styles)) {
+  failures.push("las pestañas todavía reservan demasiado espacio vertical");
 }
 
 if (!styles.includes(".capability-3d-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;")) {
