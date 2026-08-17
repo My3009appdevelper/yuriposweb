@@ -353,15 +353,6 @@ export const yuriModules: readonly YuriModule[] = [
     icon: "chart-no-axes-combined",
     visualAsset: "/assets/modulos-webp/kpis.webp",
   },
-  {
-    id: "reportes-historial",
-    category: "Reportes",
-    name: "Historial y reportes",
-    summary: "Vuelve a los datos de tu operación para entender qué está pasando.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "file-bar-chart",
-  },
 ];
 
 export type AudienceStory = {

@@ -895,7 +895,7 @@ button {
 }
 
 .capability-3d-bleed .capability-3d-art {
-  margin-top: -22px;
+  margin-top: 6px;
 }
 
 .capability-3d-card h3,
@@ -1233,7 +1233,7 @@ button {
 
 .module-visual-art {
   position: relative;
-  margin-top: -22px;
+  margin-top: 6px;
   min-height: 230px;
   aspect-ratio: 1 / 0.92;
   overflow: hidden;

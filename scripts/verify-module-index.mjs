@@ -43,8 +43,8 @@ if (!styles.includes(".module-visual-meta {\n  display: flex;\n  flex-direction:
   failures.push("la cabecera de módulos no está apilada con el plan arriba");
 }
 
-if (!/\.module-visual-art \{[\s\S]*?margin-top: -22px;/.test(styles)) {
-  failures.push("el arte de módulos conserva demasiado espacio superior");
+if (!/\.module-visual-art \{[\s\S]*?margin-top: 6px;/.test(styles)) {
+  failures.push("el arte de módulos no conserva la separación actualizada respecto a su etiqueta");
 }
 
 if (!styles.includes(".capability-3d-section {\n  position: relative;\n  overflow: clip;\n  padding: 76px 0 84px;")) {
@@ -68,7 +68,11 @@ if (!styles.includes(".module-visual-copy {\n  min-height: 108px;")) {
 }
 
 if (!styles.includes(".capability-3d-bleed .capability-3d-card-eyebrow {\n  margin: 0;\n  padding: 4px 0 0;")) {
-  failures.push("el bloque de beneficios conserva demasiado espacio antes de la imagen");
+  failures.push("la etiqueta azul del bloque de beneficios no conserva su espaciado base");
+}
+
+if (!/\.capability-3d-bleed \.capability-3d-art \{[\s\S]*?margin-top: 6px;/.test(styles)) {
+  failures.push("el bloque de beneficios no conserva la separación actualizada respecto a su etiqueta");
 }
 
 if (capability.includes("Visualiza cómo Yuri conecta cada decisión del negocio")) {
@@ -179,6 +183,10 @@ const reportOrder = ["id: \"facturas\"", "id: \"exportaciones\"", "id: \"grafica
 const reportPositions = reportOrder.map((marker) => content.indexOf(marker));
 if (reportPositions.some((position) => position === -1) || reportPositions.some((position, index) => index > 0 && position < reportPositions[index - 1])) {
   failures.push("los módulos de Reportes no están en el orden solicitado");
+}
+
+if (content.includes('id: "reportes-historial"')) {
+  failures.push("el módulo Historial y reportes todavía aparece dentro de Reportes");
 }
 
 const administrationOrder = ["id: \"sucursales\"", "id: \"cajas\"", "id: \"personal\"", "id: \"vacaciones\"", "id: \"comisiones\"", "id: \"anuncios\"", "id: \"roles-permisos\""];
