@@ -7,7 +7,6 @@ export type ModuleCategory =
   | "Administración"
   | "Operación"
   | "Recetas"
-  | "Fiscal"
   | "Reportes";
 
 export type PlanName = "Esencial" | "Profesional" | "Escala";
@@ -30,7 +29,6 @@ export const moduleCategories: readonly ModuleCategory[] = [
   "Administración",
   "Operación",
   "Recetas",
-  "Fiscal",
   "Reportes",
 ];
 
@@ -43,7 +41,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "shopping-cart",
-    visualAsset: "/assets/modulos-3d/ventas.webp",
+    visualAsset: "/assets/modulos-webp/ventas.webp",
   },
   {
     id: "historial-ventas",
@@ -53,7 +51,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "history",
-    visualAsset: "/assets/modulos-3d/historial-ventas.webp",
+    visualAsset: "/assets/modulos-webp/historial-ventas.webp",
   },
   {
     id: "promociones",
@@ -63,7 +61,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "sparkles",
-    visualAsset: "/assets/modulos-3d/promociones.webp",
+    visualAsset: "/assets/modulos-webp/promociones.webp",
   },
   {
     id: "impulso-venta",
@@ -73,7 +71,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "trending-up",
-    visualAsset: "/assets/modulos-3d/impulso-venta.webp",
+    visualAsset: "/assets/modulos-webp/impulso-venta.webp",
   },
   {
     id: "clientes",
@@ -83,7 +81,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "users-round",
-    visualAsset: "/assets/modulos-3d/clientes.webp",
+    visualAsset: "/assets/modulos-webp/clientes.webp",
   },
   {
     id: "fidelidad",
@@ -93,7 +91,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "heart-handshake",
-    visualAsset: "/assets/modulos-3d/fidelidad.webp",
+    visualAsset: "/assets/modulos-webp/fidelidad.webp",
   },
   {
     id: "productos",
@@ -103,7 +101,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "package",
-    visualAsset: "/assets/modulos-3d/productos.webp",
+    visualAsset: "/assets/modulos-webp/productos.webp",
   },
   {
     id: "departamentos-categorias",
@@ -113,7 +111,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "folder-tree",
-    visualAsset: "/assets/modulos-3d/departamentos-categorias.webp",
+    visualAsset: "/assets/modulos-webp/departamentos-categorias.webp",
   },
   {
     id: "inventario-sucursal",
@@ -123,7 +121,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "warehouse",
-    visualAsset: "/assets/modulos-3d/inventario-sucursal.webp",
+    visualAsset: "/assets/modulos-webp/inventario-sucursal.webp",
   },
   {
     id: "movimientos-inventario",
@@ -133,7 +131,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "arrow-left-right",
-    visualAsset: "/assets/modulos-3d/movimientos-inventario.webp",
+    visualAsset: "/assets/modulos-webp/movimientos-inventario.webp",
   },
   {
     id: "compras",
@@ -143,7 +141,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "shopping-basket",
-    visualAsset: "/assets/modulos-3d/compras.webp",
+    visualAsset: "/assets/modulos-webp/compras.webp",
   },
   {
     id: "historial-compras",
@@ -153,7 +151,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "history",
-    visualAsset: "/assets/modulos-3d/historial-compras.webp",
+    visualAsset: "/assets/modulos-webp/historial-compras.webp",
   },
   {
     id: "ordenes-compra",
@@ -163,7 +161,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "clipboard-list",
-    visualAsset: "/assets/modulos-3d/ordenes-compra.webp",
+    visualAsset: "/assets/modulos-webp/ordenes-compra.webp",
   },
   {
     id: "proveedores",
@@ -173,7 +171,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "truck",
-    visualAsset: "/assets/modulos-3d/proveedores.webp",
+    visualAsset: "/assets/modulos-webp/proveedores.webp",
   },
   {
     id: "sucursales",
@@ -183,7 +181,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "map-pin",
-    visualAsset: "/assets/modulos-3d/sucursales.webp",
+    visualAsset: "/assets/modulos-webp/sucursales.webp",
   },
   {
     id: "usuarios",
@@ -193,7 +191,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "user-round-cog",
-    visualAsset: "/assets/modulos-3d/usuarios.webp",
+    visualAsset: "/assets/modulos-webp/usuarios.webp",
   },
   {
     id: "cajas",
@@ -203,7 +201,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "cash-register",
-    visualAsset: "/assets/modulos-3d/cajas.webp",
+    visualAsset: "/assets/modulos-webp/cajas.webp",
   },
   {
     id: "personal",
@@ -213,7 +211,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "badge-check",
-    visualAsset: "/assets/modulos-3d/personal.webp",
+    visualAsset: "/assets/modulos-webp/personal.webp",
   },
   {
     id: "vacaciones",
@@ -223,7 +221,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "calendar-days",
-    visualAsset: "/assets/modulos-3d/vacaciones.webp",
+    visualAsset: "/assets/modulos-webp/vacaciones.webp",
   },
   {
     id: "comisiones",
@@ -233,7 +231,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "percent",
-    visualAsset: "/assets/modulos-3d/comisiones.webp",
+    visualAsset: "/assets/modulos-webp/comisiones.webp",
   },
   {
     id: "anuncios",
@@ -243,7 +241,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "megaphone",
-    visualAsset: "/assets/modulos-3d/anuncios.webp",
+    visualAsset: "/assets/modulos-webp/anuncios.webp",
   },
   {
     id: "roles-permisos",
@@ -253,7 +251,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "shield-check",
-    visualAsset: "/assets/difference-yuri/roles-permisos.webp",
+    visualAsset: "/assets/difference-yuri/optimized/roles-permisos.webp",
   },
   {
     id: "cortes-caja",
@@ -263,7 +261,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "receipt-text",
-    visualAsset: "/assets/modulos-3d/cortes-caja.webp",
+    visualAsset: "/assets/modulos-webp/cortes-caja.webp",
   },
   {
     id: "movimientos-caja",
@@ -273,7 +271,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "arrow-right-left",
-    visualAsset: "/assets/modulos-3d/movimientos-caja.webp",
+    visualAsset: "/assets/modulos-webp/movimientos-caja.webp",
   },
   {
     id: "ticket",
@@ -283,7 +281,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "file-text",
-    visualAsset: "/assets/modulos-3d/ticket.webp",
+    visualAsset: "/assets/modulos-webp/ticket.webp",
   },
   {
     id: "control-ambiental",
@@ -293,7 +291,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["farmacias"],
     plan: "Escala",
     icon: "thermometer",
-    visualAsset: "/assets/modulos-3d/control-ambiental.webp",
+    visualAsset: "/assets/modulos-webp/control-ambiental.webp",
   },
   {
     id: "recetas",
@@ -303,7 +301,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["farmacias"],
     plan: "Escala",
     icon: "pill",
-    visualAsset: "/assets/modulos-3d/recetas.webp",
+    visualAsset: "/assets/modulos-webp/recetas.webp",
   },
   {
     id: "medicos",
@@ -313,124 +311,17 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["farmacias"],
     plan: "Escala",
     icon: "stethoscope",
-    visualAsset: "/assets/modulos-3d/medicos.webp",
+    visualAsset: "/assets/modulos-webp/medicos.webp",
   },
   {
     id: "facturas",
-    category: "Fiscal",
-    name: "Facturas",
+    category: "Reportes",
+    name: "Facturación",
     summary: "Da seguimiento a la información fiscal asociada a tus operaciones.",
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Escala",
     icon: "file-check-2",
-  },
-  {
-    id: "categorias-fiscales",
-    category: "Fiscal",
-    name: "Categorías fiscales",
-    summary: "Mantén organizado el contexto fiscal de tus productos y operaciones.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "scale",
-  },
-  {
-    id: "regimen-fiscal",
-    category: "Fiscal",
-    name: "Régimen fiscal",
-    summary: "Administra el catálogo de regímenes que forma parte de tu configuración fiscal.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "landmark",
-  },
-  {
-    id: "uso-cfdi",
-    category: "Fiscal",
-    name: "Uso CFDI",
-    summary: "Configura el uso fiscal relacionado con tus comprobantes.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "file-text",
-  },
-  {
-    id: "claves-prod-serv-sat",
-    category: "Fiscal",
-    name: "Claves ProdServ SAT",
-    summary: "Consulta y administra claves de producto y servicio del catálogo SAT.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "barcode",
-  },
-  {
-    id: "claves-unidad-sat",
-    category: "Fiscal",
-    name: "Claves de unidad SAT",
-    summary: "Mantén las unidades fiscales alineadas con tu catálogo.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "ruler",
-  },
-  {
-    id: "monedas-sat",
-    category: "Fiscal",
-    name: "Monedas SAT",
-    summary: "Administra el catálogo de monedas disponible para tu configuración fiscal.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "coins",
-  },
-  {
-    id: "metodos-pago-sat",
-    category: "Fiscal",
-    name: "Métodos de pago SAT",
-    summary: "Configura los métodos de pago que reconoce tu operación fiscal.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "credit-card",
-  },
-  {
-    id: "formas-pago-sat",
-    category: "Fiscal",
-    name: "Formas de pago SAT",
-    summary: "Mantén organizado el catálogo fiscal de formas de pago.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "wallet-cards",
-  },
-  {
-    id: "impuestos-sat",
-    category: "Fiscal",
-    name: "Impuestos SAT",
-    summary: "Consulta los catálogos de impuestos que necesita tu configuración fiscal.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "calculator",
-  },
-  {
-    id: "kpis",
-    category: "Reportes",
-    name: "KPIs operativos",
-    summary: "Convierte la actividad de ventas y operación en señales para decidir.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "chart-no-axes-combined",
-  },
-  {
-    id: "graficas",
-    category: "Reportes",
-    name: "Gráficas",
-    summary: "Observa tendencias y comparaciones sin depender de hojas separadas.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "bar-chart-3",
-  },
-  {
-    id: "reportes-historial",
-    category: "Reportes",
-    name: "Historial y reportes",
-    summary: "Vuelve a los datos de tu operación para entender qué está pasando.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Profesional",
-    icon: "file-bar-chart",
+    visualAsset: "/assets/modulos-webp/facturacion.webp",
   },
   {
     id: "exportaciones",
@@ -440,6 +331,36 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Profesional",
     icon: "download",
+    visualAsset: "/assets/modulos-webp/exportacion.webp",
+  },
+  {
+    id: "graficas",
+    category: "Reportes",
+    name: "Gráficas",
+    summary: "Observa tendencias y comparaciones sin depender de hojas separadas.",
+    audiences: ["general", "farmacias", "abarrotes"],
+    plan: "Profesional",
+    icon: "bar-chart-3",
+    visualAsset: "/assets/modulos-webp/graficas.webp",
+  },
+  {
+    id: "kpis",
+    category: "Reportes",
+    name: "KPIs operativos",
+    summary: "Convierte la actividad de ventas y operación en señales para decidir.",
+    audiences: ["general", "farmacias", "abarrotes"],
+    plan: "Profesional",
+    icon: "chart-no-axes-combined",
+    visualAsset: "/assets/modulos-webp/kpis.webp",
+  },
+  {
+    id: "reportes-historial",
+    category: "Reportes",
+    name: "Historial y reportes",
+    summary: "Vuelve a los datos de tu operación para entender qué está pasando.",
+    audiences: ["general", "farmacias", "abarrotes"],
+    plan: "Profesional",
+    icon: "file-bar-chart",
   },
 ];
 

@@ -98,7 +98,7 @@ for (const asset of [
   "roles-permisos.webp",
   "reportes-operativos.webp",
 ]) {
-  if (!existsSync(resolve(root, "public", "assets", "difference-yuri", asset))) {
+  if (!existsSync(resolve(root, "public", "assets", "difference-yuri", "optimized", asset))) {
     failures.push(`falta el asset 3D ${asset}`);
   }
 }

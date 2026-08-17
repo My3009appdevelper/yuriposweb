@@ -7,6 +7,7 @@ const card = readFileSync(resolve(root, "components/module-card.tsx"), "utf8");
 const content = readFileSync(resolve(root, "lib/yuri-content.ts"), "utf8");
 const capability = readFileSync(resolve(root, "components/capability-3d-section.tsx"), "utf8");
 const styles = readFileSync(resolve(root, "app/globals.css"), "utf8");
+const moduleAssetsDir = resolve(root, "public/assets/modulos-webp");
 
 const failures = [];
 
@@ -74,7 +75,16 @@ if (capability.includes("Visualiza cómo Yuri conecta cada decisión del negocio
   failures.push("el bloque de beneficios todavía muestra el texto introductorio eliminado");
 }
 
+if (content.includes("/assets/modulos-3d/")) {
+  failures.push("la aplicación todavía referencia la carpeta antigua modulos-3d");
+}
+
+if (existsSync(resolve(root, "public/assets/modulos-3d"))) {
+  failures.push("la carpeta antigua modulos-3d todavía existe");
+}
+
 const expectedVisualAssets = [
+  "facturacion.webp",
   "ventas.webp",
   "historial-ventas.webp",
   "promociones.webp",
@@ -102,21 +112,24 @@ const expectedVisualAssets = [
   "medicos.webp",
   "cortes-caja.webp",
   "control-ambiental.webp",
+  "exportacion.webp",
+  "graficas.webp",
+  "kpis.webp",
 ];
 
 for (const asset of expectedVisualAssets) {
-  if (!content.includes(`/assets/modulos-3d/${asset}`)) {
+  if (!content.includes(`/assets/modulos-webp/${asset}`)) {
     failures.push(`falta la ruta visual del módulo ${asset}`);
   }
-  if (!existsSync(resolve(root, "public/assets/modulos-3d", asset))) {
+  if (!existsSync(resolve(moduleAssetsDir, asset))) {
     failures.push(`no existe el archivo visual ${asset}`);
   }
 }
 
-if (!content.includes('/assets/difference-yuri/roles-permisos.webp')) {
+if (!content.includes('/assets/difference-yuri/optimized/roles-permisos.webp')) {
   failures.push("Roles y permisos no reutiliza la ilustración 3D existente");
 }
-if (!existsSync(resolve(root, "public/assets/difference-yuri/roles-permisos.webp"))) {
+if (!existsSync(resolve(root, "public/assets/difference-yuri/optimized/roles-permisos.webp"))) {
   failures.push("no existe la ilustración 3D existente de Roles y permisos");
 }
 
@@ -136,6 +149,36 @@ const purchaseOrder = ["id: \"compras\"", "id: \"historial-compras\"", "id: \"or
 const purchasePositions = purchaseOrder.map((marker) => content.indexOf(marker));
 if (purchasePositions.some((position) => position === -1) || purchasePositions.some((position, index) => index > 0 && position < purchasePositions[index - 1])) {
   failures.push("los módulos de Compras no están en el orden solicitado");
+}
+
+if (content.includes('  | "Fiscal"') || content.includes('  "Fiscal",')) {
+  failures.push("la categoría Fiscal todavía aparece aunque sus módulos deben integrarse a Reportes");
+}
+
+for (const legacyFiscalId of [
+  "categorias-fiscales",
+  "regimen-fiscal",
+  "uso-cfdi",
+  "claves-prod-serv-sat",
+  "claves-unidad-sat",
+  "monedas-sat",
+  "metodos-pago-sat",
+  "formas-pago-sat",
+  "impuestos-sat",
+]) {
+  if (content.includes(`id: "${legacyFiscalId}"`)) {
+    failures.push(`el módulo fiscal no solicitado ${legacyFiscalId} todavía aparece`);
+  }
+}
+
+if (!/id: "facturas"[\s\S]*?category: "Reportes"/.test(content)) {
+  failures.push("Facturación todavía no está integrada al bloque de Reportes");
+}
+
+const reportOrder = ["id: \"facturas\"", "id: \"exportaciones\"", "id: \"graficas\"", "id: \"kpis\""];
+const reportPositions = reportOrder.map((marker) => content.indexOf(marker));
+if (reportPositions.some((position) => position === -1) || reportPositions.some((position, index) => index > 0 && position < reportPositions[index - 1])) {
+  failures.push("los módulos de Reportes no están en el orden solicitado");
 }
 
 const administrationOrder = ["id: \"sucursales\"", "id: \"cajas\"", "id: \"personal\"", "id: \"vacaciones\"", "id: \"comisiones\"", "id: \"anuncios\"", "id: \"roles-permisos\""];

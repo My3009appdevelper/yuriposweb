@@ -19,7 +19,7 @@ export function CapabilityContextSection() {
               <div className="capability-context-visual" aria-hidden="true">
                 <Image
                   className="capability-context-image"
-                  src={`/assets/difference-yuri/${item.id}.webp`}
+                src={`/assets/difference-yuri/optimized/${item.id}.webp`}
                   alt=""
                   fill
                   loading="lazy"

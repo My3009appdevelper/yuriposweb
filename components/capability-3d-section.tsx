@@ -18,7 +18,7 @@ export function Capability3DSection() {
               <p className="capability-3d-eyebrow capability-3d-card-eyebrow">{item.eyebrow}</p>
               <div className="capability-3d-art">
                 <Image
-                  src={`/assets/difference-yuri/${item.id}.webp`}
+                  src={`/assets/difference-yuri/optimized/${item.id}.webp`}
                   alt={`${item.title}: ilustración 3D de Yuri POS`}
                   fill
                   loading="lazy"
