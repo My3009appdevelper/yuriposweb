@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { YuriIcon } from "@/components/icons";
 import { ModuleCard } from "@/components/module-card";
+import { SectionHeading } from "@/components/section-heading";
 import { moduleGroups, type YuriModule } from "@/lib/yuri-content";
 
 const groupIcons: Record<string, string> = {
@@ -18,6 +19,10 @@ function getGroupLabel(eyebrow: string) {
   return eyebrow.replace(/^\d+\s*·\s*/, "");
 }
 
+function getGroupTitle(group: (typeof moduleGroups)[number]) {
+  return `${getGroupLabel(group.eyebrow).toUpperCase()} · ${group.title}`;
+}
+
 export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
   const [activeGroupId, setActiveGroupId] = useState(moduleGroups[0].id);
   const modulesById = new Map(modules.map((module) => [module.id, module]));
@@ -28,12 +33,18 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
   const activeGroupTitleId = `module-group-${activeGroup.id}-title`;
 
   return (
-    <section className="module-index-section" id="modulos" aria-labelledby={activeGroupTitleId}>
+    <section className="module-index-section" id="modulos" aria-labelledby="modules-title">
       <div className="container">
+        <SectionHeading
+          id="modules-title"
+          eyebrow="Índice de módulos"
+          title="Todo lo que tu operación necesita."
+          description="Explora Yuri POS, cada módulo tiene un propósito concreto y te ayudará a crecer según la forma en que trabajes. Descubre que con este sistema puedes:"
+        />
+
         <div className="module-group-tabs" role="tablist" aria-label="Áreas principales de Yuri POS">
           {moduleGroups.map((group) => {
             const isActive = group.id === activeGroup.id;
-            const groupModules = group.moduleIds.filter((moduleId) => modulesById.has(moduleId));
             const groupLabel = getGroupLabel(group.eyebrow);
 
             return (
@@ -53,7 +64,6 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
                 </span>
                 <span className="module-group-tab-copy">
                   <strong>{groupLabel}</strong>
-                  <small>{groupModules.length} módulos</small>
                 </span>
               </button>
             );
@@ -69,9 +79,7 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
           tabIndex={0}
         >
           <div className="module-group-heading">
-            <p className="eyebrow">{activeGroup.eyebrow}</p>
-            <h2 id={activeGroupTitleId}>{activeGroup.title}</h2>
-            <p className="module-group-description">{activeGroup.description}</p>
+            <h2 className="module-group-title" id={activeGroupTitleId}>{getGroupTitle(activeGroup)}</h2>
           </div>
           <div className="module-grid">
             {activeModules.map((module) => <ModuleCard key={module.id} module={module} />)}

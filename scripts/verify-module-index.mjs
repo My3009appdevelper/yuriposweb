@@ -15,8 +15,20 @@ if (!component.includes("useState") || !component.includes("module-group-tabs") 
   failures.push("el índice no contiene pestañas interactivas para las áreas principales");
 }
 
+if (!component.includes("SectionHeading") || !component.includes("Todo lo que tu operación necesita.") || !component.includes("Explora Yuri POS")) {
+  failures.push("el índice no recupera el título y subtítulo generales solicitados");
+}
+
 if (!component.includes('role="tab"') || !component.includes("aria-selected") || !component.includes("role=\"tabpanel\"")) {
   failures.push("las pestañas no exponen una relación accesible con su panel");
+}
+
+if (component.includes("módulos</small>") || component.includes("module-group-tab-count")) {
+  failures.push("las pestañas todavía muestran el número de módulos");
+}
+
+if (!component.includes("module-group-title") || component.includes("activeGroup.title") || component.includes("activeGroup.description") || component.includes("module-group-description")) {
+  failures.push("el panel activo todavía muestra título largo y subtítulo del bloque");
 }
 
 if (component.includes("module-plans-legend") || component.includes("module-index-note")) {
@@ -41,7 +53,7 @@ if (styles.includes(".module-index-toolbar") || styles.includes(".module-filters
   failures.push("quedaron estilos del filtro anterior que ya no se utilizan");
 }
 
-for (const selector of [".module-group-tabs", ".module-group-tab", ".module-group-tab-active", ".module-group-tab-icon", ".module-group-tab-copy", ".module-group", ".module-group-heading", ".module-group-description"]) {
+for (const selector of [".module-group-tabs", ".module-group-tab", ".module-group-tab-active", ".module-group-tab-icon", ".module-group-tab-copy", ".module-group", ".module-group-heading", ".module-group-title"]) {
   if (!styles.includes(`${selector} {`)) {
     failures.push(`falta el estilo ${selector} para las pestañas de áreas`);
   }
@@ -49,6 +61,14 @@ for (const selector of [".module-group-tabs", ".module-group-tab", ".module-grou
 
 if (styles.includes(".module-plans-legend") || styles.includes(".module-plan-chip")) {
   failures.push("quedaron estilos para la leyenda superior de planes eliminada");
+}
+
+if (!/\.module-group-tab \{[\s\S]*?align-items: center;[\s\S]*?text-align: center;/.test(styles)) {
+  failures.push("el texto de las pestañas no está centrado");
+}
+
+if (!/\.module-group-tab-icon \{[\s\S]*?position: absolute;[\s\S]*?top: 14px;[\s\S]*?right: 14px;/.test(styles)) {
+  failures.push("el icono de las pestañas no está en la esquina superior derecha");
 }
 
 if (styles.includes(".module-filters {\n  display: flex;\n  gap: 7px;\n  max-width: 100%;\n  overflow-x: auto;")) {
@@ -113,6 +133,10 @@ if (!/\.capability-3d-intro h2 \{[\s\S]*?max-width: none;/.test(styles)) {
 
 if (!styles.includes(".module-index-section {\n  padding: 64px 0 76px;")) {
   failures.push("el índice no conserva una altura compacta para la navegación por pestañas");
+}
+
+if (!styles.includes(".module-index-section .section-heading,\n.module-index-section .section-heading h2,\n.module-index-section .section-heading-description {\n  max-width: none;")) {
+  failures.push("el título y subtítulo generales todavía limitan su ancho horizontal");
 }
 
 if (!styles.includes(".module-visual-copy {\n  min-height: 96px;")) {
