@@ -8,7 +8,7 @@ export function ModuleCard({ module }: { module: YuriModule }) {
       <article className="module-visual-item">
         <div className="module-visual-meta">
           <span className={`module-plan module-plan-${module.plan.toLowerCase()}`}>{module.plan}</span>
-          <p className="module-visual-category">{module.category}</p>
+          <h3 className="module-visual-title">{module.name}</h3>
         </div>
         <div className="module-visual-art">
           <Image
@@ -20,7 +20,6 @@ export function ModuleCard({ module }: { module: YuriModule }) {
           />
         </div>
         <div className="module-visual-copy">
-          <h3>{module.name}</h3>
           <p>{module.summary}</p>
         </div>
       </article>

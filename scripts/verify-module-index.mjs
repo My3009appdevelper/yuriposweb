@@ -35,15 +35,39 @@ if (!card.includes("module.visualAsset")) {
   failures.push("las tarjetas no contemplan presentaciones visuales por módulo");
 }
 
-if (card.indexOf("module-plan") > card.indexOf("module-visual-category")) {
-  failures.push("la etiqueta de plan no está antes de la categoría azul");
+if (!card.includes("module-visual-title")) {
+  failures.push("las tarjetas visuales no muestran el título azul de cada módulo");
+}
+
+if (card.includes("module-visual-category")) {
+  failures.push("las tarjetas visuales todavía muestran la categoría general en lugar del título del módulo");
+}
+
+if (card.indexOf("module-plan") > card.indexOf("module-visual-title")) {
+  failures.push("la etiqueta de plan no está antes del título azul del módulo");
+}
+
+if (card.includes('<div className="module-visual-copy">\n          <h3>')) {
+  failures.push("el título del módulo todavía se repite debajo de la imagen");
 }
 
 if (!styles.includes(".module-visual-meta {\n  display: flex;\n  flex-direction: column;")) {
   failures.push("la cabecera de módulos no está apilada con el plan arriba");
 }
 
-if (!/\.module-visual-art \{[\s\S]*?margin-top: 6px;/.test(styles)) {
+if (!/\.module-grid \{[\s\S]*?grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/.test(styles)) {
+  failures.push("la cuadrícula de módulos no contempla seis columnas en pantallas grandes");
+}
+
+if (!styles.includes("@media (max-width: 1250px) {\n  .module-grid {\n    grid-template-columns: repeat(4, minmax(0, 1fr));")) {
+  failures.push("la cuadrícula de módulos no reduce a cuatro columnas en pantallas medianas");
+}
+
+if (!/\.module-visual-art \{[\s\S]*?min-height: 176px;/.test(styles)) {
+  failures.push("el arte de módulos no está dimensionado para la cuadrícula compacta");
+}
+
+if (!/\.module-visual-art \{[\s\S]*?margin-top: 10px;/.test(styles)) {
   failures.push("el arte de módulos no conserva la separación actualizada respecto a su etiqueta");
 }
 
@@ -63,8 +87,8 @@ if (!/\.module-index-section \.section-heading,[\s\S]*?\.module-index-section \.
   failures.push("el título del índice de módulos todavía limita su ancho horizontal");
 }
 
-if (!styles.includes(".module-visual-copy {\n  min-height: 108px;")) {
-  failures.push("los módulos visuales conservan una altura mínima innecesaria");
+if (!styles.includes(".module-visual-copy {\n  min-height: 96px;")) {
+  failures.push("los módulos visuales no reservan una altura compacta para la descripción");
 }
 
 if (!styles.includes(".capability-3d-bleed .capability-3d-card-eyebrow {\n  margin: 0;\n  padding: 4px 0 0;")) {

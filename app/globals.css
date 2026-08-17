@@ -1203,8 +1203,8 @@ button {
 
 .module-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px 12px;
 }
 
 .module-visual-item {
@@ -1217,14 +1217,14 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 7px;
   min-height: 0;
 }
 
-.module-visual-category {
+.module-visual-title {
   margin: 0;
   color: var(--color-brand);
-  font-size: 0.63rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   line-height: 1.2;
@@ -1233,16 +1233,16 @@ button {
 
 .module-visual-art {
   position: relative;
-  margin-top: 6px;
-  min-height: 230px;
-  aspect-ratio: 1 / 0.92;
+  margin-top: 10px;
+  min-height: 176px;
+  aspect-ratio: 1 / 0.9;
   overflow: hidden;
   isolation: isolate;
 }
 
 .module-visual-art img {
   object-fit: contain;
-  padding: 12px;
+  padding: 6px;
   transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -1251,23 +1251,16 @@ button {
 }
 
 .module-visual-copy {
-  min-height: 108px;
-  padding: 0 8px 18px;
+  min-height: 96px;
+  padding: 0 4px 16px;
   text-align: center;
 }
 
-.module-visual-copy h3 {
-  margin: 0;
-  font-size: 1.06rem;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-
 .module-visual-copy p {
-  max-width: 270px;
-  margin: 9px auto 0;
+  max-width: 210px;
+  margin: 0 auto;
   color: var(--color-muted);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   line-height: 1.48;
 }
 
@@ -1346,6 +1339,12 @@ button {
   margin: 20px 0 0;
   color: var(--color-muted-soft);
   font-size: 0.76rem;
+}
+
+@media (max-width: 1250px) {
+  .module-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1050px) {
