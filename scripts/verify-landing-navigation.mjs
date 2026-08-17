@@ -85,6 +85,14 @@ if (!styles.includes(".hero-parallax-section") || !styles.includes(".hero-parall
   failures.push("faltan los estilos de profundidad y accesibilidad del parallax");
 }
 
+if (!styles.includes("width: min(calc(100% - 32px), calc(var(--content-width) + 32px));") || !styles.includes("justify-content: center;")) {
+  failures.push("el hero no está limitado y centrado dentro del ancho de contenido");
+}
+
+if (!styles.includes(".hero-parallax-content .hero-copy h1") || !styles.includes(".hero-parallax-content .hero-description")) {
+  failures.push("el copy del hero no tiene escala y ancho responsivos propios");
+}
+
 if (!capability3d.includes("capability-section-3d")) {
   failures.push("falta la presentación capability-section-3d");
 }

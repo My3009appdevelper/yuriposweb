@@ -684,12 +684,16 @@ button {
 }
 
 .hero-parallax-section {
+  width: min(calc(100% - 32px), calc(var(--content-width) + 32px));
+  margin: 16px auto 0;
   min-height: clamp(650px, calc(100svh - 72px), 900px);
   display: flex;
   align-items: center;
-  padding: clamp(78px, 10vw, 132px) 0 clamp(88px, 11vw, 132px);
+  padding: clamp(64px, 8vw, 108px) clamp(18px, 5vw, 64px) clamp(72px, 9vw, 112px);
   overflow: clip;
   isolation: isolate;
+  border: 1px solid var(--color-line);
+  border-radius: 28px;
   background: var(--color-surface-soft);
 }
 
@@ -725,7 +729,7 @@ button {
 .hero-parallax-layer {
   position: absolute;
   z-index: 1;
-  inset: -8% -5%;
+  inset: -8% -7%;
   transform: translate3d(0, var(--hero-parallax-y, 0px), 0) scale(1.04);
   transform-origin: center;
   will-change: transform;
@@ -734,6 +738,7 @@ button {
 .hero-parallax-layer img {
   object-fit: contain;
   object-position: 70% 50%;
+  opacity: 0.74;
   filter: drop-shadow(0 28px 34px rgb(47 104 160 / 16%));
 }
 
@@ -742,8 +747,8 @@ button {
   z-index: 2;
   inset: 0;
   background:
-    linear-gradient(90deg, var(--color-surface-soft) 0%, rgb(247 251 255 / 97%) 27%, rgb(247 251 255 / 78%) 51%, rgb(247 251 255 / 16%) 78%, transparent 100%),
-    linear-gradient(180deg, rgb(247 251 255 / 54%) 0%, transparent 35%, rgb(247 251 255 / 40%) 100%);
+    radial-gradient(ellipse at center, rgb(247 251 255 / 94%) 0%, rgb(247 251 255 / 82%) 38%, rgb(247 251 255 / 34%) 66%, transparent 88%),
+    linear-gradient(180deg, rgb(247 251 255 / 58%) 0%, transparent 32%, rgb(247 251 255 / 48%) 100%);
 }
 
 .hero-parallax-content {
@@ -751,12 +756,26 @@ button {
   z-index: 3;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  text-align: center;
 }
 
 .hero-parallax-content .hero-copy {
-  max-width: 690px;
+  max-width: 940px;
+  margin-inline: auto;
   padding-bottom: 0;
+}
+
+.hero-parallax-content .hero-copy h1 {
+  max-width: 940px;
+  margin-inline: auto;
+  font-size: clamp(2.45rem, 4.2vw, 5rem);
+}
+
+.hero-parallax-content .hero-description {
+  max-width: 780px;
+  margin-inline: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1481,29 +1500,35 @@ button {
   }
 
   .hero-parallax-section {
-    min-height: 720px;
-    align-items: flex-start;
-    padding: 78px 0 92px;
+    width: calc(100% - 20px);
+    min-height: 640px;
+    align-items: center;
+    padding: 68px 14px 76px;
+    border-radius: 22px;
   }
 
   .hero-parallax-content {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero-parallax-layer {
-    inset: 18% -22% -2% -22%;
+    inset: 20% -18% -6% -18%;
     transform: translate3d(0, var(--hero-parallax-y, 0px), 0) scale(1.04);
   }
 
   .hero-parallax-layer img {
-    object-position: 61% 50%;
-    opacity: 0.82;
+    object-position: 50% 55%;
+    opacity: 0.52;
   }
 
   .hero-parallax-scrim {
     background:
-      linear-gradient(180deg, var(--color-surface-soft) 0%, rgb(247 251 255 / 94%) 35%, rgb(247 251 255 / 70%) 68%, rgb(247 251 255 / 38%) 100%),
-      linear-gradient(90deg, rgb(247 251 255 / 92%) 0%, rgb(247 251 255 / 38%) 100%);
+      linear-gradient(180deg, var(--color-surface-soft) 0%, rgb(247 251 255 / 94%) 34%, rgb(247 251 255 / 72%) 70%, rgb(247 251 255 / 48%) 100%),
+      radial-gradient(ellipse at center, rgb(247 251 255 / 86%) 0%, rgb(247 251 255 / 52%) 64%, transparent 100%);
+  }
+
+  .hero-parallax-content .hero-copy h1 {
+    font-size: clamp(2.55rem, 10.8vw, 4.3rem);
   }
 
   .hero-grid {
