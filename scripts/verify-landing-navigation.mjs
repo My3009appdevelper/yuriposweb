@@ -93,6 +93,10 @@ if (!styles.includes(".hero-parallax-content .hero-copy h1") || !styles.includes
   failures.push("el copy del hero no tiene escala y ancho responsivos propios");
 }
 
+if (!styles.includes(".hero-parallax-backdrop::after") || !styles.includes("linear-gradient(90deg, rgb(247 251 255 / 100%)")) {
+  failures.push("el hero no tiene fade perimetral para integrar la imagen con el fondo");
+}
+
 if (!capability3d.includes("capability-section-3d")) {
   failures.push("falta la presentación capability-section-3d");
 }

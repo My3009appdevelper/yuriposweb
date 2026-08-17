@@ -692,7 +692,6 @@ button {
   padding: clamp(64px, 8vw, 108px) clamp(18px, 5vw, 64px) clamp(72px, 9vw, 112px);
   overflow: clip;
   isolation: isolate;
-  border: 1px solid var(--color-line);
   border-radius: 28px;
   background: var(--color-surface-soft);
 }
@@ -712,6 +711,16 @@ button {
   background:
     radial-gradient(circle at 78% 42%, rgb(136 202 255 / 22%), transparent 31%),
     radial-gradient(circle at 48% 22%, rgb(255 255 255 / 90%), transparent 45%);
+}
+
+.hero-parallax-backdrop::after {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgb(247 251 255 / 100%) 0%, rgb(247 251 255 / 72%) 3%, transparent 10%, transparent 90%, rgb(247 251 255 / 72%) 97%, rgb(247 251 255 / 100%) 100%),
+    linear-gradient(180deg, rgb(247 251 255 / 100%) 0%, rgb(247 251 255 / 68%) 4%, transparent 13%, transparent 87%, rgb(247 251 255 / 68%) 96%, rgb(247 251 255 / 100%) 100%);
 }
 
 .hero-parallax-halo {
@@ -738,7 +747,7 @@ button {
 .hero-parallax-layer img {
   object-fit: contain;
   object-position: 70% 50%;
-  opacity: 0.74;
+  opacity: 0.68;
   filter: drop-shadow(0 28px 34px rgb(47 104 160 / 16%));
 }
 
@@ -747,8 +756,7 @@ button {
   z-index: 2;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, rgb(247 251 255 / 94%) 0%, rgb(247 251 255 / 82%) 38%, rgb(247 251 255 / 34%) 66%, transparent 88%),
-    linear-gradient(180deg, rgb(247 251 255 / 58%) 0%, transparent 32%, rgb(247 251 255 / 48%) 100%);
+    linear-gradient(180deg, rgb(247 251 255 / 72%) 0%, rgb(247 251 255 / 58%) 48%, rgb(247 251 255 / 68%) 100%);
 }
 
 .hero-parallax-content {
@@ -1518,13 +1526,11 @@ button {
 
   .hero-parallax-layer img {
     object-position: 50% 55%;
-    opacity: 0.52;
+    opacity: 0.5;
   }
 
   .hero-parallax-scrim {
-    background:
-      linear-gradient(180deg, var(--color-surface-soft) 0%, rgb(247 251 255 / 94%) 34%, rgb(247 251 255 / 72%) 70%, rgb(247 251 255 / 48%) 100%),
-      radial-gradient(ellipse at center, rgb(247 251 255 / 86%) 0%, rgb(247 251 255 / 52%) 64%, transparent 100%);
+    background: linear-gradient(180deg, rgb(247 251 255 / 78%) 0%, rgb(247 251 255 / 62%) 48%, rgb(247 251 255 / 72%) 100%);
   }
 
   .hero-parallax-content .hero-copy h1 {
