@@ -685,7 +685,7 @@ button {
 
 .hero-parallax-section {
   width: min(calc(100% - 32px), calc(var(--content-width) + 32px));
-  margin: 16px auto 0;
+  margin: 0 auto;
   min-height: clamp(650px, calc(100svh - 72px), 900px);
   display: flex;
   align-items: center;
@@ -693,6 +693,12 @@ button {
   overflow: clip;
   isolation: isolate;
   border-radius: 28px;
+  background: var(--color-surface-soft);
+}
+
+.hero-parallax-frame {
+  width: 100%;
+  padding-top: 16px;
   background: var(--color-surface-soft);
 }
 
