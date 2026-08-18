@@ -42,6 +42,15 @@ if (existsSync(indexPath)) {
   }
 }
 
+const demoPagePath = resolve(root, "app/demo/page.tsx");
+if (existsSync(demoPagePath)) {
+  const demoPage = readFileSync(demoPagePath, "utf8");
+  if (demoPage.includes("sandbox=")) {
+    console.error("[demo] el iframe Flutter no debe usar sandbox: impide el renderizado del motor web");
+    failed = true;
+  }
+}
+
 const dataPath = resolve(root, "public/demo-app/demo-data.json");
 const manifestPath = resolve(root, "public/demo-app/demo-manifest.json");
 const hasData = existsSync(dataPath);

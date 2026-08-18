@@ -35,7 +35,6 @@ export default function DemoPage() {
               title="Demo interactiva de Yuri POS"
               loading="lazy"
               referrerPolicy="same-origin"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-modals"
             />
           </div>
 

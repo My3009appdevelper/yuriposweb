@@ -21,11 +21,33 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
-      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      {
+        url: "/assets/brand/short-yuri-logo-dark.png",
+        type: "image/png",
+        sizes: "1228x1281",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/assets/brand/short-yuri-logo-light.png",
+        type: "image/png",
+        sizes: "1218x1291",
+        media: "(prefers-color-scheme: dark)",
+      },
     ],
-    shortcut: ["/icon.png"],
-    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+    apple: [
+      {
+        url: "/assets/brand/short-yuri-logo-dark.png",
+        type: "image/png",
+        sizes: "1228x1281",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/assets/brand/short-yuri-logo-light.png",
+        type: "image/png",
+        sizes: "1218x1291",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
   },
   openGraph: {
     type: "website",

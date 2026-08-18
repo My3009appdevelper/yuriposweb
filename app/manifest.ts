@@ -13,15 +13,16 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#f4f9ff",
     icons: [
       {
-        src: "/icon.png",
-        sizes: "512x512",
+        src: "/assets/brand/short-yuri-logo-dark.png",
+        sizes: "1228x1281",
         type: "image/png",
-        purpose: "maskable",
+        purpose: "any",
       },
       {
-        src: "/apple-icon.png",
-        sizes: "180x180",
+        src: "/assets/brand/short-yuri-logo-light.png",
+        sizes: "1218x1291",
         type: "image/png",
+        purpose: "any",
       },
     ],
   };
