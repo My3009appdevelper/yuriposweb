@@ -506,7 +506,6 @@ export type PricingPlan = {
   monthly: string;
   annual: string;
   summary: string;
-  inclusionLabel: string;
   limits: readonly string[];
   extraNote: string;
   features: readonly string[];
@@ -520,13 +519,14 @@ export const pricingPlans: readonly PricingPlan[] = [
     monthly: "$X",
     annual: "$X",
     summary: "La base clara para poner en orden la operación diaria desde el primer día.",
-    inclusionLabel: "Todo lo esencial",
     limits: ["2 sucursales incluidas", "5 usuarios incluidos"],
     extraNote: "Sucursal o usuario adicional disponible según tus necesidades.",
     features: [
-      "Ventas, historial, promociones y clientes",
+      "Sucursales, usuarios, cajas y roles y permisos",
+      "Ventas, historial de ventas, promociones y clientes",
       "Productos, departamentos e inventario por sucursal",
-      "Compras, historial de compras, proveedores y operación base",
+      "Compras, historial de compras y proveedores",
+      "Cortes de caja, movimientos de caja, ticket y exportaciones",
     ],
   },
   {
@@ -535,13 +535,17 @@ export const pricingPlans: readonly PricingPlan[] = [
     monthly: "$X",
     annual: "$X",
     summary: "Más contexto y control para equipos que ya están creciendo.",
-    inclusionLabel: "Todo lo esencial + profesional",
     limits: ["5 sucursales incluidas", "12 usuarios incluidos"],
     extraNote: "Extras por sucursal o usuario con una tarifa más conveniente que en Esencial.",
     features: [
-      "Todo lo esencial",
+      "Sucursales, usuarios, cajas y roles y permisos",
+      "Ventas, historial de ventas, promociones y clientes",
+      "Productos, departamentos e inventario por sucursal",
+      "Compras, historial de compras y proveedores",
+      "Cortes de caja, movimientos de caja, ticket y exportaciones",
       "Anuncios y órdenes de compra",
-      "Control ambiental, recetas, médicos, facturación, gráficas y KPIs operativos",
+      "Control ambiental, recetas y médicos",
+      "Facturación, gráficas y KPIs operativos",
     ],
     featured: true,
   },
@@ -551,11 +555,16 @@ export const pricingPlans: readonly PricingPlan[] = [
     monthly: "$X",
     annual: "$X",
     summary: "Capacidades avanzadas para equipos, sucursales y procesos especializados.",
-    inclusionLabel: "Todo lo profesional + escala",
     limits: ["10 sucursales incluidas", "25 usuarios incluidos"],
     extraNote: "La mejor tarifa por sucursal o usuario adicional.",
     features: [
-      "Todo lo profesional",
+      "Sucursales, usuarios, cajas y roles y permisos",
+      "Ventas, historial de ventas, promociones y clientes",
+      "Productos, departamentos e inventario por sucursal",
+      "Compras, historial de compras, órdenes de compra y proveedores",
+      "Cortes de caja, movimientos de caja, ticket y exportaciones",
+      "Anuncios, control ambiental, recetas y médicos",
+      "Facturación, gráficas y KPIs operativos",
       "Impulso de venta y fidelidad",
       "Personal, vacaciones y comisiones",
     ],

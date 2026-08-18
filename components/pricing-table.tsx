@@ -31,7 +31,6 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
               <h3>{plan.name}</h3>
               <p className="pricing-summary">{plan.summary}</p>
               <div className="pricing-amount"><strong>{price}</strong><span>MXN {cadence}</span></div>
-              <p className="pricing-inclusion">{plan.inclusionLabel}</p>
               <ul className="pricing-limits">
                 {plan.limits.map((limit) => <li key={limit}>{limit}</li>)}
               </ul>
@@ -45,7 +44,6 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
       </div>
       <p className="pricing-maintenance">Todos los planes incluyen mantenimiento y actualizaciones recurrentes para mejorar continuamente la calidad, seguridad y estabilidad del sistema.</p>
       <p className="pricing-sales-note">¿Necesitas una combinación distinta? <Link href="/#contacto">Platicar con el equipo de ventas para encontrar una cotización perfecta según tus necesidades <ArrowRight size={15} aria-hidden="true" /></Link></p>
-      <p className="pricing-disclaimer">Precios de referencia durante el desarrollo. El alcance, los límites y la contratación final se definirán antes de publicar.</p>
     </div>
   );
 }

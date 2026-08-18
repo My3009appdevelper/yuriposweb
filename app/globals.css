@@ -2324,7 +2324,7 @@ button {
 }
 
 .pricing-summary {
-  min-height: 64px;
+  min-height: 0;
   margin: 0;
   color: var(--color-muted);
   font-size: 0.81rem;
@@ -2339,7 +2339,7 @@ button {
   display: flex;
   align-items: baseline;
   gap: 6px;
-  margin: 22px 0 0;
+  margin: 14px 0 0;
 }
 
 .pricing-amount strong {
@@ -2355,23 +2355,6 @@ button {
 
 .pricing-card-featured .pricing-amount span {
   color: #a8bdc9;
-}
-
-.pricing-inclusion {
-  align-self: flex-start;
-  margin: 16px 0 0;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  font-size: 0.7rem;
-  font-weight: 850;
-  line-height: 1.2;
-}
-
-.pricing-card-featured .pricing-inclusion {
-  background: rgb(0 177 255 / 18%);
-  color: var(--color-brand);
 }
 
 .pricing-limits {
@@ -2454,15 +2437,6 @@ button {
 .pricing-card .button {
   width: 100%;
   margin-top: auto;
-}
-
-.pricing-disclaimer {
-  max-width: 650px;
-  margin: 20px auto 0;
-  text-align: center;
-  color: var(--color-muted-soft);
-  font-size: 0.72rem;
-  line-height: 1.45;
 }
 
 .pricing-maintenance,
