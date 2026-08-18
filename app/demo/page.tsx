@@ -1,4 +1,4 @@
-import { DatabaseZap, ShieldCheck, Sparkles } from "lucide-react";
+import { ShieldCheck, Sparkles } from "lucide-react";
 import { PageIntro } from "@/components/page-intro";
 
 export const metadata = {
@@ -16,18 +16,6 @@ export default function DemoPage() {
       />
       <section className="demo-launch-section">
         <div className="container">
-          <div className="demo-launch-header">
-            <div>
-              <p className="eyebrow">Sesión aislada</p>
-              <h2>Una ventana real para probar la operación.</h2>
-              <p>Los productos, ventas y movimientos de esta experiencia son de ejemplo. Puedes explorar la interfaz sin compartir una cuenta.</p>
-            </div>
-            <div className="demo-session-badge" role="status">
-              <DatabaseZap size={20} aria-hidden="true" />
-              <span>Datos ficticios · Sin producción</span>
-            </div>
-          </div>
-
           <div className="demo-embed-shell demo-embed-shell--web">
             <iframe
               className="demo-embed-frame"

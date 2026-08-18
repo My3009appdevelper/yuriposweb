@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { YuriIcon } from "@/components/icons";
 import { ModuleCard } from "@/components/module-card";
@@ -41,6 +43,11 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
           title="Todo lo que tu operación necesita."
           description="Explora Yuri POS, cada módulo tiene un propósito concreto y te ayudará a crecer según la forma en que trabajes. Descubre que con este sistema puedes:"
         />
+        <div className="module-index-actions">
+          <Link className="button button-primary" href="/demo">
+            Probar Demo <ArrowRight className="button-arrow" size={17} aria-hidden="true" />
+          </Link>
+        </div>
 
         <div className="module-group-tabs" role="tablist" aria-label="Áreas principales de Yuri POS">
           {moduleGroups.map((group) => {

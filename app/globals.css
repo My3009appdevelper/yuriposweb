@@ -1268,6 +1268,12 @@ button {
   margin-bottom: 38px;
 }
 
+.module-index-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin: -16px 0 32px;
+}
+
 .module-group-tabs {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
