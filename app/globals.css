@@ -1362,7 +1362,8 @@ button {
 }
 
 .module-visual-item {
-  flex: 0 1 clamp(210px, calc((100% - 72px) / 4), 280px);
+  flex: 0 1 calc((100% - clamp(72px, 12.6vw, 252px)) / 4);
+  max-width: none;
   min-width: 0;
   text-align: center;
 }
