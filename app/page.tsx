@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Capability3DSection } from "@/components/capability-3d-section";
 import { ContactSection } from "@/components/contact-section";
 import { ModuleIndex } from "@/components/module-index";
@@ -26,16 +25,6 @@ export default function HomePage() {
         </div>
       </section>
       <ContactSection />
-      <section className="home-cta-section" aria-labelledby="home-cta-title">
-        <div className="container home-cta-card">
-          <div>
-            <p className="eyebrow">Siguiente paso</p>
-            <h2 id="home-cta-title">Tu operación puede sentirse más clara.</h2>
-            <p>Conoce el alcance de Yuri POS y descubre qué módulos tienen sentido para tu negocio.</p>
-          </div>
-          <Link className="button button-primary" href="/#contacto">Hablemos <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
     </>
   );
 }

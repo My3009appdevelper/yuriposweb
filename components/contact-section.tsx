@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle, Sparkles } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -14,9 +14,6 @@ export function ContactSection() {
             <a className="button button-primary" href="mailto:maufuku3009@gmail.com">
               Escribirme por correo <ArrowRight size={16} aria-hidden="true" />
             </a>
-            <a className="contact-text-link" href="#precios">
-              Revisar planes <ArrowRight size={16} aria-hidden="true" />
-            </a>
           </div>
         </div>
 
@@ -24,8 +21,8 @@ export function ContactSection() {
           <div className="contact-section-panel-heading">
             <span className="contact-section-panel-icon"><Sparkles size={19} aria-hidden="true" /></span>
             <div>
-              <p className="contact-section-panel-label">Canales directos</p>
-              <p className="contact-section-panel-note">Respondo personalmente las consultas sobre Yuri POS.</p>
+              <p className="contact-section-panel-label">Respondo personalmente</p>
+              <p className="contact-section-panel-note">Cuéntame qué quieres mejorar y te orientaré sobre los módulos adecuados.</p>
             </div>
           </div>
 
@@ -34,15 +31,21 @@ export function ContactSection() {
               <span className="contact-method-icon"><Mail size={18} aria-hidden="true" /></span>
               <span className="contact-method-copy">
                 <small>Correo</small>
-                <strong>maufuku3009@gmail.com</strong>
+                <strong>Enviar un mensaje</strong>
               </span>
               <ArrowRight className="contact-method-arrow" size={17} aria-hidden="true" />
             </a>
-            <a className="contact-method" href="tel:+525570757594" aria-label="Llamar al +52 55 7075 7594">
-              <span className="contact-method-icon"><Phone size={18} aria-hidden="true" /></span>
+            <a
+              className="contact-method"
+              href="https://wa.me/525570757594?text=Hola%20Mau%2C%20me%20interesa%20conocer%20Yuri%20POS."
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Escribir por WhatsApp"
+            >
+              <span className="contact-method-icon"><MessageCircle size={18} aria-hidden="true" /></span>
               <span className="contact-method-copy">
-                <small>Teléfono</small>
-                <strong>+52 55 7075 7594</strong>
+                <small>WhatsApp</small>
+                <strong>Escribir por WhatsApp</strong>
               </span>
               <ArrowRight className="contact-method-arrow" size={17} aria-hidden="true" />
             </a>

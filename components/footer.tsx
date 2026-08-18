@@ -25,10 +25,9 @@ export function Footer() {
         </div>
         <div className="footer-links">
           <span className="footer-label">Explorar</span>
+          <Link href="/#beneficios">Beneficios</Link>
           <Link href="/#modulos">Módulos</Link>
-          <Link href="/#farmacias">Farmacias</Link>
-          <Link href="/#abarrotes">Abarrotes</Link>
-          <Link href="/#precios">Precios</Link>
+          <Link href="/#precios">Planes</Link>
         </div>
         <div className="footer-links">
           <span className="footer-label">Siguiente paso</span>
