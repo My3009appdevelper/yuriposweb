@@ -10,11 +10,6 @@ export function ContactSection() {
           <p>
             Cuéntame qué quieres mejorar en tu operación y te mostraré qué módulos tienen sentido para tu forma de trabajar.
           </p>
-          <div className="contact-section-actions">
-            <a className="button button-primary" href="mailto:maufuku3009@gmail.com">
-              Escribirme por correo <ArrowRight size={16} aria-hidden="true" />
-            </a>
-          </div>
         </div>
 
         <div className="contact-section-panel">
