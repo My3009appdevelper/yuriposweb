@@ -27,7 +27,7 @@ if (home.includes("CapabilityStrip") || home.includes("CapabilityContextSection"
   failures.push("la landing debe mostrar únicamente la presentación 3D de la diferencia Yuri");
 }
 
-const requiredHrefs = ["/#inicio", "/#beneficios", "/#modulos", "/#publico", "/#precios", "/#contacto", "/demo"];
+const requiredHrefs = ["/#inicio", "/#beneficios", "/#modulos", "/#precios", "/#contacto", "/demo"];
 for (const href of requiredHrefs) {
   if (!navigation.includes(href)) failures.push(`falta el enlace ${href}`);
 }
@@ -44,7 +44,7 @@ for (const required of ["maufuku3009@gmail.com", "tel:+525570757594", "mailto:ma
   if (!contact.includes(required)) failures.push(`falta el canal ${required}`);
 }
 
-for (const anchor of ["id=\"inicio\"", "id=\"beneficios\"", "id=\"modulos\"", "id=\"publico\"", "id=\"precios\"", "id=\"contacto\""]) {
+for (const anchor of ["id=\"inicio\"", "id=\"beneficios\"", "id=\"modulos\"", "id=\"precios\"", "id=\"contacto\""]) {
   const source = anchor === 'id="inicio"'
     ? hero
     : anchor === 'id="modulos"'

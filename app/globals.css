@@ -1278,8 +1278,8 @@ button {
 .module-group-tab {
   position: relative;
   min-width: 0;
-  min-height: 76px;
-  padding: 16px 52px 16px 18px;
+  min-height: 50px;
+  padding: 8px 18px 8px 52px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1311,13 +1311,13 @@ button {
 .module-group-tab-icon {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 36px;
   height: 36px;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  border-radius: 0 18px 0 11px;
+  border-radius: 18px 0 11px 0;
   background: rgb(0 177 255 / 10%);
   color: var(--color-brand-deep);
 }
@@ -1710,18 +1710,18 @@ button {
   }
 
   .module-group-tab {
-    min-height: 68px;
-    padding: 14px 42px 14px 12px;
+    min-height: 44px;
+    padding: 6px 40px 6px 42px;
     border-radius: 14px;
     gap: 0;
   }
 
   .module-group-tab-icon {
     top: 0;
-    right: 0;
+    left: 0;
     width: 31px;
     height: 31px;
-    border-radius: 0 14px 0 9px;
+    border-radius: 14px 0 9px 0;
   }
 
   .module-group-tab-copy strong {

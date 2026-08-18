@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { Capability3DSection } from "@/components/capability-3d-section";
-import { AudienceSection } from "@/components/audience-section";
 import { ContactSection } from "@/components/contact-section";
 import { ModuleIndex } from "@/components/module-index";
 import { PricingTable } from "@/components/pricing-table";
 import { SectionHeading } from "@/components/section-heading";
 import { YuriHero } from "@/components/yuri-hero";
-import { audienceStories, pricingPlans, yuriModules } from "@/lib/yuri-content";
+import { pricingPlans, yuriModules } from "@/lib/yuri-content";
 
 export default function HomePage() {
   return (
@@ -14,15 +13,6 @@ export default function HomePage() {
       <YuriHero />
       <Capability3DSection />
       <ModuleIndex modules={yuriModules} />
-      <div id="publico" className="audience-sections-anchor">
-        {audienceStories.map((story) => (
-          <AudienceSection
-            key={story.id}
-            story={story}
-            modules={story.moduleIds.map((moduleId) => yuriModules.find((module) => module.id === moduleId)).filter((module): module is (typeof yuriModules)[number] => Boolean(module))}
-          />
-        ))}
-      </div>
       <section className="pricing-section" id="precios" aria-labelledby="pricing-title">
         <div className="container">
           <SectionHeading
