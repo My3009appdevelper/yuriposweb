@@ -31,6 +31,7 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
               <h3>{plan.name}</h3>
               <p className="pricing-summary">{plan.summary}</p>
               <div className="pricing-amount"><strong>{price}</strong><span>MXN {cadence}</span></div>
+              {plan.inclusionLabel ? <p className="pricing-inclusion">{plan.inclusionLabel}</p> : null}
               <ul className="pricing-limits">
                 {plan.limits.map((limit) => <li key={limit}>{limit}</li>)}
               </ul>

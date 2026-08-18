@@ -506,6 +506,7 @@ export type PricingPlan = {
   monthly: string;
   annual: string;
   summary: string;
+  inclusionLabel?: string;
   limits: readonly string[];
   extraNote: string;
   features: readonly string[];
@@ -535,14 +536,10 @@ export const pricingPlans: readonly PricingPlan[] = [
     monthly: "$X",
     annual: "$X",
     summary: "Más contexto y control para equipos que ya están creciendo.",
+    inclusionLabel: "Todo lo esencial",
     limits: ["5 sucursales incluidas", "12 usuarios incluidos"],
     extraNote: "Extras por sucursal o usuario con una tarifa más conveniente que en Esencial.",
     features: [
-      "Sucursales, usuarios, cajas y roles y permisos",
-      "Ventas, historial de ventas, promociones y clientes",
-      "Productos, departamentos e inventario por sucursal",
-      "Compras, historial de compras y proveedores",
-      "Cortes de caja, movimientos de caja, ticket y exportaciones",
       "Anuncios y órdenes de compra",
       "Control ambiental, recetas y médicos",
       "Facturación, gráficas y KPIs operativos",
@@ -555,16 +552,10 @@ export const pricingPlans: readonly PricingPlan[] = [
     monthly: "$X",
     annual: "$X",
     summary: "Capacidades avanzadas para equipos, sucursales y procesos especializados.",
+    inclusionLabel: "Todo lo profesional",
     limits: ["10 sucursales incluidas", "25 usuarios incluidos"],
     extraNote: "La mejor tarifa por sucursal o usuario adicional.",
     features: [
-      "Sucursales, usuarios, cajas y roles y permisos",
-      "Ventas, historial de ventas, promociones y clientes",
-      "Productos, departamentos e inventario por sucursal",
-      "Compras, historial de compras, órdenes de compra y proveedores",
-      "Cortes de caja, movimientos de caja, ticket y exportaciones",
-      "Anuncios, control ambiental, recetas y médicos",
-      "Facturación, gráficas y KPIs operativos",
       "Impulso de venta y fidelidad",
       "Personal, vacaciones y comisiones",
     ],

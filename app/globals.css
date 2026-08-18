@@ -1532,12 +1532,12 @@ button {
   }
 
   .hero-parallax-layer {
-    inset: 20% -18% -6% -18%;
+    inset: -6% -18%;
     transform: translate3d(0, var(--hero-parallax-y, 0px), 0) scale(1.04);
   }
 
   .hero-parallax-layer img {
-    object-position: 50% 55%;
+    object-position: 50% 50%;
     opacity: 0.5;
   }
 
@@ -1635,7 +1635,7 @@ button {
   }
 
   .hero-parallax-layer {
-    inset: 23% -34% -10% -34%;
+    inset: -10% -34%;
   }
 
   .hero-parallax-content .hero-copy {
@@ -2355,6 +2355,23 @@ button {
 
 .pricing-card-featured .pricing-amount span {
   color: #a8bdc9;
+}
+
+.pricing-inclusion {
+  align-self: flex-start;
+  margin: 16px 0 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-size: 0.7rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.pricing-card-featured .pricing-inclusion {
+  background: rgb(0 177 255 / 18%);
+  color: var(--color-brand);
 }
 
 .pricing-limits {

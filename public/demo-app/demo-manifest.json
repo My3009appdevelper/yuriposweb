@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 8,
-  "generatedAt": "2026-08-18T17:22:56.800844Z",
+  "contentVersion": 9,
+  "generatedAt": "2026-08-18T17:50:28.626816Z",
   "uuidEmpresa": "demo-farmacia-yuri",
   "sourceUuidEmpresa": "74241882-45b0-4534-b6e4-d2fc765d03c4",
   "sourceCompanyName": "Yuri Salud y Abarrotes",
@@ -16,6 +16,7 @@
     "caja_corte_programaciones": 0,
     "caja_corte_programacion_turnos": 0,
     "caja_cortes": 180,
+    "usuarios": 4,
     "departamentos": 11,
     "categorias": 34,
     "productos": 35,

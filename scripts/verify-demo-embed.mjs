@@ -82,6 +82,8 @@ if (hasData !== hasManifest) {
       "empresas",
       "sucursales",
       "cajas",
+      "usuarios",
+      "caja_cortes",
       "departamentos",
       "categorias",
       "productos",
@@ -95,6 +97,7 @@ if (hasData !== hasManifest) {
       "ventas",
       "venta_detalles",
       "venta_impulso_eventos",
+      "heroes",
     ];
     for (const table of requiredTables) {
       if (!Array.isArray(data.tables?.[table])) {
@@ -102,8 +105,21 @@ if (hasData !== hasManifest) {
         failed = true;
       }
     }
+    for (const user of data.tables?.usuarios ?? []) {
+      if (Object.hasOwn(user, "auth_user_id")) {
+        console.error("[demo] los usuarios publicados no deben incluir identificadores de Auth");
+        failed = true;
+      }
+    }
+    if ((data.tables?.usuarios ?? []).every((user) => user.username !== "yuridemo")) {
+      console.error("[demo] el paquete debe conservar a yuridemo como usuario principal");
+      failed = true;
+    }
+    if ((data.tables?.caja_cortes ?? []).some((corte) => corte.estado === "abierto")) {
+      console.error("[demo] el paquete no debe publicar cortes abiertos");
+      failed = true;
+    }
     const forbiddenTables = [
-      "usuarios",
       "usuario_sesiones",
       "sync_checkpoints",
       "local_printers",
