@@ -46,13 +46,19 @@ export function HeroParallaxScene() {
 
   return (
     <div className="hero-parallax-layer" ref={layerRef}>
-      <Image
-        alt=""
-        fill
-        preload
-        sizes="(max-width: 800px) 110vw, 72vw"
-        src="/assets/hero/yuri-pos-parallax.webp"
-      />
+      <picture className="hero-parallax-picture">
+        <source
+          media="(max-width: 800px)"
+          srcSet="/assets/hero/yuri-pos-parallax-vertical.webp"
+        />
+        <Image
+          alt=""
+          fill
+          loading="eager"
+          sizes="(max-width: 800px) 110vw, 72vw"
+          src="/assets/hero/yuri-pos-parallax.webp"
+        />
+      </picture>
     </div>
   );
 }

@@ -750,6 +750,12 @@ button {
   will-change: transform;
 }
 
+.hero-parallax-picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
 .hero-parallax-layer img {
   object-fit: contain;
   object-position: 70% 50%;
@@ -1266,12 +1272,6 @@ button {
 
 .module-index-section .section-heading {
   margin-bottom: 38px;
-}
-
-.module-index-actions {
-  display: flex;
-  justify-content: flex-start;
-  margin: -16px 0 32px;
 }
 
 .module-group-tabs {
