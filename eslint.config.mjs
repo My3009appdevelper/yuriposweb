@@ -8,5 +8,6 @@ export default defineConfig([
     "node_modules/**",
     "out/**",
     "public/demo-app/**",
+    "public/tienda-app/**",
   ]),
 ]);

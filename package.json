@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "sync:demo": "node scripts/sync-demo-build.mjs",
+    "sync:store": "node scripts/sync-store-build.mjs",
     "test:demo": "node scripts/verify-demo-embed.mjs",
+    "test:store": "node scripts/verify-store-embed.mjs",
     "test": "npm run lint && npm run typecheck && npm run build",
     "typecheck": "tsc --noEmit"
   },

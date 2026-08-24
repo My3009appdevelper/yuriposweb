@@ -207,6 +207,18 @@ button {
   background: var(--color-on-primary-container);
 }
 
+.nav-link-store {
+  border: 1px solid rgb(0 119 182 / 18%);
+  color: var(--color-brand-deep);
+}
+
+.nav-link-store:hover,
+.nav-link-store.nav-link-active {
+  border-color: rgb(0 119 182 / 32%);
+  background: var(--color-surface-tint);
+  color: var(--color-ink);
+}
+
 .site-footer {
   margin-top: 110px;
   padding: 58px 0 24px;
@@ -2798,6 +2810,29 @@ button {
   color: var(--color-brand);
 }
 
+.storefront-launch-section {
+  padding: 0 0 120px;
+  background: var(--color-surface-soft);
+}
+
+.storefront-embed-shell {
+  min-height: min(900px, 82svh);
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-highlight);
+  background: #fff;
+  box-shadow: 0 24px 70px rgb(26 76 115 / 12%);
+}
+
+.storefront-embed-frame {
+  display: block;
+  width: 100%;
+  height: min(900px, 82svh);
+  min-height: 700px;
+  border: 0;
+  background: #fff;
+}
+
 .not-found-section {
   display: grid;
   min-height: 65svh;
@@ -2856,6 +2891,15 @@ button {
   }
 
   .demo-embed-shell--web {
+    height: 76svh;
+    min-height: 620px;
+  }
+
+  .storefront-embed-shell {
+    min-height: 620px;
+  }
+
+  .storefront-embed-frame {
     height: 76svh;
     min-height: 620px;
   }
@@ -2930,6 +2974,20 @@ button {
   }
 
   .demo-embed-shell--web {
+    height: 78svh;
+    min-height: 560px;
+  }
+
+  .storefront-launch-section {
+    padding-bottom: 76px;
+  }
+
+  .storefront-embed-shell {
+    min-height: 560px;
+    border-radius: 18px;
+  }
+
+  .storefront-embed-frame {
     height: 78svh;
     min-height: 560px;
   }

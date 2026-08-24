@@ -13,19 +13,48 @@ npm run dev
 
 La aplicación queda disponible en `http://localhost:3000`.
 
+## Tienda hospedada
+
+`maukunweb` funciona como el host público. La tienda funcional pertenece al
+flavor Flutter `consumidor` de `C:\Apps\pharma-pos`; Supabase conserva el
+backend y la Edge Function `storefront`. MauKun Web no consulta directamente
+las tablas de pedidos ni contiene secretos privados.
+
+Para actualizar el paquete público de la tienda:
+
+```powershell
+cd C:\Apps\pharma-pos
+flutter build web --release --base-href=/tienda-app/ --dart-define=APP_FLAVOR=consumidor
+
+cd C:\Apps\maukunweb
+npm run sync:store
+```
+
+Si la build está en otra ubicación, define `PHARMA_POS_CONSUMER_WEB_DIR` antes
+de ejecutar `npm run sync:store`. Los enlaces QR abren `/tienda?tienda=TOKEN`.
+Para que el POS genere esos enlaces con el host publicado, configura
+`CONSUMIDOR_WEB_URL`, por ejemplo:
+
+```text
+https://yuri-pos.vercel.app/tienda
+```
+
 ## Verificación
 
 ```powershell
 npm run lint
 npm run typecheck
 npm run build
+npm run test:demo
+npm run test:store
 ```
 
 ## Rutas
 
 - `/` — hero, capacidades, índice filtrable de módulos, Farmacias, Abarrotes y precios.
 - `/contacto` — estado del canal de contacto, sin formulario ficticio.
-- `/demo` — estado de la futura demo web aislada; todavía no está habilitada.
+- `/demo` — demo web Flutter aislada con datos de ejemplo.
+- `/tienda` — aplicación web del flavor consumidor hospedada dentro del sitio.
 - cualquier ruta inexistente — 404 de Yuri POS.
 
 ## Dónde editar el contenido
@@ -60,8 +89,15 @@ La versión actual ya está publicada en Vercel:
 https://yuri-pos.vercel.app
 ```
 
-El proyecto usa la configuración detectada de Next.js y no requiere variables de entorno para esta versión estática. Los precios siguen siendo referencias de desarrollo y deben revisarse antes de una publicación comercial definitiva.
+El proyecto usa la configuración detectada de Next.js. La publicación de la
+tienda requiere sincronizar el build Flutter; el host no necesita una clave
+privada de Supabase. Los precios siguen siendo referencias de desarrollo y
+deben revisarse antes de una publicación comercial definitiva.
 
 ## Límites actuales
 
-No se incluye Supabase, autenticación, CMS, analytics, pagos, backend de contacto, migraciones, demo Flutter embebida ni sesión de demo productiva. La futura demo deberá usar datos precargados aislados y borrar los cambios al cerrar la sesión.
+La tienda MVP permite pedidos como invitado, recoger en tienda, domicilio y
+pago en caja. Todavía no incluye cuentas de consumidor, pago en línea,
+reservación automática de inventario ni conversión automática a `ventas`.
+La demo y la tienda Flutter se publican como paquetes estáticos aislados; sus
+datos y reglas no deben confundirse con el panel operativo.

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Boxes, CreditCard, Home, Mail, MonitorPlay, Package, Sparkles, type LucideIcon } from "lucide-react";
+import { Boxes, CreditCard, Home, Mail, MonitorPlay, Package, Sparkles, Store, type LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -28,6 +28,8 @@ function getNavigationIcon(item: NavigationItem): LucideIcon {
       return Mail;
     case "Demo":
       return MonitorPlay;
+    case "Tienda":
+      return Store;
     default:
       return Boxes;
   }
@@ -110,10 +112,15 @@ export function Navbar() {
               ? activeLandingSection === anchor
               : isNavigationItemActive(pathname, item.href);
             const NavigationIcon = getNavigationIcon(item);
+            const variantClass = item.variant === "demo"
+              ? " nav-link-demo"
+              : item.variant === "store"
+                ? " nav-link-store"
+                : "";
 
             return (
               <Link
-                className={`nav-link${active ? " nav-link-active" : ""}${item.variant === "demo" ? " nav-link-demo" : ""}`}
+                className={`nav-link${active ? " nav-link-active" : ""}${variantClass}`}
                 href={item.href}
                 key={item.href}
                 aria-label={item.label}

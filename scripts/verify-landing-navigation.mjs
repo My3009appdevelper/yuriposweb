@@ -27,9 +27,23 @@ if (home.includes("CapabilityStrip") || home.includes("CapabilityContextSection"
   failures.push("la landing debe mostrar únicamente la presentación 3D de la diferencia Yuri");
 }
 
-const requiredHrefs = ["/#inicio", "/#beneficios", "/#modulos", "/#precios", "/#contacto", "/demo"];
+const requiredHrefs = [
+  "/#inicio",
+  "/#beneficios",
+  "/#modulos",
+  "/#precios",
+  "/#contacto",
+  "/demo",
+  "/tienda",
+];
 for (const href of requiredHrefs) {
   if (!navigation.includes(href)) failures.push(`falta el enlace ${href}`);
+}
+
+const demoIndex = navigation.indexOf('{ href: "/demo"');
+const storeIndex = navigation.indexOf('{ href: "/tienda"');
+if (demoIndex < 0 || storeIndex < 0 || storeIndex < demoIndex) {
+  failures.push("Tienda debe aparecer después de Demo en la navegación");
 }
 
 if (navigation.includes('status: "soon"') || navbar.includes("Próximamente")) {

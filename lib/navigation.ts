@@ -2,7 +2,7 @@ export type NavigationItem = {
   href: string;
   label: string;
   landingOnly?: boolean;
-  variant?: "demo";
+  variant?: "demo" | "store";
 };
 
 export const siteNavigation: readonly NavigationItem[] = [
@@ -12,5 +12,6 @@ export const siteNavigation: readonly NavigationItem[] = [
   { href: "/#precios", label: "Planes", landingOnly: true },
   { href: "/#contacto", label: "Contacto", landingOnly: true },
   { href: "/demo", label: "Demo", variant: "demo" },
+  { href: "/tienda", label: "Tienda", variant: "store" },
 ];
 
