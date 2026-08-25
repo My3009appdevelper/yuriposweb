@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { SiteShell } from "@/components/site-shell";
 import "./globals.css";
 
 const siteUrl = "https://yuri-pos.vercel.app";
@@ -84,9 +83,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body>
-        <SiteShell>{children}</SiteShell>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -14,9 +14,9 @@ const contact = readProjectFile("components/contact-section.tsx");
 const moduleIndex = readProjectFile("components/module-index.tsx");
 const hero = readProjectFile("components/yuri-hero.tsx");
 const heroParallax = readProjectFile("components/hero-parallax-scene.tsx");
-const home = readProjectFile("app/page.tsx");
+const home = readProjectFile("app/(marketing)/page.tsx");
 
-const contactPage = readProjectFile("app/contacto/page.tsx");
+const contactPage = readProjectFile("app/(marketing)/contacto/page.tsx");
 const styles = readProjectFile("app/globals.css");
 const capabilityEditorial = readProjectFile("components/capability-strip.tsx");
 const capability3d = readProjectFile("components/capability-3d-section.tsx");
@@ -54,7 +54,7 @@ if (!navigation.includes('label: "Beneficios"')) {
   failures.push("falta el enlace de Beneficios en la navegación");
 }
 
-for (const required of ["maufuku3009@gmail.com", "tel:+525570757594", "mailto:maufuku3009@gmail.com"]) {
+for (const required of ["maufuku3009@gmail.com", "https://wa.me/525570757594", "mailto:maufuku3009@gmail.com"]) {
   if (!contact.includes(required)) failures.push(`falta el canal ${required}`);
 }
 
@@ -87,7 +87,7 @@ if (!capabilityEditorial.includes("capability-section-editorial")) {
   failures.push("falta la presentación editorial");
 }
 
-if (!hero.includes("hero-parallax-section") || !hero.includes("HeroParallaxScene") || !heroParallax.includes("/assets/hero/yuri-pos-parallax.png")) {
+if (!hero.includes("hero-parallax-section") || !hero.includes("HeroParallaxScene") || !heroParallax.includes("/assets/hero/yuri-pos-parallax.webp")) {
   failures.push("el hero no contiene la escena parallax 3D ni su asset transparente");
 }
 

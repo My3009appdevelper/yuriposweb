@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageIntro } from "@/components/page-intro";
 
 export const metadata: Metadata = {
   title: "Tienda — Yuri POS",
@@ -23,24 +22,15 @@ export default async function StorePage({ searchParams }: StorePageProps) {
   const query = token ? `?tienda=${encodeURIComponent(token)}` : "";
 
   return (
-    <>
-      <PageIntro
-        eyebrow="Tienda · Yuri POS"
-        title="Compra desde tu tienda cercana."
-        description="Consulta el inventario disponible, arma tu pedido y elige cómo recibirlo."
+    <main className="immersive-app-page" aria-label="Tienda en línea de Yuri POS">
+      <iframe
+        className="immersive-app-frame"
+        src={`/tienda-app/index.html${query}`}
+        title="Tienda en línea de Yuri POS"
+        allow="camera"
+        loading="eager"
+        referrerPolicy="same-origin"
       />
-      <section className="storefront-launch-section">
-        <div className="container storefront-embed-shell">
-          <iframe
-            className="storefront-embed-frame"
-            src={`/tienda-app/index.html${query}`}
-            title="Tienda en línea de Yuri POS"
-            allow="camera"
-            loading="eager"
-            referrerPolicy="same-origin"
-          />
-        </div>
-      </section>
-    </>
+    </main>
   );
 }
