@@ -117,14 +117,17 @@ export function Navbar() {
               : item.variant === "store"
                 ? " nav-link-store"
                 : "";
+            const opensInNewTab = item.variant === "demo" || item.variant === "store";
 
             return (
               <Link
                 className={`nav-link${active ? " nav-link-active" : ""}${variantClass}`}
                 href={item.href}
                 key={item.href}
-                aria-label={item.label}
+                aria-label={opensInNewTab ? `${item.label} (se abre en una pestaña nueva)` : item.label}
                 aria-current={active ? "page" : undefined}
+                target={opensInNewTab ? "_blank" : undefined}
+                rel={opensInNewTab ? "noopener noreferrer" : undefined}
               >
                 <NavigationIcon className="nav-link-icon" size={16} strokeWidth={2.1} aria-hidden="true" />
                 <span className="nav-link-label">{item.label}</span>

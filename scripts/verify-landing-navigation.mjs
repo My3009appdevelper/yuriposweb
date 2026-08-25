@@ -54,6 +54,19 @@ if (!navigation.includes('label: "Beneficios"')) {
   failures.push("falta el enlace de Beneficios en la navegación");
 }
 
+if (!navbar.includes('const opensInNewTab = item.variant === "demo" || item.variant === "store";')) {
+  failures.push("Demo y Tienda deben marcarse para abrir en una pestaña nueva");
+}
+if (!navbar.includes('target={opensInNewTab ? "_blank" : undefined}')) {
+  failures.push("Demo y Tienda no tienen target de pestaña nueva");
+}
+if (!navbar.includes('rel={opensInNewTab ? "noopener noreferrer" : undefined}')) {
+  failures.push("Demo y Tienda no tienen rel seguro para pestaña nueva");
+}
+if (!navbar.includes('se abre en una pestaña nueva')) {
+  failures.push("Demo y Tienda no anuncian la pestaña nueva a lectores de pantalla");
+}
+
 for (const required of ["maufuku3009@gmail.com", "https://wa.me/525570757594", "mailto:maufuku3009@gmail.com"]) {
   if (!contact.includes(required)) failures.push(`falta el canal ${required}`);
 }
