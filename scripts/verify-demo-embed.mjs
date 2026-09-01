@@ -120,8 +120,8 @@ if (hasData !== hasManifest) {
         failed = true;
       }
     }
-    if ((data.tables?.usuarios ?? []).every((user) => user.username !== "yuridemo")) {
-      console.error("[demo] el paquete debe conservar a yuridemo como usuario principal");
+    if ((data.tables?.usuarios ?? []).every((user) => user.username !== "sarukidemo")) {
+      console.error("[demo] el paquete debe conservar a sarukidemo como usuario principal");
       failed = true;
     }
     if ((data.tables?.caja_cortes ?? []).some((corte) => corte.estado === "abierto")) {
