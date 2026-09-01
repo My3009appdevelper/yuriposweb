@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 10,
-  "generatedAt": "2026-08-18T20:57:38.883417Z",
+  "contentVersion": 12,
+  "generatedAt": "2026-09-01T18:32:31.778531Z",
   "uuidEmpresa": "demo-farmacia-yuri",
   "sourceUuidEmpresa": "74241882-45b0-4534-b6e4-d2fc765d03c4",
-  "sourceCompanyName": "Yuri Salud y Abarrotes",
+  "sourceCompanyName": "Saruki Salud y Abarrotes",
   "rowCounts": {
     "empresas": 1,
     "empresa_seguridad_configuraciones": 0,
