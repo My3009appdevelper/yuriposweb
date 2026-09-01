@@ -101101,7 +101101,7 @@ break A}return s},
 hr_(a,b){return a},
 hr0(a,b){return b},
 hqZ(a,b){return a.b<=b.b?b:a},
-fTd(a){var s="https://basemaps.cartocdn.com/"+(a?"dark_all":"light_all")+"/{z}/{x}/{y}{r}.png",r=B.a.j("")
+fTd(a){var s="https://basemaps.cartocdn.com/"+(a?"dark_all":"light_all")+"/{z}/{x}/{y}{r}.png",r=B.a.j("cb1_2le8_1_07c0f3471b986836c8620d98")
 if(r.length===0)return s
 return s+"?key="+A.Bq(1,r,B.cy,!0)},
 hlm(){throw A.o(A.ae("En Web la base de datos debe abrirse de forma as\xedncrona antes de crear AppDatabase."))},
