@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { YuriIcon } from "@/components/icons";
-import type { YuriModule } from "@/lib/yuri-content";
+import { SarukiIcon } from "@/components/icons";
+import type { SarukiModule } from "@/lib/saruki-content";
 
-export function ModuleCard({ module }: { module: YuriModule }) {
+export function ModuleCard({ module }: { module: SarukiModule }) {
   if (module.visualAsset) {
     return (
       <article className="module-visual-item">
@@ -13,7 +13,7 @@ export function ModuleCard({ module }: { module: YuriModule }) {
         <div className="module-visual-art">
           <Image
             src={module.visualAsset}
-            alt={`${module.name}: ilustración 3D de Yuri POS`}
+            alt={`${module.name}: ilustración 3D de Saruki POS`}
             fill
             loading="lazy"
             sizes="(max-width: 700px) 86vw, (max-width: 1050px) 42vw, 25vw"
@@ -32,12 +32,12 @@ export function ModuleCard({ module }: { module: YuriModule }) {
       ? "Especializado en farmacia"
       : module.audiences.includes("abarrotes")
         ? "Ideal para abarrotes"
-        : "Administración de Yuri POS";
+        : "Administración de Saruki POS";
 
   return (
     <article className="module-card">
       <div className="module-card-topline">
-        <span className="module-icon"><YuriIcon name={module.icon} size={21} /></span>
+        <span className="module-icon"><SarukiIcon name={module.icon} size={21} /></span>
         <span className={`module-plan module-plan-${module.plan.toLowerCase()}`}>{module.plan}</span>
       </div>
       <p className="module-category">{module.category}</p>

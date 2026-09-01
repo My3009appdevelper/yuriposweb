@@ -11,7 +11,7 @@ export type ModuleCategory =
 
 export type PlanName = "Esencial" | "Profesional" | "Escala";
 
-export type YuriModule = {
+export type SarukiModule = {
   id: string;
   category: ModuleCategory;
   name: string;
@@ -40,7 +40,7 @@ export const moduleCategories: readonly ModuleCategory[] = [
   "Reportes",
 ];
 
-export const yuriModules: readonly YuriModule[] = [
+export const sarukiModules: readonly SarukiModule[] = [
   {
     id: "ventas",
     category: "Venta",
@@ -229,7 +229,7 @@ export const yuriModules: readonly YuriModule[] = [
     audiences: ["general", "farmacias", "abarrotes"],
     plan: "Esencial",
     icon: "shield-check",
-    visualAsset: "/assets/difference-yuri/optimized/roles-permisos.webp",
+    visualAsset: "/assets/difference-saruki/optimized/roles-permisos.webp",
   },
   {
     id: "personal",
@@ -442,7 +442,7 @@ export const audienceStories: readonly AudienceStory[] = [
     eyebrow: "Para farmacias",
     title: "Más control cuando cada detalle importa.",
     description:
-      "Yuri POS reúne la venta, el inventario y los procesos que hacen especial a una farmacia en una operación más ordenada.",
+      "Saruki POS reúne la venta, el inventario y los procesos que hacen especial a una farmacia en una operación más ordenada.",
     bullets: [
       "Lotes, caducidades e inventario por sucursal.",
       "Recetas y médicos dentro del flujo operativo.",
@@ -462,7 +462,7 @@ export const audienceStories: readonly AudienceStory[] = [
     eyebrow: "Para abarrotes",
     title: "Más velocidad para el día a día.",
     description:
-      "Cuando cada venta cuenta, Yuri POS ayuda a cobrar con agilidad y a mantener el catálogo, la caja y las compras bajo control.",
+      "Cuando cada venta cuenta, Saruki POS ayuda a cobrar con agilidad y a mantener el catálogo, la caja y las compras bajo control.",
     bullets: [
       "Catálogo y existencias fáciles de consultar.",
       "Cobro, tickets y cortes de caja ordenados.",

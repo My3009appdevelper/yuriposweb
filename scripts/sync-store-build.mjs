@@ -41,9 +41,9 @@ const patchedIndex = index
   .replace(baseHrefPattern, '<base href="/tienda-app/">')
   .replace(
     /<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/i,
-    '<meta name="description" content="Tienda en línea de Yuri POS.">',
+    '<meta name="description" content="Tienda en línea de Saruki POS.">',
   )
-  .replace(/<title>[^<]*<\/title>/i, "<title>Yuri POS · Tienda</title>");
+  .replace(/<title>[^<]*<\/title>/i, "<title>Saruki POS · Tienda</title>");
 
 rmSync(destination, { recursive: true, force: true });
 cpSync(source, destination, {

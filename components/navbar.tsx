@@ -87,14 +87,14 @@ export function Navbar() {
   return (
     <header className="site-header">
       <div className="container nav-container">
-        <Link className="brand-lockup" href="/" aria-label="Yuri POS, ir a Inicio">
+        <Link className="brand-lockup" href="/" aria-label="Saruki POS, ir a Inicio">
           <span className="brand-logo" aria-hidden="true">
             <Image
               className="brand-logo-image"
-              src="/assets/brand/yuri-logo-dark.png"
+              src="/assets/brand/saruki-logo-dark.png"
               alt=""
-              width={120}
-              height={120}
+              width={2048}
+              height={1306}
               priority
             />
           </span>

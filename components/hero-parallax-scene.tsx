@@ -49,14 +49,14 @@ export function HeroParallaxScene() {
       <picture className="hero-parallax-picture">
         <source
           media="(max-width: 800px)"
-          srcSet="/assets/hero/yuri-pos-parallax-vertical.webp"
+          srcSet="/assets/hero/saruki-pos-parallax-vertical.webp"
         />
         <Image
           alt=""
           fill
           loading="eager"
           sizes="(max-width: 800px) 110vw, 72vw"
-          src="/assets/hero/yuri-pos-parallax.webp"
+          src="/assets/hero/saruki-pos-parallax.webp"
         />
       </picture>
     </div>

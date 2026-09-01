@@ -7,7 +7,7 @@ export default function NotFound() {
     <SiteShell>
       <section className="not-found-section">
         <div className="container not-found-card">
-          <p className="eyebrow">Yuri POS · 404</p>
+          <p className="eyebrow">Saruki POS · 404</p>
           <h1>Esta ruta no está en el mapa.</h1>
           <p>La página que buscas no existe o todavía está tomando forma.</p>
           <div className="standby-actions">

@@ -11,6 +11,7 @@ const root = process.cwd();
 const sourceCandidates = process.env.PHARMA_POS_WEB_DIR
   ? [resolve(process.env.PHARMA_POS_WEB_DIR)]
   : [
+      resolve(root, "..", "pharma-pos", "build", "web"),
       resolve(
         root,
         "..",
@@ -26,9 +27,20 @@ const source = sourceCandidates.find(
 );
 const destination = resolve(root, "public", "demo-app");
 const sourceIndex = source ? resolve(source, "index.html") : "";
-const packageSource = process.env.PHARMA_POS_DEMO_PACKAGE_DIR
+const packageCandidates = process.env.PHARMA_POS_DEMO_PACKAGE_DIR
   ? resolve(process.env.PHARMA_POS_DEMO_PACKAGE_DIR)
-  : resolve(root, "..", "pharma-pos-worktrees", "artifacts", "demo-package");
+  : [
+      resolve(root, "..", "pharma-pos", "artifacts", "demo-package"),
+      resolve(root, "..", "pharma-pos-worktrees", "artifacts", "demo-package"),
+    ];
+const packageSources = Array.isArray(packageCandidates)
+  ? packageCandidates
+  : [packageCandidates];
+const packageSource = packageSources.find(
+  (candidate) =>
+    existsSync(resolve(candidate, "demo-data.json")) &&
+    existsSync(resolve(candidate, "demo-manifest.json")),
+) ?? packageSources[0];
 const packageData = resolve(packageSource, "demo-data.json");
 const packageManifest = resolve(packageSource, "demo-manifest.json");
 
@@ -50,9 +62,9 @@ const patchedIndex = index
   .replace(baseHrefPattern, '<base href="/demo-app/">')
   .replace(
     /<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/i,
-    '<meta name="description" content="Demo interactiva de Yuri POS con datos de ejemplo.">',
+    '<meta name="description" content="Demo interactiva de Saruki POS con datos de ejemplo.">',
   )
-  .replace(/<title>[^<]*<\/title>/i, "<title>Yuri POS · Demo</title>");
+  .replace(/<title>[^<]*<\/title>/i, "<title>Saruki POS · Demo</title>");
 
 rmSync(destination, { recursive: true, force: true });
 cpSync(source, destination, {

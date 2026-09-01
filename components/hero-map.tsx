@@ -11,7 +11,7 @@ export function HeroMap() {
         role="img"
         aria-labelledby="hero-map-title hero-map-description"
       >
-        <title id="hero-map-title">Mapa operativo de Yuri POS</title>
+        <title id="hero-map-title">Mapa operativo de Saruki POS</title>
         <desc id="hero-map-description">
           Venta, inventario, compras, caja y reportes conectados alrededor de la operación del negocio.
         </desc>
@@ -32,7 +32,7 @@ export function HeroMap() {
         <path className="hero-map-line hero-map-line-dashed" d="M308 205 C287 158 299 121 319 90" />
         <g filter="url(#map-shadow)">
           <rect className="hero-map-center" x="247" y="211" width="146" height="80" rx="20" />
-          <text className="hero-map-center-label" x="320" y="244" textAnchor="middle">YURI POS</text>
+          <text className="hero-map-center-label" x="320" y="244" textAnchor="middle">SARUKI POS</text>
           <text className="hero-map-center-subtitle" x="320" y="266" textAnchor="middle">operación en contexto</text>
         </g>
         <g className="hero-map-node hero-map-node-cyan">
@@ -72,7 +72,7 @@ export function HeroMap() {
         role="img"
         aria-labelledby="hero-map-mobile-title hero-map-mobile-description"
       >
-        <title id="hero-map-mobile-title">Mapa operativo de Yuri POS</title>
+        <title id="hero-map-mobile-title">Mapa operativo de Saruki POS</title>
         <desc id="hero-map-mobile-description">
           Venta, inventario, compras, caja y reportes conectados alrededor de la operación del negocio.
         </desc>
@@ -93,7 +93,7 @@ export function HeroMap() {
         <path className="hero-map-line hero-map-line-dashed hero-map-mobile-line" d="M210 216 C210 170 210 132 210 108" />
         <g filter="url(#map-shadow-mobile)">
           <rect className="hero-map-center" x="120" y="228" width="180" height="84" rx="20" />
-          <text className="hero-map-center-label" x="210" y="263" textAnchor="middle">YURI POS</text>
+          <text className="hero-map-center-label" x="210" y="263" textAnchor="middle">SARUKI POS</text>
           <text className="hero-map-center-subtitle" x="210" y="287" textAnchor="middle">operación en contexto</text>
         </g>
         <g className="hero-map-node hero-map-node-red">

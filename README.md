@@ -1,6 +1,6 @@
-# Yuri POS web
+# Saruki POS web
 
-Portfolio comercial de Yuri POS, construido con Next.js App Router. Presenta el sistema como una plataforma de gestión operativa y punto de venta para farmacias y abarrotes.
+Portfolio comercial de Saruki POS, construido con Next.js App Router. Presenta el sistema como una plataforma de gestión operativa y punto de venta para farmacias y abarrotes.
 
 ## Ejecutar localmente
 
@@ -12,6 +12,8 @@ npm run dev
 ```
 
 La aplicación queda disponible en `http://localhost:3000`.
+
+Para cambiar el dominio canónico que usan los metadatos y las vistas previas al compartir enlaces, configura `NEXT_PUBLIC_SITE_URL` con la URL publicada de Saruki POS. Mientras no exista un dominio nuevo, se conserva la URL actual de Vercel para no publicar enlaces rotos.
 
 ## Tienda hospedada
 
@@ -55,11 +57,11 @@ npm run test:store
 - `/contacto` — estado del canal de contacto, sin formulario ficticio.
 - `/demo` — demo web Flutter aislada con datos de ejemplo.
 - `/tienda` — aplicación web del flavor consumidor hospedada dentro del sitio.
-- cualquier ruta inexistente — 404 de Yuri POS.
+- cualquier ruta inexistente — 404 de Saruki POS.
 
 ## Dónde editar el contenido
 
-- `lib/yuri-content.ts` contiene módulos, audiencias, capacidades y planes de referencia.
+- `lib/saruki-content.ts` contiene módulos, audiencias, capacidades y planes de referencia.
 - `components/hero-map.tsx` contiene el mapa SVG del hero.
 - `components/module-index.tsx` contiene el filtro de categorías.
 - `components/pricing-table.tsx` contiene el selector mensual/anual.

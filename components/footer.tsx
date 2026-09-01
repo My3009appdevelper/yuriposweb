@@ -7,14 +7,14 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <Link className="footer-brand" href="/" aria-label="Yuri POS, ir a Inicio">
+          <Link className="footer-brand" href="/" aria-label="Saruki POS, ir a Inicio">
             <span className="brand-logo" aria-hidden="true">
               <Image
                 className="brand-logo-image"
-                src="/assets/brand/yuri-logo-light.png"
+                src="/assets/brand/saruki-logo-light.png"
                 alt=""
-                width={120}
-                height={120}
+                width={2048}
+                height={1306}
               />
             </span>
             <span className="brand-product-label">POS</span>
@@ -38,7 +38,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>Yuri POS · Portfolio comercial</span>
+        <span>Saruki POS · Portfolio comercial</span>
         <span>Precios y capacidades sujetos a revisión</span>
       </div>
     </footer>

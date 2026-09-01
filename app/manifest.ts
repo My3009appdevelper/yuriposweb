@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Yuri POS",
-    short_name: "Yuri POS",
+    name: "Saruki POS",
+    short_name: "Saruki",
     description:
       "Gestión operativa y punto de venta para negocios que quieren trabajar con más orden.",
     lang: "es-MX",
@@ -13,14 +13,8 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#f4f9ff",
     icons: [
       {
-        src: "/assets/brand/short-yuri-logo-dark.png",
-        sizes: "1228x1281",
-        type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/assets/brand/short-yuri-logo-light.png",
-        sizes: "1218x1291",
+        src: "/assets/brand/saruki-icon-dark.png",
+        sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },

@@ -125,22 +125,18 @@ button {
 }
 
 .brand-logo {
-  position: relative;
-  display: block;
+  display: grid;
   flex: 0 0 auto;
-  width: 112px;
+  width: 76px;
   height: 48px;
-  overflow: hidden;
+  place-items: center;
 }
 
 .brand-logo-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 112px;
-  max-width: none;
-  height: 112px;
-  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-product-label {
@@ -444,13 +440,8 @@ button {
   }
 
   .nav-container .brand-logo {
-    width: 80px;
+    width: 66px;
     height: 42px;
-  }
-
-  .nav-container .brand-logo-image {
-    width: 92px;
-    height: 92px;
   }
 
   .nav-container .brand-product-label {
@@ -488,13 +479,8 @@ button {
   }
 
   .nav-container .brand-logo {
-    width: 64px;
+    width: 60px;
     height: 38px;
-  }
-
-  .nav-container .brand-logo-image {
-    width: 76px;
-    height: 76px;
   }
 
   .nav-container .brand-product-label {
@@ -528,7 +514,7 @@ button {
   }
 }
 
-/* Yuri POS portfolio sections */
+/* Saruki POS portfolio sections */
 
 .hero-section {
   position: relative;

@@ -1,11 +1,11 @@
 {
-    "name": "pos_farmacia",
-    "short_name": "pos_farmacia",
+    "name": "Saruki POS",
+    "short_name": "Saruki",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Sistema de punto de venta Saruki.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

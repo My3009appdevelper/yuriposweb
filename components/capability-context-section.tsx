@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { capabilityHighlights } from "@/lib/yuri-content";
+import { capabilityHighlights } from "@/lib/saruki-content";
 
 export function CapabilityContextSection() {
   return (
@@ -19,7 +19,7 @@ export function CapabilityContextSection() {
               <div className="capability-context-visual" aria-hidden="true">
                 <Image
                   className="capability-context-image"
-                src={`/assets/difference-yuri/optimized/${item.id}.webp`}
+                src={`/assets/difference-saruki/optimized/${item.id}.webp`}
                   alt=""
                   fill
                   loading="lazy"

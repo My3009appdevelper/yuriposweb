@@ -6,7 +6,7 @@ export function ContactSection() {
       <div className="container contact-section-grid">
         <div className="contact-section-copy">
           <p className="eyebrow">Siguiente paso</p>
-          <h2 id="contact-title">Hablemos de cómo Yuri POS puede ordenar tu negocio.</h2>
+          <h2 id="contact-title">Hablemos de cómo Saruki POS puede ordenar tu negocio.</h2>
           <p>
             Cuéntame qué quieres mejorar en tu operación y te mostraré qué módulos tienen sentido para tu forma de trabajar.
           </p>
@@ -32,7 +32,7 @@ export function ContactSection() {
             </a>
             <a
               className="contact-method"
-              href="https://wa.me/525570757594?text=Hola%20Mau%2C%20me%20interesa%20conocer%20Yuri%20POS."
+              href="https://wa.me/525570757594?text=Hola%20Mau%2C%20me%20interesa%20conocer%20Saruki%20POS."
               target="_blank"
               rel="noreferrer"
               aria-label="Escribir por WhatsApp"

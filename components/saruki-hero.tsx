@@ -1,6 +1,6 @@
 import { HeroParallaxScene } from "@/components/hero-parallax-scene";
 
-export function YuriHero() {
+export function SarukiHero() {
   return (
     <div className="hero-parallax-frame">
       <section className="hero-section hero-parallax-section" id="inicio">
@@ -11,13 +11,13 @@ export function YuriHero() {
         </div>
         <div className="container hero-parallax-content">
           <div className="hero-copy">
-            <p className="eyebrow">Yuri POS · gestión que acompaña</p>
+            <p className="eyebrow">Saruki POS · gestión que acompaña</p>
             <h1>
               Más que un punto de venta.
               <span> El sistema que mantiene tu negocio en movimiento.</span>
             </h1>
             <p className="hero-description">
-              Yuri POS conecta ventas, inventario, compras y administración para que una farmacia o un abarrotes pueda trabajar con más orden y decidir con mejor información.
+              Saruki POS conecta ventas, inventario, compras y administración para que una farmacia o un abarrotes pueda trabajar con más orden y decidir con mejor información.
             </p>
           </div>
         </div>

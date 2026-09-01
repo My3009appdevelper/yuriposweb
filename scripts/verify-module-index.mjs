@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 const root = process.cwd();
 const component = readFileSync(resolve(root, "components/module-index.tsx"), "utf8");
 const card = readFileSync(resolve(root, "components/module-card.tsx"), "utf8");
-const content = readFileSync(resolve(root, "lib/yuri-content.ts"), "utf8");
+const content = readFileSync(resolve(root, "lib/saruki-content.ts"), "utf8");
 const capability = readFileSync(resolve(root, "components/capability-3d-section.tsx"), "utf8");
 const styles = readFileSync(resolve(root, "app/globals.css"), "utf8");
 const moduleAssetsDir = resolve(root, "public/assets/modulos-webp");
@@ -15,7 +15,7 @@ if (!component.includes("useState") || !component.includes("module-group-tabs") 
   failures.push("el índice no contiene pestañas interactivas para las áreas principales");
 }
 
-if (!component.includes("SectionHeading") || !component.includes("Todo lo que tu operación necesita.") || !component.includes("Explora Yuri POS")) {
+if (!component.includes("SectionHeading") || !component.includes("Todo lo que tu operación necesita.") || !component.includes("Explora Saruki POS")) {
   failures.push("el índice no recupera el título y subtítulo generales solicitados");
 }
 
@@ -67,8 +67,8 @@ if (!/\.module-group-tab \{[\s\S]*?align-items: center;[\s\S]*?text-align: cente
   failures.push("el texto de las pestañas no está centrado");
 }
 
-if (!/\.module-group-tab-icon \{[\s\S]*?position: absolute;[\s\S]*?top: 0;[\s\S]*?right: 0;/.test(styles)) {
-  failures.push("el icono de las pestañas no está pegado a la esquina superior derecha");
+if (!/\.module-group-tab-icon \{[\s\S]*?position: absolute;[\s\S]*?top: 0;[\s\S]*?left: 0;/.test(styles)) {
+  failures.push("el icono de las pestañas no está pegado a la esquina superior izquierda");
 }
 
 if (styles.includes(".module-filters {\n  display: flex;\n  gap: 7px;\n  max-width: 100%;\n  overflow-x: auto;")) {
@@ -111,11 +111,11 @@ if (!styles.includes(".module-grid {\n  display: flex;\n  flex-wrap: wrap;\n  ju
   failures.push("la cuadrícula de módulos no centra sus filas con distribución uniforme");
 }
 
-if (!/\.module-visual-item \{[\s\S]*?flex: 0 1 clamp\(210px, calc\(\(100% - 72px\) \/ 4\), 280px\);/.test(styles)) {
+if (!/\.module-visual-item \{[\s\S]*?flex: 0 1 calc\(\(100% - clamp\(72px, 12\.6vw, 252px\)\) \/ 4\);/.test(styles)) {
   failures.push("los módulos no conservan un ancho controlado para mostrar cuatro por fila");
 }
 
-if (!/\.module-group-tab \{[\s\S]*?min-height: 76px;[\s\S]*?padding: 16px 52px 16px 18px;/.test(styles)) {
+if (!/\.module-group-tab \{[\s\S]*?min-height: 50px;[\s\S]*?padding: 8px 18px 8px 52px;/.test(styles)) {
   failures.push("las pestañas todavía reservan demasiado espacio vertical");
 }
 
@@ -179,7 +179,7 @@ if (!/\.capability-3d-bleed \.capability-3d-art \{[\s\S]*?margin-top: 6px;/.test
   failures.push("el bloque de beneficios no conserva la separación actualizada respecto a su etiqueta");
 }
 
-if (capability.includes("Visualiza cómo Yuri conecta cada decisión del negocio")) {
+if (capability.includes("Visualiza cómo Saruki conecta cada decisión del negocio")) {
   failures.push("el bloque de beneficios todavía muestra el texto introductorio eliminado");
 }
 
@@ -197,6 +197,8 @@ const expectedVisualAssets = [
   "historial-ventas.webp",
   "promociones.webp",
   "impulso-venta.webp",
+  "a granel.webp",
+  "venta por presentaciones.webp",
   "clientes.webp",
   "fidelidad.webp",
   "productos.webp",
@@ -233,14 +235,14 @@ for (const asset of expectedVisualAssets) {
   }
 }
 
-if (!content.includes('/assets/difference-yuri/optimized/roles-permisos.webp')) {
+if (!content.includes('/assets/difference-saruki/optimized/roles-permisos.webp')) {
   failures.push("Roles y permisos no reutiliza la ilustración 3D existente");
 }
-if (!existsSync(resolve(root, "public/assets/difference-yuri/optimized/roles-permisos.webp"))) {
+if (!existsSync(resolve(root, "public/assets/difference-saruki/optimized/roles-permisos.webp"))) {
   failures.push("no existe la ilustración 3D existente de Roles y permisos");
 }
 
-const ventaOrder = ["id: \"ventas\"", "id: \"historial-ventas\"", "id: \"promociones\"", "id: \"impulso-venta\"", "id: \"clientes\"", "id: \"fidelidad\""];
+const ventaOrder = ["id: \"ventas\"", "id: \"historial-ventas\"", "id: \"promociones\"", "id: \"impulso-venta\"", "id: \"venta-granel\"", "id: \"venta-presentaciones\"", "id: \"clientes\"", "id: \"fidelidad\""];
 const ventaPositions = ventaOrder.map((marker) => content.indexOf(marker));
 if (ventaPositions.some((position) => position === -1) || ventaPositions.some((position, index) => index > 0 && position < ventaPositions[index - 1])) {
   failures.push("los módulos de Venta no están en el orden comercial solicitado");

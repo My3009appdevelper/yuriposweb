@@ -99,7 +99,7 @@ const iconMap: Record<string, LucideIcon> = {
   "wifi-off": WifiOff,
 };
 
-export function YuriIcon({ name, size = 22 }: { name: string; size?: number }) {
+export function SarukiIcon({ name, size = 22 }: { name: string; size?: number }) {
   const Icon = iconMap[name] ?? Boxes;
   return <Icon aria-hidden="true" size={size} strokeWidth={1.8} />;
 }

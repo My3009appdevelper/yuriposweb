@@ -12,7 +12,7 @@ const navigation = readProjectFile("lib/navigation.ts");
 const navbar = readProjectFile("components/navbar.tsx");
 const contact = readProjectFile("components/contact-section.tsx");
 const moduleIndex = readProjectFile("components/module-index.tsx");
-const hero = readProjectFile("components/yuri-hero.tsx");
+const hero = readProjectFile("components/saruki-hero.tsx");
 const heroParallax = readProjectFile("components/hero-parallax-scene.tsx");
 const home = readProjectFile("app/(marketing)/page.tsx");
 
@@ -24,7 +24,7 @@ const capabilityContext = readProjectFile("components/capability-context-section
 const failures = [];
 
 if (home.includes("CapabilityStrip") || home.includes("CapabilityContextSection")) {
-  failures.push("la landing debe mostrar únicamente la presentación 3D de la diferencia Yuri");
+  failures.push("la landing debe mostrar únicamente la presentación 3D de la diferencia Saruki");
 }
 
 const requiredHrefs = [
@@ -100,7 +100,7 @@ if (!capabilityEditorial.includes("capability-section-editorial")) {
   failures.push("falta la presentación editorial");
 }
 
-if (!hero.includes("hero-parallax-section") || !hero.includes("HeroParallaxScene") || !heroParallax.includes("/assets/hero/yuri-pos-parallax.webp")) {
+if (!hero.includes("hero-parallax-section") || !hero.includes("HeroParallaxScene") || !heroParallax.includes("/assets/hero/saruki-pos-parallax.webp")) {
   failures.push("el hero no contiene la escena parallax 3D ni su asset transparente");
 }
 
@@ -150,7 +150,7 @@ for (const asset of [
   "roles-permisos.webp",
   "reportes-operativos.webp",
 ]) {
-  if (!existsSync(resolve(root, "public", "assets", "difference-yuri", "optimized", asset))) {
+  if (!existsSync(resolve(root, "public", "assets", "difference-saruki", "optimized", asset))) {
     failures.push(`falta el asset 3D ${asset}`);
   }
 }

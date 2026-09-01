@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { capabilityHighlights } from "@/lib/yuri-content";
+import { capabilityHighlights } from "@/lib/saruki-content";
 
 export function Capability3DSection() {
   return (
@@ -18,8 +18,8 @@ export function Capability3DSection() {
               <p className="capability-3d-eyebrow capability-3d-card-eyebrow">{item.eyebrow}</p>
               <div className="capability-3d-art">
                 <Image
-                  src={`/assets/difference-yuri/optimized/${item.id}.webp`}
-                  alt={`${item.title}: ilustración 3D de Yuri POS`}
+                  src={`/assets/difference-saruki/optimized/${item.id}.webp`}
+                  alt={`${item.title}: ilustración 3D de Saruki POS`}
                   fill
                   loading="lazy"
                   sizes="(max-width: 700px) 86vw, (max-width: 1080px) 42vw, 25vw"

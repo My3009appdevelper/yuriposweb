@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tienda — Yuri POS",
+  title: "Tienda — Saruki POS",
   description: "Consulta el catálogo de tu tienda y prepara tu pedido.",
 };
 
@@ -22,11 +22,11 @@ export default async function StorePage({ searchParams }: StorePageProps) {
   const query = token ? `?tienda=${encodeURIComponent(token)}` : "";
 
   return (
-    <main className="immersive-app-page" aria-label="Tienda en línea de Yuri POS">
+    <main className="immersive-app-page" aria-label="Tienda en línea de Saruki POS">
       <iframe
         className="immersive-app-frame"
         src={`/tienda-app/index.html${query}`}
-        title="Tienda en línea de Yuri POS"
+        title="Tienda en línea de Saruki POS"
         allow="camera"
         loading="eager"
         referrerPolicy="same-origin"

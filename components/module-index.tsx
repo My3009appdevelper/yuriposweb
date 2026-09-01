@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { YuriIcon } from "@/components/icons";
+import { SarukiIcon } from "@/components/icons";
 import { ModuleCard } from "@/components/module-card";
 import { SectionHeading } from "@/components/section-heading";
-import { moduleGroups, type YuriModule } from "@/lib/yuri-content";
+import { moduleGroups, type SarukiModule } from "@/lib/saruki-content";
 
 const groupIcons: Record<string, string> = {
   administracion: "building-2",
@@ -23,13 +23,13 @@ function getGroupTitle(group: (typeof moduleGroups)[number]) {
   return `${getGroupLabel(group.eyebrow).toUpperCase()} · ${group.title}`;
 }
 
-export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
+export function ModuleIndex({ modules }: { modules: readonly SarukiModule[] }) {
   const [activeGroupId, setActiveGroupId] = useState(moduleGroups[0].id);
   const modulesById = new Map(modules.map((module) => [module.id, module]));
   const activeGroup = moduleGroups.find((group) => group.id === activeGroupId) ?? moduleGroups[0];
   const activeModules = activeGroup.moduleIds
     .map((moduleId) => modulesById.get(moduleId))
-    .filter((module): module is YuriModule => Boolean(module));
+    .filter((module): module is SarukiModule => Boolean(module));
   const activeGroupTitleId = `module-group-${activeGroup.id}-title`;
 
   return (
@@ -39,10 +39,10 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
           id="modules-title"
           eyebrow="Índice de módulos"
           title="Todo lo que tu operación necesita."
-          description="Explora Yuri POS, cada módulo tiene un propósito concreto y te ayudará a crecer según la forma en que trabajes. Descubre que con este sistema puedes:"
+          description="Explora Saruki POS, cada módulo tiene un propósito concreto y te ayudará a crecer según la forma en que trabajes. Descubre que con este sistema puedes:"
         />
 
-        <div className="module-group-tabs" role="tablist" aria-label="Áreas principales de Yuri POS">
+        <div className="module-group-tabs" role="tablist" aria-label="Áreas principales de Saruki POS">
           {moduleGroups.map((group) => {
             const isActive = group.id === activeGroup.id;
             const groupLabel = getGroupLabel(group.eyebrow);
@@ -60,7 +60,7 @@ export function ModuleIndex({ modules }: { modules: readonly YuriModule[] }) {
                 type="button"
               >
                 <span className="module-group-tab-icon">
-                  <YuriIcon name={groupIcons[group.id] ?? "boxes"} size={21} />
+                  <SarukiIcon name={groupIcons[group.id] ?? "boxes"} size={21} />
                 </span>
                 <span className="module-group-tab-copy">
                   <strong>{groupLabel}</strong>

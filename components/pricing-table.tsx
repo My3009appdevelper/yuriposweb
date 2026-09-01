@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import { pricingPlans, type PricingPlan } from "@/lib/yuri-content";
+import { pricingPlans, type PricingPlan } from "@/lib/saruki-content";
 
 type BillingPeriod = "monthly" | "annual";
 
