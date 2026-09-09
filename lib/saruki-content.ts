@@ -9,7 +9,8 @@ export type ModuleCategory =
   | "Recetas"
   | "Reportes";
 
-export type PlanName = "Esencial" | "Profesional" | "Escala";
+export type PlanName = "Esencial" | "Profesional";
+export type PricingPlanName = PlanName | "Empresarial";
 
 export type SarukiModule = {
   id: string;
@@ -77,7 +78,7 @@ export const sarukiModules: readonly SarukiModule[] = [
     name: "Impulso de venta",
     summary: "Relaciona productos y recomendaciones para acompañar cada decisión de compra.",
     audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
+    plan: "Profesional",
     icon: "trending-up",
     visualAsset: "/assets/modulos-webp/impulso-venta.webp",
   },
@@ -117,7 +118,7 @@ export const sarukiModules: readonly SarukiModule[] = [
     name: "Fidelidad",
     summary: "Da seguimiento a beneficios y recompensas para construir relaciones duraderas.",
     audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
+    plan: "Profesional",
     icon: "heart-handshake",
     visualAsset: "/assets/modulos-webp/fidelidad.webp",
   },
@@ -232,32 +233,12 @@ export const sarukiModules: readonly SarukiModule[] = [
     visualAsset: "/assets/difference-saruki/optimized/roles-permisos.webp",
   },
   {
-    id: "personal",
-    category: "Administración",
-    name: "Personal",
-    summary: "Conserva la estructura de tu equipo y sus relaciones laborales.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "badge-check",
-    visualAsset: "/assets/modulos-webp/personal.webp",
-  },
-  {
-    id: "vacaciones",
-    category: "Administración",
-    name: "Vacaciones",
-    summary: "Da seguimiento a descansos y disponibilidad con una vista más ordenada.",
-    audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
-    icon: "calendar-days",
-    visualAsset: "/assets/modulos-webp/vacaciones.webp",
-  },
-  {
     id: "comisiones",
     category: "Administración",
     name: "Comisiones",
     summary: "Relaciona el desempeño comercial con reglas de comisión más claras.",
     audiences: ["general", "farmacias", "abarrotes"],
-    plan: "Escala",
+    plan: "Profesional",
     icon: "percent",
     visualAsset: "/assets/modulos-webp/comisiones.webp",
   },
@@ -379,7 +360,7 @@ export const moduleGroups: readonly ModuleGroup[] = [
     eyebrow: "01 · Administración",
     title: "Administra tu negocio con una sola lógica.",
     description: "Centraliza sucursales, equipos, cajas y permisos para que cada persona sepa qué hacer y tú conserves el control a medida que el negocio crece.",
-    moduleIds: ["sucursales", "usuarios", "cajas", "roles-permisos", "personal", "vacaciones", "comisiones", "anuncios"],
+    moduleIds: ["sucursales", "usuarios", "cajas", "roles-permisos", "comisiones", "anuncios"],
   },
   {
     id: "venta",
@@ -531,7 +512,7 @@ export const capabilityHighlights: readonly CapabilityHighlight[] = [
 
 export type PricingPlan = {
   id: string;
-  name: PlanName;
+  name: PricingPlanName;
   monthly: string;
   annual: string;
   summary: string;
@@ -540,6 +521,7 @@ export type PricingPlan = {
   extraNote: string;
   features: readonly string[];
   featured?: boolean;
+  pricingMode?: "fixed" | "custom";
 };
 
 export const pricingPlans: readonly PricingPlan[] = [
@@ -549,7 +531,7 @@ export const pricingPlans: readonly PricingPlan[] = [
     monthly: "$X",
     annual: "$X",
     summary: "La base clara para poner en orden la operación diaria desde el primer día.",
-    limits: ["2 sucursales incluidas", "5 usuarios incluidos"],
+    limits: ["1 sucursal incluida", "5 usuarios incluidos"],
     extraNote: "Sucursal o usuario adicional disponible según tus necesidades.",
     features: [
       "Sucursales, usuarios, cajas y roles y permisos",
@@ -564,29 +546,31 @@ export const pricingPlans: readonly PricingPlan[] = [
     name: "Profesional",
     monthly: "$X",
     annual: "$X",
-    summary: "Más contexto y control para equipos que ya están creciendo.",
+    summary: "Más herramientas y capacidad para equipos que ya están creciendo.",
     inclusionLabel: "Todo lo esencial",
-    limits: ["5 sucursales incluidas", "12 usuarios incluidos"],
-    extraNote: "Extras por sucursal o usuario con una tarifa más conveniente que en Esencial.",
+    limits: ["5 sucursales incluidas", "25 usuarios incluidos"],
+    extraNote: "Sucursal o usuario adicional disponible según tus necesidades.",
     features: [
       "Anuncios y órdenes de compra",
       "Control ambiental, recetas y médicos",
       "Facturación, gráficas y KPIs operativos",
+      "Impulso de venta, fidelidad y comisiones",
     ],
     featured: true,
   },
   {
-    id: "escala",
-    name: "Escala",
-    monthly: "$X",
-    annual: "$X",
-    summary: "Capacidades avanzadas para equipos, sucursales y procesos especializados.",
-    inclusionLabel: "Todo lo profesional",
-    limits: ["10 sucursales incluidas", "25 usuarios incluidos"],
-    extraNote: "La mejor tarifa por sucursal o usuario adicional.",
+    id: "empresarial",
+    name: "Empresarial",
+    monthly: "A cotizar",
+    annual: "A cotizar",
+    summary: "Una propuesta a la medida de tus sucursales, usuarios y objetivos.",
+    inclusionLabel: "Plan personalizado",
+    limits: ["Desde 10 sucursales", "Desde 50 usuarios"],
+    extraNote: "El alcance, la implementación y el precio se definen contigo.",
     features: [
-      "Impulso de venta y fidelidad",
-      "Personal, vacaciones y comisiones",
+      "Todo lo de Profesional",
+      "Tienda en línea, IA e integraciones según el proyecto",
     ],
+    pricingMode: "custom",
   },
 ];

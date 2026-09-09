@@ -9,6 +9,7 @@ type BillingPeriod = "monthly" | "annual";
 
 export function PricingTable({ plans = pricingPlans }: { plans?: readonly PricingPlan[] }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
+  const showAnnualSavings = plans.some((plan) => plan.pricingMode !== "custom");
 
   return (
     <div className="pricing-table-wrap">
@@ -17,20 +18,21 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
           Mensual
         </button>
         <button className={period === "annual" ? "pricing-toggle-active" : ""} type="button" aria-pressed={period === "annual"} onClick={() => setPeriod("annual")}>
-          Anual <span>Ahorra 2 meses</span>
+          Anual {showAnnualSavings ? <span>Ahorra 2 meses</span> : null}
         </button>
       </div>
       <div className="pricing-grid">
         {plans.map((plan) => {
           const price = period === "monthly" ? plan.monthly : plan.annual;
           const cadence = period === "monthly" ? "/ mes" : "/ año";
+          const isCustomPricing = plan.pricingMode === "custom";
           return (
             <article className={`pricing-card${plan.featured ? " pricing-card-featured" : ""}`} key={plan.id}>
               {plan.featured ? <div className="pricing-featured-badge"><Sparkles size={13} aria-hidden="true" /> Más elegido</div> : null}
               <p className="pricing-kicker">{plan.name === "Esencial" ? "Para comenzar" : plan.name === "Profesional" ? "Para crecer" : "A tu medida"}</p>
               <h3>{plan.name}</h3>
               <p className="pricing-summary">{plan.summary}</p>
-              <div className="pricing-amount"><strong>{price}</strong><span>MXN {cadence}</span></div>
+              <div className="pricing-amount"><strong>{price}</strong><span>{isCustomPricing ? "Según alcance" : "MXN " + cadence}</span></div>
               {plan.inclusionLabel ? <p className="pricing-inclusion">{plan.inclusionLabel}</p> : null}
               <ul className="pricing-limits">
                 {plan.limits.map((limit) => <li key={limit}>{limit}</li>)}
@@ -43,7 +45,7 @@ export function PricingTable({ plans = pricingPlans }: { plans?: readonly Pricin
           );
         })}
       </div>
-      <p className="pricing-maintenance">Todos los planes incluyen mantenimiento y actualizaciones recurrentes para mejorar continuamente la calidad, seguridad y estabilidad del sistema.</p>
+      <p className="pricing-maintenance">Todos los planes incluyen configuración inicial, capacitación, acompañamiento durante el arranque, mantenimiento y actualizaciones recurrentes para mejorar continuamente la calidad, seguridad y estabilidad del sistema.</p>
       <p className="pricing-sales-note">¿Necesitas una combinación distinta? <Link href="/#contacto">Platicar con el equipo de ventas para encontrar una cotización perfecta según tus necesidades <ArrowRight size={15} aria-hidden="true" /></Link></p>
     </div>
   );

@@ -19,7 +19,7 @@ export default function HomePage() {
             align="center"
             eyebrow="Planes de referencia"
             title="Empieza con lo que necesitas. Crece cuando estés listo."
-            description="Tres formas de acercar Saruki POS a la escala de tu negocio."
+            description="Dos planes claros y una opción empresarial a la medida."
           />
           <PricingTable plans={pricingPlans} />
         </div>

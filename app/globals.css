@@ -2291,7 +2291,8 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 13px;
-  margin-top: 18px;
+  max-width: 1180px;
+  margin: 18px auto 0;
 }
 
 .pricing-card {
