@@ -7,6 +7,7 @@ const checks = [
   ["build index", resolve(root, "public/demo-app/index.html"), null],
   ["Flutter bootstrap", resolve(root, "public/demo-app/flutter_bootstrap.js"), null],
   ["Flutter application bundle", resolve(root, "public/demo-app/main.dart.js"), null],
+  ["SQLite WASM", resolve(root, "public/demo-app/sqlite3.wasm"), null],
   ["Flutter assets", resolve(root, "public/demo-app/assets"), null],
   ["demo iframe", resolve(root, "app/demo/page.tsx"), "/demo-app/index.html"],
   ["embed css", resolve(root, "app/globals.css"), ".demo-embed-shell"],
